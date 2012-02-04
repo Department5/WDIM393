@@ -17,12 +17,15 @@ body {
 	font-family: Century Gothic, sans-serif;
 }
 
+.ltie9 body {
+	background:#e8e7e7;
+}
+
 header#header {
 	height:62px;
 	background:url(../images/nav-back.jpg) repeat-x;
 	margin:0;
 	padding:0;
-	padding:0 150px;
 	box-shadow:0 0 15px #000;
 }
 
@@ -42,8 +45,12 @@ header#header ul {
 header#header ul li {
 	display:inline-block;
 	color:#ececec;
-	margin-right:70px;
+	margin-right:60px;
 	text-align:left;
+}
+
+.ie7 header#header ul li {
+	display: inline;
 }
 
 header#header ul li span {
@@ -68,18 +75,31 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 }
 
 figure#logo {
-	width:900px;
-	margin:0 auto;
+	height: 285px;
+	margin: -30px auto 0;
+	width: 900px;
+	display: block;
 }
 
-figure#logo img {
-	position:absolute;
-	margin-top:-20px;
+figure#logo #dpt5 {
+	margin-bottom:80px;
+}
+
+figure#coolShit {
+	margin: 55px auto 0;
+	padding-right: 60px;
+	text-align: right;
+	width: 840px;
 }
 
 footer#footer {
-	height:62px;
-	background:url(../images/nav-back.jpg) repeat-x;
-	margin:0;
-	padding:0;
+	background: url("http://jakelovedev.com/wdim393/d5/css/../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
+	bottom: 0;
+	color: #717171;
+	height: 42px;
+	margin: 0;
+	padding: 20px 0 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
