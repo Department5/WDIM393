@@ -1,7 +1,4 @@
-
-
 html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
-
 
 caption, th, td {text-align:left;font-weight:normal;}
 
@@ -15,7 +12,6 @@ blockquote, q {quotes: "" "";}
 
 body {
 	font-size: 14px;
-
 	background: hsla(0, 2%, 91%, 1);
 	color: #000;
 	font-family: Century Gothic, sans-serif;
