@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
+html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
 
 caption, th, td {text-align:left;font-weight:normal;}
 
@@ -12,7 +12,74 @@ blockquote, q {quotes: "" "";}
 
 body {
 	font-size: 14px;
-	background: #e8e7e7;
+	background: hsla(0, 2%, 91%, 1);
 	color: #000;
 	font-family: Century Gothic, sans-serif;
+}
+
+header#header {
+	height:62px;
+	background:url(../images/nav-back.jpg) repeat-x;
+	margin:0;
+	padding:0;
+	padding:0 150px;
+	box-shadow:0 0 15px #000;
+}
+
+header#header menu {
+	margin: 0 auto;
+	text-align: right;
+	width: 900px;
+}
+
+header#header ul {
+	list-style-type:none;
+	padding-top:10px;
+	width:460px;
+	display: inline-block;
+}
+
+header#header ul li {
+	display:inline-block;
+	color:#ececec;
+	margin-right:70px;
+	text-align:left;
+}
+
+header#header ul li span {
+	font-weight:bold;
+}
+
+header#header ul li.currentPage span {
+	color:#FFF;
+}
+
+header#header ul li a:link, header#header ul li a:visited {
+	color:#ececec;
+	text-decoration:none;
+}
+
+header#header ul li a:hover {
+	color:#f6a09f;
+}
+
+header#header ul li.currentPage a:link, header#header ul li.currentPage a:visited {
+	color:#f34947;
+}
+
+figure#logo {
+	width:900px;
+	margin:0 auto;
+}
+
+figure#logo img {
+	position:absolute;
+	margin-top:-20px;
+}
+
+footer#footer {
+	height:62px;
+	background:url(../images/nav-back.jpg) repeat-x;
+	margin:0;
+	padding:0;
 }
