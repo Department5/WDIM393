@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
-=======
+
+
 html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
->>>>>>> 1ac33e7adff333c6976181a5da67d4ce19325b4f
+
 
 caption, th, td {text-align:left;font-weight:normal;}
 
@@ -16,51 +15,7 @@ blockquote, q {quotes: "" "";}
 
 body {
 	font-size: 14px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	background: #d1c3aa;
-	color: #000;
-	font-family: Century Gothic, sans-serif;
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 90d1c5a2f523f33a7a68abe4ee1a62dd511678f0
-=======
-	background: #e8e7e7;
-	color: #000;
-	font-family: Century Gothic, sans-serif;
-}
->>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
-=======
-	background: #e8e7e7;
-	color: #000;
-	font-family: Century Gothic, sans-serif;
-}
->>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
-=======
-	background: #e8e7e7;
-	color: #000;
-	font-family: Century Gothic, sans-serif;
-}
->>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
-=======
-	background: #e8e7e7;
-	color: #000;
-	font-family: Century Gothic, sans-serif;
-}
->>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
-=======
-	background: #e8e7e7;
-	color: #000;
-	font-family: Century Gothic, sans-serif;
-}
->>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
-=======
+
 	background: hsla(0, 2%, 91%, 1);
 	color: #000;
 	font-family: Century Gothic, sans-serif;
@@ -125,7 +80,7 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 
 figure#logo {
 	height: 285px;
-	margin: -30px auto 0;
+	margin: -30px auto 30px;
 	width: 900px;
 	display: block;
 }
@@ -141,15 +96,39 @@ figure#coolShit {
 	width: 840px;
 }
 
+
+section.standOut {
+	padding:35px 0;
+	width:100%;
+	display: block;
+	height:52px;
+	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
+	background-repeat: repeat-x, repeat-x, repeat-x;
+	background-position: top center, center center, bottom center;
+}
+
+.ltie9 section.standOut {
+	background:url(../images/mid-bg-repeat-ltie9.jpg) center center repeat-x;
+}
+
+section.standOut article {
+	color: #161616;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 27px;
+	margin: 0 auto;
+	padding-left: 50px;
+	width: 850px;
+}
+
 footer#footer {
 	background: url("http://jakelovedev.com/wdim393/d5/css/../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	bottom: 0;
 	color: #717171;
 	height: 42px;
-	margin: 0;
+	margin: 30px 0 0;
 	padding: 20px 0 0;
-	position: absolute;
+	position: static;
 	text-align: center;
 	width: 100%;
 }
->>>>>>> 1ac33e7adff333c6976181a5da67d4ce19325b4f
