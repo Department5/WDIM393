@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
 selectivizr v1.0.2 - (c) Keith Clark, freely distributable under the terms 
 of the MIT license.
@@ -572,6 +573,8 @@ References:
 >>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
 =======
 >>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
+=======
+>>>>>>> 1ac33e7adff333c6976181a5da67d4ce19325b4f
 /*
 selectivizr v1.0.2 - (c) Keith Clark, freely distributable under the terms 
 of the MIT license.
@@ -1136,6 +1139,7 @@ References:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
 =======
 >>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
@@ -1145,4 +1149,6 @@ References:
 >>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
 =======
 >>>>>>> 83a9b3e382e4ece3948f02b970e866ca2100872c
+=======
+>>>>>>> 1ac33e7adff333c6976181a5da67d4ce19325b4f
 })(this);
