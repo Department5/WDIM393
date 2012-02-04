@@ -116,14 +116,39 @@ section.standOut article {
 	width: 850px;
 }
 
+section#calls2act {
+	width:900px;
+	margin:0 auto;
+	margin-bottom:30px;
+	text-align:center;
+}
+
+section#calls2act ul#actions {
+	list-style-type:none;
+}
+
+section#calls2act ul#actions li {
+	display: inline-block;
+	float:left;
+}
+
+section#calls2act ul#actions li:nth-child(2), .ltie9 section#calls2act ul#actions li.ieFix {
+	margin:0 52px;
+}
+
 footer#footer {
 	background: url("http://jakelovedev.com/wdim393/d5/css/../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
-	bottom: 0;
 	color: #717171;
 	height: 42px;
-	margin: 30px 0 0;
-	padding: 20px 0 0;
+	margin-top: 40px;
+	padding-top: 20px;
+	bottom: 0;
 	position: static;
 	text-align: center;
 	width: 100%;
+	box-shadow: 0px 0px 15px #000000;
+}
+
+.clear {
+	clear:both;
 }
