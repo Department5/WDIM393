@@ -1,0 +1,19 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
+
+caption, th, td {text-align:left;font-weight:normal;}
+
+table {border-collapse:separate;border-spacing:0;}
+
+blockquote:before,blockquote:after,q:before,q:after {content: "";}
+
+blockquote, q {quotes: "" "";}
+
+/* END RESET */
+
+body {
+	font-size: 14px;
+	background: #d1c3aa;
+	color: #000;
+	font-family: Century Gothic, sans-serif;
+}
+shit shit and more shit
