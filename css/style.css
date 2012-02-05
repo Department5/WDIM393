@@ -14,7 +14,7 @@ body {
 	font-size: 14px;
 	background: hsla(0, 2%, 91%, 1);
 	color: #000;
-	font-family: Century Gothic, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .ltie9 body {
@@ -63,14 +63,12 @@ header#header ul li {
 	color:#ececec;
 	margin-right:60px;
 	text-align:left;
+	font-family: 'Passion One', cursive;
+	font-size:16px;
 }
 
 .ie7 header#header ul li {
 	display: inline;
-}
-
-header#header ul li span {
-	font-weight:bold;
 }
 
 header#header ul li.currentPage span {
@@ -149,6 +147,7 @@ section#calls2act {
 	margin:0 auto;
 	margin-bottom:30px;
 	text-align:center;
+	height:215px;
 }
 
 section#calls2act ul#actions {
@@ -169,30 +168,32 @@ section#calls2act ul#actions li:nth-child(2) {
 	margin:0 52px;
 }
 
-section#calls2act ul#actions li:first-child:after {
+section#calls2act ul#actions li:first-child:hover:after {
 	display:inline;
 	content:"{It will change your life}";
+	font-weight:bold;
+	transform: rotate(-330deg);
 }
 
 .ltie9 section#calls2act ul#actions li:first-child:after {
 	content: "";
 }
 
-section#calls2act ul#actions li:nth-child(2):after {
+section#calls2act ul#actions li:nth-child(2):hover:after {
 	content:"{Let's grab a virtual beer}";
+	font-weight:bold;
+	transform: rotate(-330deg);
 }
 
-section#calls2act ul#actions li:last-child:after {
+section#calls2act ul#actions li:last-child:hover:after {
 	display:inline;
 	content:"{We’ll make you a sandwich...}";
+	font-weight:bold;
+	transform: rotate(-330deg);
 }
 
 section#calls2act ul#actions li:hover {
-	transform: rotate(-30deg);
-}
-
-section#calls2act ul#actions li:hover:after {
-	content:"" !important;
+	transform: rotate(-390deg);
 }
 
 section#recentPost {
