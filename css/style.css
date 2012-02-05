@@ -21,6 +21,19 @@ body {
 	background:#e8e7e7;
 }
 
+a:link, a:visited {
+	color:#b52f2d;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#461c1b;
+}
+
+#container {
+	padding-bottom:85px;
+}
+
 header#header {
 	height:62px;
 	background:url(../images/nav-back.jpg) repeat-x;
@@ -100,6 +113,7 @@ section.standOut {
 	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
 	background-repeat: repeat-x, repeat-x, repeat-x;
 	background-position: top center, center center, bottom center;
+	margin-bottom:20px;
 }
 
 .ltie9 section.standOut {
@@ -132,23 +146,94 @@ section#calls2act ul#actions li {
 	float:left;
 }
 
-section#calls2act ul#actions li:nth-child(2), .ltie9 section#calls2act ul#actions li.ieFix {
+section#calls2act ul#actions li:nth-child(2) {
 	margin:0 52px;
 }
 
+.ltie9 section#calls2act ul#actions li.ieFix {
+	margin:0 52px;
+}
+
+section#recentPost {
+	width:900px;
+	margin:0 auto;
+}
+
+section#recentPost article {
+	padding-left:50px;
+}
+
 footer#footer {
-	background: url("http://jakelovedev.com/wdim393/d5/css/../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
+	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	color: #717171;
 	height: 42px;
-	margin-top: 40px;
 	padding-top: 20px;
 	bottom: 0;
-	position: static;
+	position: fixed;
 	text-align: center;
 	width: 100%;
 	box-shadow: 0px 0px 15px #000000;
+	display: block;
+}
+
+.red {
+	color:#b52f2d;
 }
 
 .clear {
 	clear:both;
+}
+
+progress,          /* All HTML5 progress enabled browsers */
+progress[role]     /* polyfill */
+{
+
+	/* Turns off styling - not usually needed, but good to know. */
+	appearance: none;
+	/*-moz-appearance: none;
+	-webkit-appearance: none;
+
+	/* gets rid of default border in Firefox and Opera. */
+	border: none;
+
+	/* Needs to be in here for Safari polyfill so background images work as expected. */
+	background-size: auto;
+
+	height:11px;
+
+}
+
+/* Polyfill */
+progress[role]:after {
+	background-image: none; /* removes default background from polyfill */
+}
+
+/* Ensure fallback text doesn't appear in polyfill */
+progress[role] strong {
+	display: none;
+}
+
+progress,                          /* Firefox  */
+progress[role][aria-valuenow] {    /* Polyfill */
+   background: #C6C6C6 !important; /* !important is needed by the polyfill */
+}
+
+/* Chrome */
+progress::-webkit-progress-bar {
+    background: #C6C6C6;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+    background: #b52f2d;
+}
+
+/* Chrome */
+progress::-webkit-progress-value {
+    background: #b52f2d;
+}
+
+/* Polyfill */
+progress[aria-valuenow]:before  {
+    background: #b52f2d;
 }
