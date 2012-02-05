@@ -74,12 +74,12 @@ header#header ul li.currentPage span {
 	color:#FFF;
 }
 
-header#header ul li a:link, header#header ul li a:visited {
+header#header ul li:not(.currentPage) a:link, header#header ul li:not(.currentPage) a:visited {
 	color:#ececec;
 	text-decoration:none;
 }
 
-header#header ul li a:hover {
+header#header ul li:not(.currentPage) a:hover {
 	color:#f6a09f;
 }
 
@@ -155,6 +155,20 @@ section#calls2act ul#actions li:nth-child(2) {
 	margin:0 52px;
 }
 
+section#calls2act ul#actions li:first-child:after {
+	display:inline;
+	content:"{It will change your life}";
+}
+
+section#calls2act ul#actions li:nth-child(2):after {
+	content:"{Let's grab a virtual beer}";
+}
+
+section#calls2act ul#actions li:last-child:after {
+	display:inline;
+	content:"{We’ll make you a sandwich...}";
+}
+
 section#recentPost {
 	width:900px;
 	margin:0 auto;
@@ -185,56 +199,6 @@ footer#footer {
 	clear:both;
 }
 
-progress,          /* All HTML5 progress enabled browsers */
-progress[role]     /* polyfill */
-{
-
-	/* Turns off styling - not usually needed, but good to know. */
-	appearance: none;
-	/*-moz-appearance: none;
-	-webkit-appearance: none;
-
-	/* gets rid of default border in Firefox and Opera. */
-	border: none;
-
-	/* Needs to be in here for Safari polyfill so background images work as expected. */
-	background-size: auto;
-
-	height:11px;
-
-}
-
-/* Polyfill */
-progress[role]:after {
-	background-image: none; /* removes default background from polyfill */
-}
-
-/* Ensure fallback text doesn't appear in polyfill */
-progress[role] strong {
-	display: none;
-}
-
-progress,                          /* Firefox  */
-progress[role][aria-valuenow] {    /* Polyfill */
-   background: #C6C6C6 !important; /* !important is needed by the polyfill */
-}
-
-/* Chrome */
-progress::-webkit-progress-bar {
-    background: #C6C6C6;
-}
-
-/* Firefox */
-progress::-moz-progress-bar {
-    background: #b52f2d;
-}
-
-/* Chrome */
-progress::-webkit-progress-value {
-    background: #b52f2d;
-}
-
-/* Polyfill */
-progress[aria-valuenow]:before  {
-    background: #b52f2d;
+progress {
+	height:9px;
 }
