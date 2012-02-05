@@ -7,15 +7,37 @@
 <![endif]-->
 <!--[if IE 7]>
 <html class="ie7 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<script type="text/javascript">
+  alert('You should probably come to grips with reality and upgrade your fucking browser!');
+  window.location = "http://www.mozilla.org/en-US/firefox/new/";
+</script>
 <![endif]-->
 <!--[if !IE]>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <![endif]-->
 <head>
 <meta charset="utf-8" />
 <title>[D5] Web Development - Welcome</title>
 <base href="http://jakelovedev.com/wdim393/d5/" />
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+$(function(){
+  $('#dpt5').fadeIn(2000);
+  $logo = $('#d5');
+
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll > 74){
+      $logo.stop(true).animate({ opacity: 0 }, 500);
+    } 
+    if(scroll < 74){
+      $logo.stop(true).animate({ opacity: 1 }, 500);
+    }
+  })
+
+});
+</script>
 <script src="js/prefixfree.min.js"></script>
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="js/selectivizr.js"></script>
@@ -37,7 +59,7 @@
     </menu>
   </header>
   <figure id="logo">
-    <img src="images/logo.png" height="287" width="328" alt="D5" />
+    <img id="d5" src="images/logo.png" height="287" width="328" alt="D5" />
     <img id="dpt5" src="images/DEPT5.jpg" height="134" width="526" alt="Department 5 - The League of Extraordinary Developers" />
   </figure>
   <section class="standOut">

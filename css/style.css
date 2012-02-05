@@ -24,6 +24,7 @@ body {
 a:link, a:visited {
 	color:#b52f2d;
 	text-decoration:none;
+	transition: all .5s ease-in-out;
 }
 
 a:hover {
@@ -35,11 +36,13 @@ a:hover {
 }
 
 header#header {
-	height:62px;
-	background:url(../images/nav-back.jpg) repeat-x;
-	margin:0;
-	padding:0;
-	box-shadow:0 0 15px #000;
+	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
+	box-shadow: 0 0 15px #000000;
+	height: 62px;
+	padding: 0;
+	position: fixed;
+	width: 100%;
+	z-index:1000;
 }
 
 header#header menu {
@@ -81,7 +84,6 @@ header#header ul li:not(.currentPage) a:link, header#header ul li:not(.currentPa
 
 header#header ul li:not(.currentPage) a:hover {
 	color:#f6a09f;
-	transition: all .5s ease-in-out;
 }
 
 header#header ul li.currentPage a:link, header#header ul li.currentPage a:visited {
@@ -90,13 +92,23 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 
 figure#logo {
 	height: 285px;
-	margin: -30px auto 30px;
+	margin: 0 auto;
 	width: 900px;
 	display: block;
+	padding-top:30px;
+	margin-bottom:30px;
+}
+
+figure#logo #d5 {
+	position: fixed;
+	z-index: 999999;
 }
 
 figure#logo #dpt5 {
-	margin-bottom:80px;
+	display:none;
+	margin-left: 323px;
+	margin-top: 75px;
+	z-index: -1;
 }
 
 figure#coolShit {
@@ -160,6 +172,10 @@ section#calls2act ul#actions li:nth-child(2) {
 section#calls2act ul#actions li:first-child:after {
 	display:inline;
 	content:"{It will change your life}";
+}
+
+.ltie9 section#calls2act ul#actions li:first-child:after {
+	content: "";
 }
 
 section#calls2act ul#actions li:nth-child(2):after {
