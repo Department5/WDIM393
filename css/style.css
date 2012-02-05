@@ -81,6 +81,7 @@ header#header ul li:not(.currentPage) a:link, header#header ul li:not(.currentPa
 
 header#header ul li:not(.currentPage) a:hover {
 	color:#f6a09f;
+	transition: all .5s ease-in-out;
 }
 
 header#header ul li.currentPage a:link, header#header ul li.currentPage a:visited {
@@ -145,6 +146,7 @@ section#calls2act ul#actions {
 section#calls2act ul#actions li {
 	display: inline-block;
 	float:left;
+	transition: all .5s ease-in-out;
 }
 
 section#calls2act ul#actions li:nth-child(2) {
@@ -167,6 +169,14 @@ section#calls2act ul#actions li:nth-child(2):after {
 section#calls2act ul#actions li:last-child:after {
 	display:inline;
 	content:"{We’ll make you a sandwich...}";
+}
+
+section#calls2act ul#actions li:hover {
+	transform: rotate(-30deg);
+}
+
+section#calls2act ul#actions li:hover:after {
+	content:"" !important;
 }
 
 section#recentPost {
