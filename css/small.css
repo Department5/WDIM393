@@ -1,0 +1,75 @@
+figure#logo #d5 {
+	height:50px;
+	width:auto;
+	margin-top:-23px;
+	margin-left:-35px;
+}
+
+header#header menu {
+	width:320px;
+	text-align:left;
+	margin-left:75px;
+}
+
+header#header ul {
+	width:320px;
+}
+
+header#header ul li {
+	margin-right:20px;
+}
+
+figure#logo {
+	width:320px;
+	height:auto;
+	margin:0 auto 10px;
+}
+
+figure#logo img#dpt5 {
+	width:320px;
+	height:auto;
+	margin-top: 45px;
+	z-index: -1;
+	margin-left:0 !important;
+}
+
+section.standOut article {
+  color: #161616;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 17px;
+  margin: 0 auto;
+  padding-left: 0;
+  width: 320px;
+}
+
+section#calls2act {
+  height:auto;
+  min-height: 215px;
+  margin: 0 auto 30px;
+  text-align: center;
+  width: 320px;
+  display: block;
+}
+
+section#calls2act ul#actions li {
+  display: block;
+  height: 225px;
+  width: 320px;
+}
+
+section#calls2act ul#actions li:nth-child(2) {
+  margin: 0;
+}
+section#calls2act ul#actions li:hover:after {
+	content:"" !important;
+}
+
+section#recentPost {
+  margin: 0 auto;
+  width: 320px;
+}
+
+section#recentPost article {
+  padding-left: 0;
+}
