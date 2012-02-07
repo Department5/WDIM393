@@ -1,5 +1,3 @@
-/* @override http://jakelovedev.com/wdim393/d5/css/style.css */
-
 html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
 
 caption, th, td {text-align:left;font-weight:normal;}
@@ -50,22 +48,20 @@ header#header {
 header#header menu {
 	margin: 0 auto;
 	text-align: right;
-	max-width: 900px;
-	width: 90%;
-	padding-right: 50px;
+	width: 900px;
 }
 
 header#header ul {
 	list-style-type:none;
 	padding-top:10px;
-	width:100%;
+	width:460px;
 	display: inline-block;
 }
 
 header#header ul li {
 	display:inline-block;
 	color:#ececec;
-	margin-right: 6.666666667%;
+	margin-right:60px;
 	text-align:left;
 	font-family: 'Passion One', cursive;
 	font-size:16px;
@@ -93,30 +89,24 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 }
 
 figure#logo {
+	height: 285px;
 	margin: 0 auto;
-	max-width: 900px;
-	width: 90%;
+	width: 900px;
 	display: block;
-	padding:30px 50px 0 0;
+	padding-top:30px;
 	margin-bottom:30px;
 }
 
 figure#logo #d5 {
 	position: fixed;
 	z-index: 999999;
-	width: 36.444444444%; /* 329px / 900px */
-	max-width: 328px;
-	height: auto;
 }
 
 figure#logo #dpt5 {
 	display:none;
-	margin-left: 35.888888889%; /* 323px / 900px */
+	margin-left: 323px;
 	margin-top: 75px;
 	z-index: -1;
-	width: 64.111111%; /* 577px / 900px */
-	height: auto;
-	padding-bottom: 46px;
 }
 
 figure#coolShit {
@@ -126,14 +116,16 @@ figure#coolShit {
 	width: 840px;
 }
 
+
 section.standOut {
 	padding:35px 0;
+	width:100%;
 	display: block;
-	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
-	background-repeat: repeat-x, repeat-x, repeat-x;
-	background-position: top center, center center, bottom center;
-	margin-bottom:20px;
 	max-height:52px;
+	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
+	background-repeat: repeat-x, repeat-x, repeat-x;
+	background-position: top center, bottom center, center center;
+	margin-bottom:20px;
 }
 
 .ltie9 section.standOut {
@@ -146,32 +138,16 @@ section.standOut article {
 	font-weight: bold;
 	line-height: 27px;
 	margin: 0 auto;
-	padding: 0 50px;
-	max-width: 850px;
-	width: 90%;
+	padding-left: 50px;
+	width: 850px;
 }
-#actions {
-	width: 90%;
-	max-width:900px;
-	margin:0 auto;
-}
-#actions:after {
-	content: '';
-	display: block;
-	height: 0;
-	clear: both;
-}
-#actions li {
-	width: 29.444444444%; /* (1-(5.833333334 * 2))/3 */
-}
-#actions li img {
-	width: 100%;
-	height: auto;
-}
+
 section#calls2act {
+	width:900px;
+	margin:0 auto;
 	margin-bottom:30px;
 	text-align:center;
-	min-height:245px;
+	height:215px;
 }
 
 section#calls2act ul#actions {
@@ -184,17 +160,12 @@ section#calls2act ul#actions li {
 	transition: all .5s ease-in-out;
 }
 
-section#calls2act ul#actions li:after {
-	content:"{}";
-	font-weight:bold;
-}
-
 section#calls2act ul#actions li:nth-child(2) {
-	margin:0 5.833333334%; /* 52px / 900px */
+	margin:0 52px;
 }
 
 .ltie9 section#calls2act ul#actions li.ieFix {
-	margin:0 5.833333334%; /* 52px / 900px */
+	margin:0 52px;
 }
 
 section#calls2act ul#actions li:first-child:hover:after {
@@ -222,24 +193,23 @@ section#calls2act ul#actions li:last-child:hover:after {
 }
 
 section#recentPost {
-	max-width:900px;
-	width: 90%;
+	width:900px;
 	margin:0 auto;
 }
 
 section#recentPost article {
-	padding-left:25px;
+	padding-left:50px;
 }
 
 footer#footer {
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	color: #717171;
 	height: 42px;
-	padding: 20px 5% 0 5%;
+	padding-top: 20px;
 	bottom: 0;
 	position: fixed;
 	text-align: center;
-	width: 90%;
+	width: 100%;
 	box-shadow: 0px 0px 15px #000000;
 	display: block;
 }

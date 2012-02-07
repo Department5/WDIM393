@@ -1,3 +1,5 @@
+/* @override http://jakelovedev.com/wdim393/d5/css/style.css */
+
 html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
 
 caption, th, td {text-align:left;font-weight:normal;}
@@ -19,6 +21,10 @@ body {
 
 .ltie9 body {
 	background:#e8e7e7;
+}
+
+a {
+    transition: all 0.3s ease-in-out;
 }
 
 a:link, a:visited {
@@ -48,20 +54,22 @@ header#header {
 header#header menu {
 	margin: 0 auto;
 	text-align: right;
-	width: 900px;
+	max-width: 900px;
+	width: 90%;
+	padding-right: 50px;
 }
 
 header#header ul {
 	list-style-type:none;
 	padding-top:10px;
-	width:460px;
+	width:100%;
 	display: inline-block;
 }
 
 header#header ul li {
 	display:inline-block;
 	color:#ececec;
-	margin-right:60px;
+	margin-right: 6.666666667%; /* 60px / 900px */
 	text-align:left;
 	font-family: 'Passion One', cursive;
 	font-size:16px;
@@ -89,24 +97,30 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 }
 
 figure#logo {
-	height: 285px;
 	margin: 0 auto;
-	width: 900px;
+	max-width: 900px;
+	width: 90%;
 	display: block;
-	padding-top:30px;
+	padding:30px 50px 0 0;
 	margin-bottom:30px;
 }
 
 figure#logo #d5 {
 	position: fixed;
 	z-index: 999999;
+	width: 36.444444444%; /* 329px / 900px */
+	max-width: 329px;
+	height: auto;
 }
 
 figure#logo #dpt5 {
 	display:none;
-	margin-left: 323px;
+	margin-left: 35.888888889%; /* 323px / 900px */
 	margin-top: 75px;
 	z-index: -1;
+	width: 64.111111%; /* 577px / 900px */
+	height: auto;
+	padding-bottom: 46px;
 }
 
 figure#coolShit {
@@ -116,16 +130,14 @@ figure#coolShit {
 	width: 840px;
 }
 
-
 section.standOut {
 	padding:35px 0;
-	width:100%;
 	display: block;
-	max-height:52px;
-	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
+	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
 	background-repeat: repeat-x, repeat-x, repeat-x;
-	background-position: top center, bottom center, center center;
+	background-position: top center, center center, bottom center;
 	margin-bottom:20px;
+	max-height:52px;
 }
 
 .ltie9 section.standOut {
@@ -138,16 +150,46 @@ section.standOut article {
 	font-weight: bold;
 	line-height: 27px;
 	margin: 0 auto;
-	padding-left: 50px;
-	width: 850px;
+	padding: 0 50px;
+	max-width: 850px;
+	width: 90%;
+}
+#actions {
+	width: 90%;
+	max-width:900px;
+	margin:0 auto;
+}
+#actions:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
 }
 
+section#calls2act ul#actions li:nth-child(2) {
+	margin:0 5.833333334%; /* 52px / 900px */
+}
+
+.ltie9 section#calls2act ul#actions li.ieFix {
+	margin:0 5.833333334%; /* 52px / 900px */
+}
+
+#actions li {
+	width: 29.444444444%; /* (100-(5.833333334 * 2))/3 */
+}
+
+#actions li img {
+	width: 100%;
+	height: auto;
+}
+#actions li a {
+	display: inline-block;
+	height: auto;
+}
 section#calls2act {
-	width:900px;
-	margin:0 auto;
-	margin-bottom:30px;
+	margin-bottom:15px;
 	text-align:center;
-	height:215px;
+	padding-left: 15px;
 }
 
 section#calls2act ul#actions {
@@ -155,61 +197,52 @@ section#calls2act ul#actions {
 }
 
 section#calls2act ul#actions li {
-	display: inline-block;
-	float:left;
-	transition: all .5s ease-in-out;
+	display: block;
+	float: left;
 }
 
-section#calls2act ul#actions li:nth-child(2) {
-	margin:0 52px;
+section#calls2act ul#actions li:after {
+	font-weight:bold;
+	color: transparent;
+	text-shadow: #c6c6c6 0 0 2px;
 }
 
-.ltie9 section#calls2act ul#actions li.ieFix {
-	margin:0 52px;
+section#calls2act ul#actions li:hover:after {
+	text-shadow: #B52F2D 0 0 0;
+	color: #B52F2D;
 }
 
-section#calls2act ul#actions li:first-child:hover:after {
-	display:inline;
+section#calls2act ul#actions li:first-child:after {
 	content:"{It will change your life}";
-	font-weight:bold;
-	color:#B52F2D;
 }
 
-.ltie9 section#calls2act ul#actions li:first-child:after {
-	content: "";
-}
-
-section#calls2act ul#actions li:nth-child(2):hover:after {
+section#calls2act ul#actions li:nth-child(2):after {
 	content:"{Let's grab a virtual beer}";
-	font-weight:bold;
-	color:#B52F2D;
 }
 
-section#calls2act ul#actions li:last-child:hover:after {
-	display:inline;
+section#calls2act ul#actions li:last-child:after {
 	content:"{We’ll make you a sandwich...}";
-	font-weight:bold;
-	color:#B52F2D;
 }
 
 section#recentPost {
-	width:900px;
+	max-width:900px;
+	width: 90%;
 	margin:0 auto;
 }
 
 section#recentPost article {
-	padding-left:50px;
+	padding-left:25px;
 }
 
 footer#footer {
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	color: #717171;
 	height: 42px;
-	padding-top: 20px;
+	padding: 20px 5% 0 5%;
 	bottom: 0;
 	position: fixed;
 	text-align: center;
-	width: 100%;
+	width: 90%;
 	box-shadow: 0px 0px 15px #000000;
 	display: block;
 }
