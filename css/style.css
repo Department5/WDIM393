@@ -172,7 +172,7 @@ section#calls2act ul#actions li:first-child:hover:after {
 	display:inline;
 	content:"{It will change your life}";
 	font-weight:bold;
-	transform: rotate(-330deg);
+	color:#B52F2D;
 }
 
 .ltie9 section#calls2act ul#actions li:first-child:after {
@@ -182,18 +182,14 @@ section#calls2act ul#actions li:first-child:hover:after {
 section#calls2act ul#actions li:nth-child(2):hover:after {
 	content:"{Let's grab a virtual beer}";
 	font-weight:bold;
-	transform: rotate(-330deg);
+	color:#B52F2D;
 }
 
 section#calls2act ul#actions li:last-child:hover:after {
 	display:inline;
 	content:"{We’ll make you a sandwich...}";
 	font-weight:bold;
-	transform: rotate(-330deg);
-}
-
-section#calls2act ul#actions li:hover {
-	transform: rotate(-390deg);
+	color:#B52F2D;
 }
 
 section#recentPost {
