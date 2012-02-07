@@ -1,0 +1,231 @@
+html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
+
+caption, th, td {text-align:left;font-weight:normal;}
+
+table {border-collapse:separate;border-spacing:0;}
+
+blockquote:before,blockquote:after,q:before,q:after {content: "";}
+
+blockquote, q {quotes: "" "";}
+
+/* END RESET */
+
+body {
+	font-size: 14px;
+	background: hsla(0, 2%, 91%, 1);
+	color: #000;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.ltie9 body {
+	background:#e8e7e7;
+}
+
+a:link, a:visited {
+	color:#b52f2d;
+	text-decoration:none;
+	transition: all .5s ease-in-out;
+}
+
+a:hover {
+	color:#461c1b;
+}
+
+#container {
+	padding-bottom:85px;
+}
+
+header#header {
+	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
+	box-shadow: 0 0 15px #000000;
+	height: 62px;
+	padding: 0;
+	position: fixed;
+	width: 100%;
+	z-index:1000;
+}
+
+header#header menu {
+	margin: 0 auto;
+	text-align: right;
+	width: 900px;
+}
+
+header#header ul {
+	list-style-type:none;
+	padding-top:10px;
+	width:460px;
+	display: inline-block;
+}
+
+header#header ul li {
+	display:inline-block;
+	color:#ececec;
+	margin-right:60px;
+	text-align:left;
+	font-family: 'Passion One', cursive;
+	font-size:16px;
+}
+
+.ie7 header#header ul li {
+	display: inline;
+}
+
+header#header ul li.currentPage span {
+	color:#FFF;
+}
+
+header#header ul li:not(.currentPage) a:link, header#header ul li:not(.currentPage) a:visited {
+	color:#ececec;
+	text-decoration:none;
+}
+
+header#header ul li:not(.currentPage) a:hover {
+	color:#f6a09f;
+}
+
+header#header ul li.currentPage a:link, header#header ul li.currentPage a:visited {
+	color:#f34947;
+}
+
+figure#logo {
+	height: 285px;
+	margin: 0 auto;
+	width: 900px;
+	display: block;
+	padding-top:30px;
+	margin-bottom:30px;
+}
+
+figure#logo #d5 {
+	position: fixed;
+	z-index: 999999;
+}
+
+figure#logo #dpt5 {
+	display:none;
+	margin-left: 323px;
+	margin-top: 75px;
+	z-index: -1;
+}
+
+figure#coolShit {
+	margin: 55px auto 0;
+	padding-right: 60px;
+	text-align: right;
+	width: 840px;
+}
+
+
+section.standOut {
+	padding:35px 0;
+	width:100%;
+	display: block;
+	height:52px;
+	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
+	background-repeat: repeat-x, repeat-x, repeat-x;
+	background-position: top center, center center, bottom center;
+	margin-bottom:20px;
+}
+
+.ltie9 section.standOut {
+	background:url(../images/mid-bg-repeat-ltie9.jpg) center center repeat-x;
+}
+
+section.standOut article {
+	color: #161616;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 27px;
+	margin: 0 auto;
+	padding-left: 50px;
+	width: 850px;
+}
+
+section#calls2act {
+	width:900px;
+	margin:0 auto;
+	margin-bottom:30px;
+	text-align:center;
+	height:215px;
+}
+
+section#calls2act ul#actions {
+	list-style-type:none;
+}
+
+section#calls2act ul#actions li {
+	display: inline-block;
+	float:left;
+	transition: all .5s ease-in-out;
+}
+
+section#calls2act ul#actions li:nth-child(2) {
+	margin:0 52px;
+}
+
+.ltie9 section#calls2act ul#actions li.ieFix {
+	margin:0 52px;
+}
+
+section#calls2act ul#actions li:first-child:hover:after {
+	display:inline;
+	content:"{It will change your life}";
+	font-weight:bold;
+	transform: rotate(-330deg);
+}
+
+.ltie9 section#calls2act ul#actions li:first-child:after {
+	content: "";
+}
+
+section#calls2act ul#actions li:nth-child(2):hover:after {
+	content:"{Let's grab a virtual beer}";
+	font-weight:bold;
+	transform: rotate(-330deg);
+}
+
+section#calls2act ul#actions li:last-child:hover:after {
+	display:inline;
+	content:"{We’ll make you a sandwich...}";
+	font-weight:bold;
+	transform: rotate(-330deg);
+}
+
+section#calls2act ul#actions li:hover {
+	transform: rotate(-390deg);
+}
+
+section#recentPost {
+	width:900px;
+	margin:0 auto;
+}
+
+section#recentPost article {
+	padding-left:50px;
+}
+
+footer#footer {
+	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
+	color: #717171;
+	height: 42px;
+	padding-top: 20px;
+	bottom: 0;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	box-shadow: 0px 0px 15px #000000;
+	display: block;
+}
+
+.red {
+	color:#b52f2d;
+}
+
+.clear {
+	clear:both;
+}
+
+progress {
+	height:9px;
+}
