@@ -121,10 +121,10 @@ section.standOut {
 	padding:35px 0;
 	width:100%;
 	display: block;
-	height:52px;
-	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
+	max-height:52px;
+	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
 	background-repeat: repeat-x, repeat-x, repeat-x;
-	background-position: top center, center center, bottom center;
+	background-position: top center, bottom center, center center;
 	margin-bottom:20px;
 }
 

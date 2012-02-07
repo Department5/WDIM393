@@ -31,9 +31,12 @@ $(function(){
   $(window).scroll(function(){
     var scroll = $(window).scrollTop();
     if(scroll > 74){
-      $logo.stop(true).animate({ opacity: 0 }, 500);
+      $logo.stop(true).animate({ opacity: 0 }, 500, function(){
+        $(this).css('display', 'none');
+      });
     } 
     if(scroll < 74){
+      $logo.css('display', '');
       $logo.stop(true).animate({ opacity: 1 }, 500);
     }
   })
