@@ -368,7 +368,7 @@ section.peep article .imgs {
 }
 
 section.peep article .imgs img {
-	transition:all 0.9s ease-in-out;
+	transition:all 0.3s ease-in-out;
 	display: inline-block;
 	margin-bottom:30px;
 	width: 94.117647059%; /* 480px /510px */
@@ -377,12 +377,11 @@ section.peep article .imgs img {
 	outline: 1px solid #b5b5b5;
 	border: 1px solid #fafafa;
 	border-radius: 0;
-	box-shadow:0 0 0 #3737370;
+	box-shadow:0 0 0 #5f5f5f;
 }
-
 section.peep article .imgs img:hover {
 	border-radius:10px;
-	box-shadow:0 0 15px #373737;
+	box-shadow:0 0 15px #5f5f5f;
 	outline-color: transparent;
 }
 section.peep {
