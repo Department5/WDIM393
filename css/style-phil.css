@@ -225,16 +225,22 @@ progress {
 	background: hsla(0, 2%, 91%, 1);
 	color: #000;
 	font-family: 'Quicksand', sans-serif;
+	padding-bottom: 30px;
 	}
+#container #intro h1 {
+}
 #peepLinker ul li {
 	display: inline;
+	margin-bottom: 20px;
+	font-size: 24px;
 }
 section.peep {
 	height: 100%;
-	width: 600px;
-	padding-left: 200px;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
 }
-section.peep header hgroup {
+section.peep header {
 	padding:35px 0;
 	width:100%;
 	display: block;
@@ -243,4 +249,7 @@ section.peep header hgroup {
 	background-repeat: repeat-x, repeat-x, repeat-x;
 	background-position: top center, bottom center, center center;
 	margin-bottom:20px;
+}
+section.peep header hgroup {
+	
 }
