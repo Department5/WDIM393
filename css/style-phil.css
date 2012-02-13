@@ -220,6 +220,9 @@ progress {
 	color: #000;
 	font-family: 'Quicksand', sans-serif;
 }
+#intro h1 {
+	font-size: 24px;
+}
 #peepLinker ul {
 	font-size: 14px;
 	background: hsla(0, 2%, 91%, 1);
@@ -227,8 +230,6 @@ progress {
 	font-family: 'Quicksand', sans-serif;
 	padding-bottom: 30px;
 	}
-#container #intro h1 {
-}
 #peepLinker ul li {
 	display: inline;
 	margin-bottom: 20px;
@@ -251,5 +252,8 @@ section.peep header {
 	margin-bottom:20px;
 }
 section.peep header hgroup {
-	
+	width: 820px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 20px;
 }
