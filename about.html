@@ -15,12 +15,35 @@
 <!--[if !IE]>
 <html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <![endif]-->
-<html lang="en">
 <head>
-<title>[D5] Web Development - About</title>
-<link href="css/style-phil.css" media="screen" rel="stylesheet" type="text/css" />
+<meta charset="utf-8" />
+<title>[D5] Web Development - Welcome</title>
+<!--<base href="http://jakelovedev.com/wdim393/d5/" />-->
 <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Passion+One' rel='stylesheet' type='text/css'>
+<link href="css/style-phil.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
+<script src="js/jquery-1.7.1.min.js"></script>
+
+<script>
+$(function(){
+  $('#dpt5').fadeIn(2000);
+  $logo = $('#d5');
+
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll > 74){
+      $logo.stop(true).animate({ opacity: 0 }, 500, function(){
+        $(this).css('display', 'none');
+      });
+    } 
+    if(scroll < 74){
+      $logo.css('display', '');
+      $logo.stop(true).animate({ opacity: 1 }, 500);
+    }
+  })
+
+});
+</script>
 <script src="js/prefixfree.min.js"></script>
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="js/selectivizr.js"></script>
@@ -28,48 +51,61 @@
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-
 </head>
 <body>
-  <header>
-    <figure>
-      <img src="images/logo.png" width="150" height="170" alt="D5 Development" />
-    </figure>
-    <hgroup>
-      <h1>[Department5]</h1>
-      <h2>League of Extraordinary Developers</h2>
-    </hgroup>
+<div id="container">
+  <header id="header">
+    <menu>
+      <ul>
+        <li><span>01.</span><br /><a href="index.html">Home</a></li>
+        <li class="currentPage"><span>02.</span><br /><a href="about.html">About</a></li>
+        <li><span>03.</span><br /><a href="portfolio.html">Portfolio</a></li>
+        <li><span>04.</span><br /><a href="#">Blog</a></li>
+      </ul>
+    </menu>
   </header>
-  <nav id="main">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">[About D5]</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
-  <section id="content">
-    <h3>About D5</h3>
-    <p>Here at D5 we believe in the 3 p's. Plans, Progress, and Pussy. If you don't like any of those you can run this &#060;?php $you-&#062;hell(); ?&#062;. Checkout some bio info on our peeps.</p>
+  <figure id="logo">
+    <img id="d5" src="images/logo.png" height="287" width="328" alt="D5" />
+    <img id="dpt5" src="images/DEPT5.jpg" height="134" width="526" alt="Department 5 - The League of Extraordinary Developers" />
+  </figure>
+  <section class="standOut">
+    <article>Here at D5 we believe in the 3 p's. Plans, Progress, and Pussy. If you don't like any of those you can go to hell.</article>
   </section>
-  <aside id="peepLinker">
+  <section id="intro">
+
+	<h1>Checkout some bio info on our peeps.</h1>
+    <aside id="peepLinker">
     <ul>
-      <li><a href="about.html#jake">Jake</a></li>
-      <li><a href="about.html#phil">Phil</a></li>
-      <li><a href="about.html#bill">Bill</a></li>
+      <li><a href="about.html#jake">Jake</a></li> |
+      <li><a href="about.html#phil">Phil</a></li> |
+      <li><a href="about.html#bill">Bill</a></li> |
       <li><a href="about.html#ryan">Ryan</a></li>
     </ul>
   </aside>
+  <div class="clear"></div>
+  </section>
+  
+  
   <section class="peep" id="jake">
     <header>
-      <figure>
-        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" />
-      </figure>
       <hgroup>
         <h1>Jake Love</h1>
         <h2>Super-Human Web Developer / nth Degree Code Ninja Master</h2>
       </hgroup>
     </header>
+    <div class="homie">
+      <figure>
+        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" class="dude"/>
+        
+     <footer>
+      <a href="https://www.facebook.com/rockymountainhigh1943" target="_blank"><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href="https://twitter.com/#!/Jakel0v3" target="_blank"><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href=""><img src="images/icons/google_32.png" alt="google"></a> | 
+      <a href="http://www.linkedin.com/in/jakelove" target="_blank"><img src="images/icons/linkedin_32.png" alt="linkedin"></a> 
+      <address><a href="mailto:jake@jakelovedev.com">Email Jake</a></address>
+    </footer>
+    
+      </figure>
     <article>
       <h3>About Me:</h3>
       <p>I currently work as Corporate Web Developer for Entercom Radio and work on a national scale as well as with local brands such as 94.7 NRK, 99.5 The Wolf, 105.1 The Buzz, 97.1 Charlie, and 1080 ESPN Radio - The Fan. I'm also a freelance developer and enjoy working with new technologies and adding new languages to my skill set. I play/sing for the Aspen Meadow Band and play out of state often. I enjoy song writing and the outdoors more than anything and wish I had more time to complete my album.I specialize in building highly custom websites/applications and WordPress/Drupal driven Content Management Solutions. I love anything JavaScript, PHP, and MySQL.</p>
@@ -81,52 +117,72 @@
       <h3>Claim to Fame:</h3>
       <p>Wrote a JavaScript to stop time.</p>
     </article>
-    <footer>
-      <a href="https://www.facebook.com/rockymountainhigh1943" target="_blank">FaceBook</a> | <a href="https://twitter.com/#!/Jakel0v3" target="_blank">Twitter</a> | <a href="">Google+</a> | <a href="http://www.linkedin.com/in/jakelove" target="_blank">LinkedIn</a> | <address><a href="mailto:jake@jakelovedev.com">Email Jake</a></address>
-    </footer>
+    </div>
+
   </section>
-<section>
-  <header>
-      <figure>
-        <img src="images/phil.jpg" alt="Phil Riehl" />
-      </figure>
+  
+  
+  <section class="peep" id="phil">
+    <header>
         <hgroup>
         <h1>Phil Riehl</h1>
-        <h2>Guy who is graduating AI, but doesn't know anything</h2>
+        <h2>Guy who is better than everyone at anything</h2>
       </hgroup>
-  </header>
-      <article>
-      <h3>About Me:</h3>
-      <p>I live in Salem, I am married with two kids, so my hopes and dreams were flushed down the toilet long ago.</p>
-      <p>I give up easily and browse reddit.</p>
-      <h3>Specialties:</h3>
-      <p>Mediocre designer.</p>
-      <h3>Super Power:</h3>
-      <p>You've gotta be kidding me.</p>
-      <h3>Claim to Fame:</h3>
-      <p>Nothing. Absolutely nothing. Never done anything great at all. I watched paint dry once. </p>
-      <h3>Specialties:</h3>
-      <p>Stealing other people's work and taking credit, mooching, being lazy and plagiarism.</p>
-    </article>
-   <footer>
-      <a href="https://www.facebook.com/phil.riehl">FaceBook</a> | 
-      <a href="https://twitter.com/#!/philriehl">Twitter</a> | 
-      <a href="https://plus.google.com/101984841893137362753/posts?hl=en">Google+</a> | 
-      <a href="http://www.linkedin.com/in/philriehl">LinkedIn</a> | 
+    </header>
+    <div class="homie">
+      <figure>
+        <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude"/>
+   	<footer>
+      <a href="https://www.facebook.com/phil.riehl"><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href="https://twitter.com/#!/philriehl"><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href="https://plus.google.com/101984841893137362753/posts?hl=en"><img src="images/icons/google_32.png" alt="google"></a> | 
+      <a href="http://www.linkedin.com/in/philriehl"><img src="images/icons/linkedin_32.png" alt="linkedin"></a>  
       <address><a href="hello@philriehl.com">Email Phil</a></address>
     </footer>
+      </figure>
+      <article>
+      <h3>About Me:</h3>
+      <p>First and foremost, I should be taken extremely seriously at all times.</p>
+      <p>I plan on taking over the world with my evil web designing skills.</p>
+      <p>Money will be irrelevant at that point, because I'll own everything.
+      After the earth and everything in it belongs to me, I'll start conquering the
+      other planets. And, of course this will all happen because of all the 
+      knowledge and experience I've gained at the Art Institute of Portland.</p>
+
+      <h3>Specialties:</h3>
+      <p>I do everything. I am half Robocop and half Chuck Norris.</p>
+      <h3>Super Power:</h3>
+      <p>There's nothing I can't do.</p>
+      <h3>Claim to Fame:</h3>
+      <p>World's biggest ego. Got that way by hanging out with developers.</p>
+
+</article>
+</div>
 </section>
+
+
+
+
 
   <section class="peep" id="bill">
     <header>
-      <figure>
-        <img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" />
-      </figure>
       <hgroup>
         <h1>Bill Dingwall (bill &middot; ding &middot; wall)</h1>
         <h2>A Little Bit of This | A Little Bit of That</h2>
       </hgroup>
     </header>
+    
+    <div class="homie">
+      <figure>
+        <img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" class="dude"/>
+    <footer>
+      <a href="http://www.facebook.com/williamdingwall"><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href="https://twitter.com/#!/williamdingwall"><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href="https://plus.google.com/u/0/100026096132048097901/posts"><img src="images/icons/google_32.png" alt="google"></a> | 
+      <a href="http://www.linkedin.com/pub/william-dingwall/27/73/95b"><img src="images/icons/linkedin_32.png" alt="linkedin"></a>  
+      <address><a href="mailto:brdingwall@aol.com">Email Bill</a></address>
+    </footer>
+      </figure>
     <article>
       <h3>About Me:</h3>
       <p>I started off with a background in art and pushed towards design, but my desire to travel has me searching for more web based work.  My favorite language is <abbr title="Cascading Style Sheet">CSS</abbr> - followed directly by english - but <abbr title="HyperText Markup Language">HTML</abbr>, Javascript/jQuery/Ajax, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, and <abbr title="My Structured Query Language">MySQL</abbr> are pretty cool too; and Content Management Systems are the shit. On that most basic level, I love building things, and watching it develop as I go.  While off duty, I'm usually outside doing something active, or grabbing drinks with friends.</p>
@@ -139,20 +195,30 @@
       <h3>Claim to Fame:</h3>
       <p>I am that one guy&hellip;</p>
     </article>
-    <footer>
-      <a href="http://www.facebook.com/williamdingwall">FaceBook</a> | <a href="https://twitter.com/#!/williamdingwall">Twitter</a> | <a href="https://plus.google.com/u/0/100026096132048097901/posts">Google+</a> | <a href="http://www.linkedin.com/pub/william-dingwall/27/73/95b">LinkedIn</a> | <address><a href="mailto:brdingwall@aol.com">Email Bill</a></address>
-    </footer>
-  </section>
+    </div>
+     </section>
+
+  
+  
   <section class="peep" id="ryan">
     <header>
-      <figure>
-        [image of Ryan]
-      </figure>
       <hgroup>
         <h1>Ryan Leitz</h1>
         <h2></h2>
-      </hgroup>
-    </header>
+      </hgroup>  
+      </header>      
+    <div class="homie">
+      <figure>
+        <img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" class="dude"/>
+      <footer>
+      <a href=""><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href=""><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href=""><img src="images/icons/google_32.png" alt="google"></a> | 
+      <a href=""><img src="images/icons/linkedin_32.png" alt="linkedin"></a>  
+      <address><a href="mailto:brdingwall@aol.com">Email Bill</a></address>
+    </footer>
+      </figure>
+
     <article>
       <h3>About Me:</h3>
       <p>Since High School I've spent a year at OSU, a bit o' time at the School of Hard Knocks, a couple terms at community college, travelled to a few new corners of the world, and finally ended up here at The Art Institute. Always have had interest in painting and drawing, which in the past 3 years has turned to an interest in Graphic design, and finally, Web Design.</p>
@@ -164,12 +230,15 @@
       <h3>Claim to Fame:</h3>
       <p></p>
     </article>
-    <footer>
-      <a href="">FaceBook</a> | <a href="">Twitter</a> | <a href="">Google+</a> | <a href="">LinkedIn</a> | <address><a href="">Email Ryan</a></address>
-    </footer>
-   </section>
-  <footer>
-  &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi
+</div>
+</section>
+
+</div>
+
+  <footer id="footer">
+  &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi | Progress: 
+  <progress id="progress" max="10" value="1">
+  </progress>
   </footer>
 </body>
 </html>
