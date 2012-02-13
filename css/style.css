@@ -145,6 +145,7 @@ figure#coolShit {
 	background-repeat: repeat-x, repeat-x, repeat;
 	background-position: top center, bottom center, top left ;
 	margin-bottom:20px;
+	min-height: 52px;
 }
 
 .ltie9 section.standOut {
@@ -284,7 +285,7 @@ progress {
 	height:9px;
 }
 
-.port aside#peepLinker div {
+aside#peepLinker div {
 	color: #161616;
 	font-size: 25px;
 	font-weight: bold;
@@ -295,7 +296,7 @@ progress {
 	margin:0 auto;
 	padding:40px 30px 0 30px;
 }
-.port aside#peepLinker div h5, .port aside#peepLinker div ul {
+aside#peepLinker div h5, .port aside#peepLinker div ul {
 	display: inline;
 	padding-right: 15px;
 }
@@ -320,18 +321,18 @@ section.peep header hgroup h2 {
   font-weight: bold;
 }
 
-.port section.peep {
+section.peep {
 	padding-top:50px;
 	clear: both;
 }
 
-.port section.peep div {
+section.peep div {
 	max-width:860px;
 	width: 90%;
 	margin:0 auto;
 }
 
-.port section.peep hgroup {
+section.peep hgroup {
 	max-width:800px;
 	width: 90%;
 	padding: 0 30px;
@@ -344,29 +345,29 @@ section.peep header hgroup h2 {
 	padding-bottom:20px;
 }
 
-.port section.peep article .desc h3 {
+section.peep article .desc h3 {
 	font-weight:bold;
 	font-size:18px;
 	margin-bottom:5px;
 }
 
-.port section.peep article .desc {
+section.peep article .desc {
 	width: 28.125%; /* 225px / 800px */
 	float:left;
 }
 
-.port section.peep article .desc a {
+section.peep article .desc a {
 	display: inline-block;
 	font-weight: bold;
 	margin-top: 5px;
 }
 
-.port section.peep article .imgs {
+section.peep article .imgs {
 	width: 63.75%; /* 510px / 800px */
 	float:right;
 }
 
-.port section.peep article .imgs img {
+section.peep article .imgs img {
 	transition:all 0.9s ease-in-out;
 	display: inline-block;
 	margin-bottom:30px;
@@ -379,8 +380,66 @@ section.peep header hgroup h2 {
 	box-shadow:0 0 0 #3737370;
 }
 
-.port section.peep article .imgs img:hover {
+section.peep article .imgs img:hover {
 	border-radius:10px;
 	box-shadow:0 0 15px #373737;
 	outline-color: transparent;
+}
+section.peep {
+	height: 100%;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+section.peep header hgroup {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+section.peep header hgroup h1 {
+	font-size: 24px;
+	color: #000;
+	font-weight: bolder;
+}
+section.peep header hgroup h2 {
+	font-size: 18px;
+	color: #d0403e;
+	font-weight: bold;
+}
+section.peep figure {
+	float: left;
+	height: 100%;
+	width: 200px;
+}
+section.peep .homie {
+	width: 900px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 100px;
+	margin-left: auto;
+	clear: both;
+}
+section.peep .homie figure footer {
+	width: 250px;
+}
+section.peep .homie article h3 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+section.peep .homie article p {
+	padding-bottom: 10px;
+}
+section.peep .homie figure img {
+	
+}
+section.peep .homie figure footer a {
+	height: 32px;
+	width: 32px;
+	margin: 0px;
+	padding: 0px;
+}
+section.peep .homie figure .dude {
+	width: 200px;
 }
