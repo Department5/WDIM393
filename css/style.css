@@ -329,6 +329,8 @@ section.peep header hgroup h2 {
 	border-radius:10px;
 	display: inline-block;
 	margin-bottom:15px;
+	width:500px;
+	height:auto;
 }
 
 .port section.peep article .imgs img:hover {
