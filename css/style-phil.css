@@ -261,10 +261,12 @@ section.peep header hgroup {
 section.peep header hgroup h1 {
 	font-size: 18px;
 	color: #000;
+	font-weight: bolder;
 }
 section.peep header hgroup h2 {
 	font-size: 18px;
-	color: #F00;
+	color: #d0403e;
+	font-weight: bold;
 }
 section.peep figure {
 	float: left;
