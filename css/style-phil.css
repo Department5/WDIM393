@@ -207,3 +207,40 @@ footer#footer {
 progress {
 	height:9px;
 }
+#intro {
+	color: #161616;
+	font-size: 145px;
+	font-weight: bold;
+	line-height: 27px;
+	margin: 0 auto;
+	padding-left: 50px;
+	width: 850px;
+	font-size: 14px;
+	background: hsla(0, 2%, 91%, 1);
+	color: #000;
+	font-family: 'Quicksand', sans-serif;
+}
+#peepLinker ul {
+	font-size: 14px;
+	background: hsla(0, 2%, 91%, 1);
+	color: #000;
+	font-family: 'Quicksand', sans-serif;
+	}
+#peepLinker ul li {
+	display: inline;
+}
+section.peep {
+	height: 100%;
+	width: 600px;
+	padding-left: 200px;
+}
+section.peep header hgroup {
+	padding:35px 0;
+	width:100%;
+	display: block;
+	max-height:52px;
+	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
+	background-repeat: repeat-x, repeat-x, repeat-x;
+	background-position: top center, bottom center, center center;
+	margin-bottom:20px;
+}
