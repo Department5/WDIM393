@@ -130,12 +130,12 @@ figure#coolShit {
 	width: 840px;
 }
 
-section.standOut {
+.standOut {
 	padding:35px 0;
 	display: block;
-	background-image: url(../images/shade-line-top.jpg), url(../images/mid-bg-repeat.jpg), url(../images/shade-line-bottom.jpg);
+	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
 	background-repeat: repeat-x, repeat-x, repeat-x;
-	background-position: top center, center center, bottom center;
+	background-position: top center, bottom center, center center ;
 	margin-bottom:20px;
 	max-height:52px;
 }
@@ -151,8 +151,7 @@ section.standOut article {
 	line-height: 27px;
 	margin: 0 auto;
 	padding: 0 50px;
-	max-width: 850px;
-	width: 90%;
+	max-width: 900px;
 }
 #actions {
 	width: 90%;
@@ -257,4 +256,64 @@ footer#footer {
 
 progress {
 	height:9px;
+}
+
+.port aside#peepLinker div {
+	color: #161616;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 27px;
+	margin: 0 auto;
+	max-width: 900px;
+	width:900px;
+	margin:0 auto;
+	padding:20px 0;
+}
+
+aside#peepLinker div ul {
+	list-style-type:none;
+}
+
+aside#peepLinker div ul li {
+	display: inline-block;
+}
+
+section.peep header hgroup h1 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+section.peep header hgroup h2 {
+  color: #D0403E;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.port section.peep {
+	margin-top:20px;
+}
+
+.port section.peep div {
+	width:900px;
+	margin:0 auto;
+}
+
+.port section.peep hgroup {
+	width:900px;
+	margin:0 auto;
+}
+
+.port section.peep article {
+	clear:both;
+}
+
+.port section.peep article .desc {
+	width:250px;
+	float:left;
+}
+
+.port section.peep article .imgs {
+	width:510px;
+	float:right;
 }
