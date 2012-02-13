@@ -240,6 +240,7 @@ section.peep {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
+	position: relative;
 }
 section.peep header {
 	padding:35px 0;
@@ -257,6 +258,14 @@ section.peep header hgroup {
 	margin-left: auto;
 	padding-left: 20px;
 }
+section.peep header hgroup h1 {
+	font-size: 18px;
+	color: #000;
+}
+section.peep header hgroup h2 {
+	font-size: 18px;
+	color: #F00;
+}
 section.peep figure {
 	float: left;
 	height: 100%;
@@ -266,6 +275,21 @@ section.peep .homie {
 	width: 900px;
 	margin-top: 0px;
 	margin-right: auto;
-	margin-bottom: 0px;
+	margin-bottom: 100px;
 	margin-left: auto;
+	clear: both;
+}
+section.peep .homie figure footer {
+	width: 250px;
+}
+section.peep .homie article h3 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+section.peep .homie article p {
+	padding-bottom: 10px;
+}
+section.peep .homie figure img {
+	width: 200px;
 }
