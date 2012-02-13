@@ -293,7 +293,11 @@ progress {
 	max-width: 800px;
 	width: 90%;
 	margin:0 auto;
-	padding:20px 30px;
+	padding:40px 30px 0 30px;
+}
+.port aside#peepLinker div h5, .port aside#peepLinker div ul {
+	display: inline;
+	padding-right: 15px;
 }
 
 aside#peepLinker div ul {
@@ -317,7 +321,7 @@ section.peep header hgroup h2 {
 }
 
 .port section.peep {
-	margin-top:20px;
+	padding-top:50px;
 	clear: both;
 }
 
@@ -347,7 +351,7 @@ section.peep header hgroup h2 {
 }
 
 .port section.peep article .desc {
-	width:250px;
+	width: 28.125%; /* 225px / 800px */
 	float:left;
 }
 
@@ -363,17 +367,20 @@ section.peep header hgroup h2 {
 }
 
 .port section.peep article .imgs img {
-	transition:all 0.3s ease-in-out;
+	transition:all 0.9s ease-in-out;
 	display: inline-block;
-	margin-bottom:20px;
-	width: 96.078431373%; /* 490px /510px */
-	padding: 1.960784314%; /* 10px / 510px */
+	margin-bottom:30px;
+	width: 94.117647059%; /* 480px /510px */
+	padding: 2.549019608%; /* 13px / 510px */
 	background: url(../images/mid-bg-repeat.jpg);  
 	outline: 1px solid #b5b5b5;
 	border: 1px solid #fafafa;
+	border-radius: 0;
+	box-shadow:0 0 0 #3737370;
 }
 
 .port section.peep article .imgs img:hover {
 	border-radius:10px;
-	box-shadow:0 0 15px #000000;
+	box-shadow:0 0 15px #373737;
+	outline-color: transparent;
 }
