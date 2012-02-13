@@ -28,6 +28,11 @@
 $(function(){
   $('#dpt5').fadeIn(2000);
   $logo = $('#d5');
+  var scroll = $(window).scrollTop();
+
+  if(scroll > 74){
+    $logo.css('display', 'none');
+  }
 
   $(window).scroll(function(){
     var scroll = $(window).scrollTop();

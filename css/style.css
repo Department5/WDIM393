@@ -283,6 +283,7 @@ section.peep header hgroup h2 {
 
 .port section.peep {
 	margin-top:20px;
+	clear: both;
 }
 
 .port section.peep div {
@@ -298,6 +299,7 @@ section.peep header hgroup h2 {
 .port section.peep article {
 	clear:both;
 	margin-bottom:20px;
+	padding-bottom:20px;
 }
 
 .port section.peep article .desc h3 {
