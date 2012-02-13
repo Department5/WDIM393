@@ -323,3 +323,14 @@ section.peep header hgroup h2 {
 	width:510px;
 	float:right;
 }
+
+.port section.peep article .imgs img {
+	transition:all 0.3s ease-in-out;
+	border-radius:10px;
+	display: inline-block;
+	margin-bottom:15px;
+}
+
+.port section.peep article .imgs img:hover {
+	box-shadow:0 0 15px #000000;
+}

@@ -132,8 +132,7 @@ section.standOut article {
 	font-weight: bold;
 	line-height: 27px;
 	margin: 0 auto;
-	padding-left: 50px;
-	width: 850px;
+	width: 900px;
 }
 section#calls2act {
 	width:900px;
@@ -213,8 +212,7 @@ progress {
 	font-weight: bold;
 	line-height: 27px;
 	margin: 0 auto;
-	padding-left: 50px;
-	width: 850px;
+	width: 900px;
 	font-size: 14px;
 	background: hsla(0, 2%, 91%, 1);
 	color: #000;
@@ -222,9 +220,10 @@ progress {
 }
 #intro h1 {
 	font-size: 24px;
+	padding-top:15px;
 }
 #peepLinker ul {
-	font-size: 14px;
+	font-size: 24px;
 	background: hsla(0, 2%, 91%, 1);
 	color: #000;
 	font-family: 'Quicksand', sans-serif;
@@ -253,13 +252,12 @@ section.peep header {
 	margin-bottom:20px;
 }
 section.peep header hgroup {
-	width: 820px;
+	width: 900px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: 20px;
 }
 section.peep header hgroup h1 {
-	font-size: 18px;
+	font-size: 24px;
 	color: #000;
 	font-weight: bolder;
 }
@@ -274,7 +272,7 @@ section.peep figure {
 	width: 200px;
 }
 section.peep .homie {
-	width: 800px;
+	width: 900px;
 	margin-top: 0px;
 	margin-right: auto;
 	margin-bottom: 100px;
