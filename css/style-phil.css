@@ -257,3 +257,15 @@ section.peep header hgroup {
 	margin-left: auto;
 	padding-left: 20px;
 }
+section.peep figure {
+	float: left;
+	height: 100%;
+	width: 200px;
+}
+section.peep .homie {
+	width: 900px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
