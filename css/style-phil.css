@@ -293,5 +293,14 @@ section.peep .homie article p {
 	padding-bottom: 10px;
 }
 section.peep .homie figure img {
+	
+}
+section.peep .homie figure footer a {
+	height: 32px;
+	width: 32px;
+	margin: 0px;
+	padding: 0px;
+}
+section.peep .homie figure .dude {
 	width: 200px;
 }
