@@ -280,7 +280,7 @@ aside#peepLinker div ul li {
 
 section.peep header hgroup h1 {
   color: #000000;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bolder;
 }
 
@@ -306,11 +306,24 @@ section.peep header hgroup h2 {
 
 .port section.peep article {
 	clear:both;
+	margin-bottom:20px;
+}
+
+.port section.peep article .desc h3 {
+	font-weight:bold;
+	font-size:18px;
+	margin-bottom:5px;
 }
 
 .port section.peep article .desc {
 	width:250px;
 	float:left;
+}
+
+.port section.peep article .desc a {
+	display: inline-block;
+	font-weight: bold;
+	margin-top: 5px;
 }
 
 .port section.peep article .imgs {
