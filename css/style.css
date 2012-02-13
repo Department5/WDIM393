@@ -258,7 +258,7 @@ progress {
 	height:9px;
 }
 
-aside#peepLinker div {
+.port aside#peepLinker div {
 	color: #161616;
 	font-size: 25px;
 	font-weight: bold;
@@ -267,6 +267,7 @@ aside#peepLinker div {
 	max-width: 900px;
 	width:900px;
 	margin:0 auto;
+	padding:20px 0;
 }
 
 aside#peepLinker div ul {
@@ -293,12 +294,26 @@ section.peep header hgroup h2 {
 	margin-top:20px;
 }
 
-section.peep div {
+.port section.peep div {
 	width:900px;
 	margin:0 auto;
 }
 
-section.peep header {
+.port section.peep hgroup {
 	width:900px;
 	margin:0 auto;
+}
+
+.port section.peep article {
+	clear:both;
+}
+
+.port section.peep article .desc {
+	width:250px;
+	float:left;
+}
+
+.port section.peep article .imgs {
+	width:510px;
+	float:right;
 }
