@@ -97,32 +97,23 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 }
 
 figure#logo {
+	height: 285px;
 	margin: 0 auto;
-	max-width: 900px;
-	width: 90%;
+	width: 900px;
 	display: block;
-	padding:30px 50px 0 0;
+	padding-top:30px;
 	margin-bottom:30px;
 }
-
 figure#logo #d5 {
 	position: fixed;
 	z-index: 999999;
-	width: 36.444444444%; /* 329px / 900px */
-	max-width: 329px;
-	height: auto;
 }
-
 figure#logo #dpt5 {
 	display:none;
-	margin-left: 35.888888889%; /* 323px / 900px */
+	margin-left: 323px;
 	margin-top: 75px;
 	z-index: -1;
-	width: 64.111111%; /* 577px / 900px */
-	height: auto;
-	padding-bottom: 46px;
 }
-
 figure#coolShit {
 	margin: 55px auto 0;
 	padding-right: 60px;
