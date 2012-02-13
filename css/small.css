@@ -1,36 +1,42 @@
-figure#logo #d5 {
-	height:50px;
-	width:auto;
-	margin-top:-23px;
-	margin-left:-35px;
+/* @override http://jakelovedev.com/wdim393/d5/css/small.css */
+
+header#header {
+	background: url("../images/logo-small.png"), url("../images/nav-back.jpg");
+  background-position: 15px 7px, top left;
+  background-repeat: no-repeat, repeat-x;
 }
 
 header#header menu {
-	width:320px;
+	width:80%;
 	text-align:left;
-	margin-left:75px;
+	margin-left:20%;
 }
 
 header#header ul {
-	width:320px;
+	width:100%;
+	padding-top: 15px;
 }
 
 header#header ul li {
-	margin-right:20px;
+	margin-right: 12%;
 }
 
 figure#logo {
-	width:320px;
+	width: 90%;
 	height:auto;
 	margin:0 auto 10px;
 }
 
+figure#logo #d5 {
+  display:none !important;
+}
+
 figure#logo img#dpt5 {
-	width:320px;
+	width:100%;
 	height:auto;
 	margin-top: 45px;
 	z-index: -1;
-	margin-left:0 !important;
+	margin-left:1% !important;
 }
 
 section.standOut article {
@@ -40,7 +46,7 @@ section.standOut article {
   line-height: 17px;
   margin: 0 auto;
   padding-left: 0;
-  width: 320px;
+  width: 80%;
 }
 
 section#calls2act {
@@ -48,14 +54,15 @@ section#calls2act {
   min-height: 215px;
   margin: 0 auto 30px;
   text-align: center;
-  width: 320px;
+  width: 100%;
   display: block;
 }
 
 section#calls2act ul#actions li {
   display: block;
-  height: 225px;
-  width: 320px;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 section#calls2act ul#actions li:nth-child(2) {
@@ -67,7 +74,7 @@ section#calls2act ul#actions li:hover:after {
 
 section#recentPost {
   margin: 0 auto;
-  width: 320px;
+  width: 80%;
 }
 
 section#recentPost article {
