@@ -14,6 +14,24 @@ blockquote, q {quotes: "" "";}
 body, html {
 	width: 100%;
 }
+#ievid {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index:4000;
+	color: #fff;
+	font-size: 30px;
+}
+
+video {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	z-index: 3000;
+	position: fixed;
+	background-color: #000;
+}
 
 body {
 	font-size: 14px;
@@ -127,7 +145,7 @@ figure#logo #d5 {
 	width: 34.88372093%; /* 300px / 860px */
 	height: auto;
 	position: fixed;
-	z-index: 999999;
+	z-index: 2000;
 }
 figure#logo #dpt5 {
 	width: 62.222222222%; /* 560px / 860px */
@@ -370,7 +388,7 @@ section.peep .homie figure footer a img {
 	width: 13.913043478%; /* 32px / 230px */
 }
 section.peep .homie figure footer a:nth-child(2n+2) {
-	margin: 0 6%;
+	margin: 0 5%;
 }
 section.peep .homie div {
 	width: 65%; /* 520px / 800px */ 

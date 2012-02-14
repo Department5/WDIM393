@@ -7,10 +7,11 @@
 <![endif]-->
 <!--[if IE 7]>
 <html class="ie7 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<script type="text/javascript">
+<!--<script type="text/javascript">
   alert('You should probably come to grips with reality and upgrade your fucking browser!');
   window.location = "http://www.mozilla.org/en-US/firefox/new/";
-</script>
+</script>-->
+
 <![endif]-->
 <!--[if !IE]>
 <html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -56,6 +57,18 @@ $(function(){
 <![endif]-->
 </head>
 <body>
+<!--[if IE 8]>
+<video controls="controls" poster="video/1.jpg" autoplay="autoplay" loop="loop" controls=""onclick="if(/Android/.test(navigator.userAgent))this.play();">
+	 <source src="1.mp4" type="video/mp4" />
+</video>
+<nav id="ievid">
+<h1>Ah, ah, ah, your browser sucks, please download on of these...</h1>
+<a href="">Firefox</a>
+<a href="">Opera</a>
+<a href="">Chrome</a>
+<a href="">Safari</a>
+</nav>
+<![endif]-->
 <div id="container">
   <header id="header">
     <menu>
