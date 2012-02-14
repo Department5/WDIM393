@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 <meta charset="utf-8" />
 <title>[D5] Web Development - Welcome</title>
@@ -7,6 +7,15 @@
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
 <script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script>
+/*
+Modernizr.load({
+  test: Modernizr.boxshadow,
+  nope: ''
+});
+*/
+</script>
 <script>
 $(function(){
   $('#dpt5').fadeIn(2000);
@@ -36,23 +45,8 @@ $(function(){
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="js/selectivizr.js"></script>
 <![endif]--> 
-<!--[if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 </head>
 <body>
-<!--[if IE 8]>
-<video controls="controls" poster="video/1.jpg" autoplay="autoplay" loop="loop" controls=""onclick="if(/Android/.test(navigator.userAgent))this.play();">
-	 <source src="1.mp4" type="video/mp4" />
-</video>
-<nav id="ievid">
-<h1>Ah, ah, ah, your browser sucks, please download on of these...</h1>
-<a href="">Firefox</a>
-<a href="">Opera</a>
-<a href="">Chrome</a>
-<a href="">Safari</a>
-</nav>
-<![endif]-->
 <div id="container">
   <header id="header">
     <menu>
