@@ -1,29 +1,12 @@
 <!DOCTYPE html>
-<!--[if IE 9]>
-<html class="ie9 ie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie8 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-<html class="ie7 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<script type="text/javascript">
-  alert('You should probably come to grips with reality and upgrade your fucking browser!');
-  window.location = "http://www.mozilla.org/en-US/firefox/new/";
-</script>
-<![endif]-->
-<!--[if !IE]>
 <html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<![endif]-->
 <head>
 <meta charset="utf-8" />
-<title>[D5] Web Development - About</title>
-<!--<base href="http://jakelovedev.com/wdim393/d5/" />-->
+<title>[D5] Web Development - About The Peeps</title>
 <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Passion+One' rel='stylesheet' type='text/css'>
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
 <script src="js/jquery-1.7.1.min.js"></script>
-
 <script>
 $(function(){
   $('#dpt5').fadeIn(2000);
@@ -31,7 +14,7 @@ $(function(){
   var scroll = $(window).scrollTop();
 
   if(scroll > 74){
-    $logo.remove();
+    $logo.css('display', 'none');
   }
 
   $(window).scroll(function(){
@@ -45,7 +28,7 @@ $(function(){
       $logo.css('display', '');
       $logo.stop(true).animate({ opacity: 1 }, 500);
     }
-  })
+  });
 
 });
 </script>
