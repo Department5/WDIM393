@@ -17,10 +17,10 @@
 <![endif]-->
 <head>
 <meta charset="utf-8" />
-<title>[D5] Web Development - About</title>
+<title>[D5] Web Development - Welcome</title>
 <!--<base href="http://jakelovedev.com/wdim393/d5/" />-->
 <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Passion+One' rel='stylesheet' type='text/css'>
-<link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/style-phil.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
 <script src="js/jquery-1.7.1.min.js"></script>
 
@@ -28,11 +28,6 @@
 $(function(){
   $('#dpt5').fadeIn(2000);
   $logo = $('#d5');
-  var scroll = $(window).scrollTop();
-
-  if(scroll > 74){
-    $logo.css('display', 'none');
-  }
 
   $(window).scroll(function(){
     var scroll = $(window).scrollTop();
@@ -77,23 +72,22 @@ $(function(){
     <article>Here at D5 we believe in the 3 p's. Plans, Progress, and Pussy. If you don't like any of those you can go to hell.</article>
   </section>
   <section id="intro">
-	<aside id="peepLinker">
-	  <div>
-	    <h5>Checkout some bio info on our peeps:</5>
-	    <ul>
-	      <li><a href="#jake">Jake</a>&nbsp;|&nbsp;</li>
-	      <li><a href="#phil">Phil</a>&nbsp;|&nbsp;</li>
-	      <li><a href="#bill">Bill</a>&nbsp;|&nbsp;</li>
-	      <li><a href="#ryan">Ryan</a></li>
-	    </ul>
-	  </div>
-	</aside>
+
+	<h1>Checkout some bio info on our peeps.</h1>
+    <aside id="peepLinker">
+    <ul>
+      <li><a href="about.html#jake">Jake</a></li> |
+      <li><a href="about.html#phil">Phil</a></li> |
+      <li><a href="about.html#bill">Bill</a></li> |
+      <li><a href="about.html#ryan">Ryan</a></li>
+    </ul>
+  </aside>
   <div class="clear"></div>
   </section>
   
   
   <section class="peep" id="jake">
-    <header class="standOut">
+    <header>
       <hgroup>
         <h1>Jake Love</h1>
         <h2>Super-Human Web Developer / nth Degree Code Ninja Master</h2>
@@ -104,11 +98,11 @@ $(function(){
         <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" class="dude"/>
         
      <footer>
-      <a href="https://www.facebook.com/rockymountainhigh1943" target="_blank"><img src="images/icons/facebook_32.png" alt="facebook"></a>
-      <a href="https://twitter.com/#!/Jakel0v3" target="_blank"><img src="images/icons/twitter_32.png" alt="twitter"></a>
-      <a href=""><img src="images/icons/google_32.png" alt="google"></a>
+      <a href="https://www.facebook.com/rockymountainhigh1943" target="_blank"><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href="https://twitter.com/#!/Jakel0v3" target="_blank"><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href=""><img src="images/icons/google_32.png" alt="google"></a> | 
       <a href="http://www.linkedin.com/in/jakelove" target="_blank"><img src="images/icons/linkedin_32.png" alt="linkedin"></a> 
-      <a href="mailto:jake@jakelovedev.com"><img src="images/icons/mail_32.png" alt="mail"></a>
+      <address><a href="mailto:jake@jakelovedev.com">Email Jake</a></address>
     </footer>
     
       </figure>
@@ -129,7 +123,7 @@ $(function(){
   
   
   <section class="peep" id="phil">
-    <header class="standOut">
+    <header>
         <hgroup>
         <h1>Phil Riehl</h1>
         <h2>Guy who is better than everyone at anything</h2>
@@ -139,11 +133,11 @@ $(function(){
       <figure>
         <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude"/>
    	<footer>
-      <a href="https://www.facebook.com/phil.riehl"><img src="images/icons/facebook_32.png" alt="facebook"></a>
-      <a href="https://twitter.com/#!/philriehl"><img src="images/icons/twitter_32.png" alt="twitter"></a>
-      <a href="https://plus.google.com/101984841893137362753/posts?hl=en"><img src="images/icons/google_32.png" alt="google"></a>
+      <a href="https://www.facebook.com/phil.riehl"><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href="https://twitter.com/#!/philriehl"><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href="https://plus.google.com/101984841893137362753/posts?hl=en"><img src="images/icons/google_32.png" alt="google"></a> | 
       <a href="http://www.linkedin.com/in/philriehl"><img src="images/icons/linkedin_32.png" alt="linkedin"></a>  
-      <a href="hello@philriehl.com"><img src="images/icons/mail_32.png" alt="mail"></a>
+      <address><a href="hello@philriehl.com">Email Phil</a></address>
     </footer>
       </figure>
       <article>
@@ -171,7 +165,7 @@ $(function(){
 
 
   <section class="peep" id="bill">
-    <header class="standOut">
+    <header>
       <hgroup>
         <h1>Bill Dingwall (bill &middot; ding &middot; wall)</h1>
         <h2>A Little Bit of This | A Little Bit of That</h2>
@@ -182,12 +176,12 @@ $(function(){
       <figure>
         <img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" class="dude"/>
     <footer>
-      <a href="http://www.facebook.com/williamdingwall"><img src="images/icons/facebook_32.png" alt="facebook"></a>
-      <a href="https://twitter.com/#!/williamdingwall"><img src="images/icons/twitter_32.png" alt="twitter"></a>
-      <a href="https://plus.google.com/u/0/100026096132048097901/posts"><img src="images/icons/google_32.png" alt="google"></a>
+      <a href="http://www.facebook.com/williamdingwall"><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href="https://twitter.com/#!/williamdingwall"><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href="https://plus.google.com/u/0/100026096132048097901/posts"><img src="images/icons/google_32.png" alt="google"></a> | 
       <a href="http://www.linkedin.com/pub/william-dingwall/27/73/95b"><img src="images/icons/linkedin_32.png" alt="linkedin"></a>  
-      <a href="mailto:brdingwall@aol.com"><img src="images/icons/mail_32.png" alt="mail"></a>
-      </footer>
+      <address><a href="mailto:brdingwall@aol.com">Email Bill</a></address>
+    </footer>
       </figure>
     <article>
       <h3>About Me:</h3>
@@ -207,7 +201,7 @@ $(function(){
   
   
   <section class="peep" id="ryan">
-    <header class="standOut">
+    <header>
       <hgroup>
         <h1>Ryan Leitz</h1>
         <h2></h2>
@@ -215,13 +209,13 @@ $(function(){
       </header>      
     <div class="homie">
       <figure>
-        <img src="images/bill1.jpg" alt="Oil Painted Self Portrait of Bill" class="dude"/>
+        <img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" class="dude"/>
       <footer>
-      <a href=""><img src="images/icons/facebook_32.png" alt="facebook"></a>
-      <a href=""><img src="images/icons/twitter_32.png" alt="twitter"></a>
-      <a href=""><img src="images/icons/google_32.png" alt="google"></a>
+      <a href=""><img src="images/icons/facebook_32.png" alt="facebook"></a> | 
+      <a href=""><img src="images/icons/twitter_32.png" alt="twitter"></a> | 
+      <a href=""><img src="images/icons/google_32.png" alt="google"></a> | 
       <a href=""><img src="images/icons/linkedin_32.png" alt="linkedin"></a>  
-      <a href="mailto:brdingwall@aol.com"><img src="images/icons/mail_32.png" alt="mail"></a>
+      <address><a href="mailto:brdingwall@aol.com">Email Bill</a></address>
     </footer>
       </figure>
 
@@ -243,7 +237,7 @@ $(function(){
 
   <footer id="footer">
   &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi | Progress: 
-  <progress id="progress" max="10" value="5">
+  <progress id="progress" max="10" value="1">
   </progress>
   </footer>
 </body>

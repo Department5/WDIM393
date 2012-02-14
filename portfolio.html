@@ -1,192 +1,333 @@
  <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 9]>
+<html class="ie9 ie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie8 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<![endif]-->
+<!--[if IE 7]>
+<html class="ie7 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<script type="text/javascript">
+  alert('You should probably come to grips with reality and upgrade your fucking browser!');
+  window.location = "http://www.mozilla.org/en-US/firefox/new/";
+</script>
+<![endif]-->
+<!--[if !IE]>
+<html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<![endif]-->
 <head>
 <meta charset="utf-8" />
-<title>[D5] Web Development - Welcome</title>
-<base href="http://jakelovedev.com/wdim393/d5/" />
+<title>[D5] Web Development - Check Out Our Shit</title>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Passion+One' rel='stylesheet' type='text/css'>
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+<link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+$(function(){
+  $('#dpt5').fadeIn(2000);
+  $logo = $('#d5');
+  var scroll = $(window).scrollTop();
+
+  if(scroll > 74){
+    $logo.css('display', 'none');
+  }
+
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll > 74){
+      $logo.stop(true).animate({ opacity: 0 }, 500, function(){
+        $(this).css('display', 'none');
+      });
+    } 
+    if(scroll < 74){
+      $logo.css('display', '');
+      $logo.stop(true).animate({ opacity: 1 }, 500);
+    }
+  })
+
+});
+</script>
+<script src="js/prefixfree.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/selectivizr.js"></script>
+<![endif]--> 
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
-<body>
-  <header>
-    <figure>
-      <img src="images/logo.png" width="150" height="170" alt="D5 Development" />
-    </figure>
-    <hgroup>
-      <h1>[Department5]</h1>
-      <h2>League of Extraordinary Developers</h2>
-    </hgroup>
+<body class="port">
+<div id="container">
+  <header id="header">
+    <menu>
+      <ul>
+        <li><span>01.</span><br /><a href="index.html">Home</a></li>
+        <li><span>02.</span><br /><a href="about.html">About</a></li>
+        <li class="currentPage"><span>03.</span><br /><a href="portfolio.html">Portfolio</a></li>
+        <li><span>04.</span><br /><a href="#">Blog</a></li>
+      </ul>
+    </menu>
   </header>
-  <nav id="main">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About D5</a></li>
-      <li><a href="portfolio.html">[Portfolio]</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
-  <section id="content">
-    <h3>Portfolio</h3>
-    <p>This proves we're true badasses. Just take a look at our skills.</p>
+  <figure id="logo">
+    <img id="d5" src="images/logo.png" height="287" width="328" alt="D5" />
+    <img id="dpt5" src="images/DEPT5.jpg" height="134" width="526" alt="Department 5 - The League of Extraordinary Developers" />
+  </figure>
+  <section class="standOut">
+    <article>This proves we're true badasses.<br />Just take a look at our skills.</article>
   </section>
   <aside id="peepLinker">
-    <ul>
-      <li><a href="portfolio.html#jake">Jake</a></li>
-      <li><a href="portfolio.html#phil">Phil</a></li>
-      <li><a href="portfolio.html#bill">Bill</a></li>
-      <li><a href="portfolio.html#ryan">Ryan</a></li>
-    </ul>
+    <div>
+      <h5>Our Peeps:</5>
+      <ul>
+        <li><a href="#jake">Jake</a>&nbsp;|&nbsp;</li>
+        <li><a href="#phil">Phil</a>&nbsp;|&nbsp;</li>
+        <li><a href="#bill">Bill</a>&nbsp;|&nbsp;</li>
+        <li><a href="#ryan">Ryan</a></li>
+      </ul>
+    </div>
   </aside>
+  <!-- START #jake -->
   <section class="peep" id="jake">
-    <header>
-      <figure>
-        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love" />
-      </figure>
-      <hgroup>
-        <h1>Jake Love</h1>
-      </hgroup>
-    </header>
-    <article>
-      <h3>AMC Coordinator</h3>
-      <p><strong>A project</strong> for WDIM-493 Ruby. This project is built entirely on Ruby and Sinatra and is an Events Manager and Registration system for a non-profit organization. Admins can setup Venus, Roles, and Positions as well as create events and confirm event registrations. Users can sign up, request a switch, and print out their monthly schedule.</p>
-      <img src="images/amc1.jpg" alt="" />
-      <img src="images/amc2.jpg" alt="" />
-      <img src="images/amc3.jpg" alt="" />
-      <p><a href="http://freezing-leaf-974.heroku.com/" target="_blank">[View Site]</a></p>
-    </article>
-    <article>
-      <h3>Vectors</h3>
-      <p>A project for the Poetry and Animation co-op classes. During the 2010 spring term, Art Institute of Portland creative writing students and experimental animation students collaborated to create short animated films. This project is built on WordPress and allows the instructors to add new classes each term and upload videos of the animations, bios of the students, sample work, and the original poetry.</p>
-      <img src="images/vectors1.jpg" alt="" />
-      <img src="images/vectors2.jpg" alt="" />
-      <img src="images/vectors3.jpg" alt="" />
-      <p><a href="http://aidepartments.com/vectors/" target="_blank">[View Site]</a></p>
-    </article>
-    <article>
-      <h3>Marathon Education Partners</h3>
-      <p>A project for WDIM-380 Website Development. This project was the second part of a two part class. We worked as a group in both classes with a client supplied by the instructor. We provided them with many different design comps of which they choose the one they liked best. In the second class we then built the site out in WordPress. Key functionality includes a full-blown Events Manager System, Image Gallery, and Blog.</p>
-      <img src="images/mep1.jpg" alt="" />
-      <img src="images/mep2.jpg" alt="" />
-      <img src="images/mep3.jpg" alt="" />
-      <p><a href="http://www.marathoneducationpartners.org" target="_blank">[View Site]</a></p>
-    </article>
-    <article>
-      <h3>Set-List.ME</h3>
-      <p>A project for WDIM-387 AJAX. This project was developed using all AJAX calls hooked up to a CodeIgniter backend. The project is still in active development and will eventually be released for personal and commercial uses.</p>
-      <img src="images/set1.jpg" alt="" />
-      <img src="images/set2.jpg" alt="" />
-      <img src="images/set3.jpg" alt="" />
-      <p><a href="http://www.set-list.me" target="_blank">[View Site]</a></p>
-    </article>
+      <header class="standOut">
+        <hgroup>
+          <h1>Jake Love</h1>
+          <h2>Super-Human Web Developer / nth Degree Code Ninja Master</h2>
+        </hgroup>
+      </header>
+    <div>
+      <article>
+        <div class="desc">
+          <h3>AMC Coordinator</h3>
+          <p><strong>A project</strong> for WDIM-493 Ruby. This project is built entirely on Ruby and Sinatra and is an Events Manager and Registration system for a non-profit organization. Admins can setup Venus, Roles, and Positions as well as create events and confirm event registrations. Users can sign up, request a switch, and print out their monthly schedule.</p>
+          <p><a href="http://freezing-leaf-974.heroku.com/" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/amc1.jpg" alt="" />
+          <img src="images/amc2.jpg" alt="" />
+          <img src="images/amc3.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Vectors</h3>
+          <p>A project for the Poetry and Animation co-op classes. During the 2010 spring term, Art Institute of Portland creative writing students and experimental animation students collaborated to create short animated films. This project is built on WordPress and allows the instructors to add new classes each term and upload videos of the animations, bios of the students, sample work, and the original poetry.</p>
+          <p><a href="http://aidepartments.com/vectors/" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/vectors1.jpg" alt="" />
+          <img src="images/vectors2.jpg" alt="" />
+          <img src="images/vectors3.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Marathon Education Partners</h3>
+          <p>A project for WDIM-380 Website Development. This project was the second part of a two part class. We worked as a group in both classes with a client supplied by the instructor. We provided them with many different design comps of which they choose the one they liked best. In the second class we then built the site out in WordPress. Key functionality includes a full-blown Events Manager System, Image Gallery, and Blog.</p>
+          <p><a href="http://www.marathoneducationpartners.org" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/mep1.jpg" alt="" />
+          <img src="images/mep2.jpg" alt="" />
+          <img src="images/mep3.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Set-List.ME</h3>
+          <p>A project for WDIM-387 AJAX. This project was developed using all AJAX calls hooked up to a CodeIgniter backend. The project is still in active development and will eventually be released for personal and commercial uses.</p>
+          <p><a href="http://www.set-list.me" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/set1.jpg" alt="" />
+          <img src="images/set2.jpg" alt="" />
+          <img src="images/set3.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+    </div>
   </section>
-    <section class="peep" id="phil">
-    <header>
-      <figure>
-        <img src="images/phil.jpg" height="360" width="200" alt="Phil Riehl" />
-      </figure>
+  <!-- END #jake -->
+  <!-- START #phil -->
+  <section class="peep" id="phil">
+    <header class="standOut">
       <hgroup>
         <h1>Phil Riehl</h1>
+        <h2>Guy who is better than everyone at anything</h2>
       </hgroup>
     </header>
-    <article>
-      <h3>Web Manager at DisplayStar</h3>
-  		<p>Start Date: 1-5-11</p>
-        <p>Responsibilities: Desgining product graphics, Using CMS/Ecommerce platform Volusion, Front end development, SEO, Email Marketing</p>
-      
-      <p><a href="http://www.displaystar.com" target="_blank">DisplayStar.com</a></p>
-    </article>
-    <article>
-      <h3>iHeart Productions</h3>
-  		<p>Responsibilities: Modifications, revisions, additions to design and front end coding.</p>
-      
-      <p><a href="http://www.pdxiheart.com" target="_blank">PDXiHeart.com</a></p>
-    </article>
-        <article>
-      <h3>Marathon Education Partners</h3>
-  		<p>Responsibilities: Managed team of designer/developers, scheduled and planned, communicated with client.</p>
-      
-      <p><a href="marathoneducationpartners.org" target="_blank">MarathonEducationPartners.org</a></p>
-    </article>
-        <article>
-      <h3>Populace</h3>
-  		<p>Responsibilities: Designed and developed HTML5/CSS3 site for a web standards class last year. </p>
-      
-      <p><a href="http://philipriehl.com/school/wdim268/final/index.html" target="_blank">Populace</a></p>
-    </article>
+    <div>
+      <article>
+        <div class="desc">
+          <h3>Web Manager at DisplayStar</h3>
+          <p>Start Date: 1-5-11</p>
+          <p>Responsibilities: Desgining product graphics, Using CMS/Ecommerce platform Volusion, Front end development, SEO, Email Marketing</p>
+          <p><a href="http://www.displaystar.com" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/phil-thumbs/displaystar.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>iHeart Productions</h3>
+          <p>Responsibilities: Modifications, revisions, additions to design and front end coding.</p>
+          <p><a href="http://www.pdxiheart.com" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/phil-thumbs/iheart.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Marathon Education Partners</h3>
+          <p>Responsibilities: Managed team of designer/developers, scheduled and planned, communicated with client.</p>
+          <p><a href="marathoneducationpartners.org" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/phil-thumbs/marathon.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Populace</h3>
+          <p>Responsibilities: Designed and developed HTML5/CSS3 site for a web standards class last year. </p>
+          <p><a href="http://philipriehl.com/school/wdim268/final/index.html" target="_blank">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/phil-thumbs/populace.jpg" alt="" />
+        </div>
+        <div class="clear"></div>
+      </article>
+    </div>
   </section>
+  <!-- END #phil -->
+  <!-- START #bill -->
   <section class="peep" id="bill">
-    <header>
-      <figure>
-        <img src="images/bill1.jpg" alt="Oil Painted Self Portrait of Bill" />
-      </figure>
+    <header class="standOut">
       <hgroup>
         <h1>Bill</h1>
+        <h2>A Little Bit of This | A Little Bit of That</h2>
       </hgroup>
     </header>
-    <article>
-      <h3>Lucent Fine Art | Brand Development</h3>
-      <p>Full service brand development for a print shop in Colorado.</p>
-      <p><img src="images/lucent.jpg" alt="Lucent Fine Art Logo" /></p>
-      <p><a href="http://lucentfineart.com/">lucentfineart.com</a></p>
-    </article>
-    <article>
-      <h3>Inn at Red Hills | Wordpress Development &amp; Design</h3>
-      <p>Designed and built the website for the Inn at Red Hills in Dundee, OR.</p>
-      <p><img src="images/IARH.jpg" alt="the Inn at Red Hills Website" /></p>
-      <p><a href="http://www.innatredhills.com/">innatredhills.com</a></p>
-    </article>
-    <article>
-      <h3>Inergy | Package Design</h3>
-      <p>Done back in the day, but still one of my favorites.</p>
-      <p><img src="images/inergy.jpg" alt="Inergy Package Design" /></p>
-    </article>
-    <article>
-      <h3>Holtey Law | Logo Design</h3>
-      <p>Done while working at LucentPDX.</p>
-      <p><img src="images/holtey.jpg" alt="logo variations for Holtey Law" /></p>
-      <p><a href="http://holteylaw.com/">holteylaw.com</a></p>
-    </article>
-    <article>
-      <h3>Tattoo | Type Design &amp; Illustration</h3>
-      <p>A self made font, illustrated with graphite and photoshop.</p>
-      <p><img src="images/tattoo.jpg" alt="Tattoo type illustration" /></p>
-    </article>
-    <article>
-      <h3>Forkfly Coupon | Mobile Design</h3>
-      <p>Done for an internship with Forkfly.com</p>
-      <p><img src="images/forkfly.jpg" alt="the Forkfly coupon" /></p>
-      <p><a href="http://www.forkfly.com">forkfly.comk</a></p>
-    </article>
+    <div>
+      <article>
+        <div class="desc">
+          <h3>Lucent Fine Art | Brand Development</h3>
+          <p>Full service brand development for a print shop in Colorado...in progress...</p>
+          <p><a href="http://lucentfineart.com/">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/lucent.jpg" alt="Lucent Fine Art Logo" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Inn at Red Hills | Wordpress Development &amp; Design</h3>
+          <p>Designed and built the website for the Inn at Red Hills in Dundee, OR.</p>
+          <p><a href="http://www.innatredhills.com/">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/IARH.jpg" alt="the Inn at Red Hills Website" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Inergy | Package Design</h3>
+          <p>Done back in the day, but still one of my favorites.</p>
+        </div>
+        <div class="imgs">
+          <img src="images/inergy.jpg" alt="Inergy Package Design" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Holtey Law | Logo Design</h3>
+          <p>Done while working at LucentPDX.</p>
+          <p><a href="http://holteylaw.com/">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/holtey.jpg" alt="logo variations for Holtey Law" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Tattoo | Type Design &amp; Illustration</h3>
+          <p>A self made font, illustrated with graphite and photoshop.</p>
+        </div>
+        <div class="imgs">
+          <img src="images/tattoo.jpg" alt="Tattoo type illustration" />
+        </div>
+        <div class="clear"></div>
+      </article>
+      <article>
+        <div class="desc">
+          <h3>Forkfly Coupon | Mobile Design</h3>
+          <p>Done for an internship with Forkfly.com</p>
+          <p><a href="http://www.forkfly.com">{View Site}</a></p>
+        </div>
+        <div class="imgs">
+          <img src="images/forkfly.jpg" alt="the Forkfly coupon" />
+        </div>
+        <div class="clear"></div>
+      </article>
+    </div>
   </section>
+  <!-- END #bill -->
+  <!-- START #ryan -->
   <section class="peep" id="ryan">
-  <header>
-		<figure>
-			<img src="images/ryan.jpg" height="360" width="200" alt="Ryan Leitz" />
-		</figure>
-		<hgroup>
-			<h1>Ryan Leitz</h1>
-		</hgroup>
-	</header>
-	<article>
-		<h3>Portland Center Stage</h3>
-		<p>A project for the Web Design and Layout class. Intended to be a redesign for the current PCS site.</p>
-		<p><img src="images/ryan1.jpg" alt="PCS" /></p>
-	</article>
-	<article>
-		<h3>Heart Disease and Stroke Prevention</h3>
-		<p>Another project for the Web Design and Layout class. Intended to be a simple/informative page for Oregon's Heart Disease and Stroke Prevention program.</p>
-		<p><img src="images/ryan2.jpg" alt="Heart and Stroke Prevention" /></p>
-	</article>
-	<article>
-		<h3>Online Book Store</h3>
-		<p>And yet another project for the Web Design and Layout class. Intended to be a design for an online book store.</p>
-		<p><img src="images/ryan3.jpg" alt="Book Store" /></p>
-	</article>
+    <header class="standOut">
+      <hgroup>
+        <h1>Ryan Leitz</h1>
+      </hgroup>
+    </header>
+  <div>
+    <article>
+      <div class="desc">
+        <h3>Portland Center Stage</h3>
+        <p>A project for the Web Design and Layout class. Intended to be a redesign for the current PCS site.</p>
+      </div>
+      <div class="imgs">
+        <img src="images/ryan1.jpg" alt="PCS" />
+      </div>
+        <div class="clear"></div>
+    </article>
+    <article>
+      <div class="desc">
+        <h3>Heart Disease and Stroke Prevention</h3>
+        <p>Another project for the Web Design and Layout class. Intended to be a simple/informative page for Oregon's Heart Disease and Stroke Prevention program.</p>
+      </div>
+      <div class="imgs">
+        <img src="images/ryan2.jpg" alt="Heart and Stroke Prevention" />
+      </div>
+        <div class="clear"></div>
+    </article>
+    <article>
+      <div class="desc">
+        <h3>Online Book Store</h3>
+        <p>And yet another project for the Web Design and Layout class. Intended to be a design for an online book store.</p>
+      </div>
+      <div class="imgs">
+        <img src="images/ryan3.jpg" alt="Book Store" />
+      </div>
+      <div class="clear"></div>
+    </article>
+  </div>
   </section>
-  <footer>
-  &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi
+  <!-- END #ryan -->
+</div><!-- end #container -->
+  <footer id="footer">
+  &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi | Progress: 
+  <progress id="progress" max="10" value="5">
+  </progress>
   </footer>
 </body>
 </html>

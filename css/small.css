@@ -45,8 +45,8 @@ section.standOut article {
   font-weight: bold;
   line-height: 17px;
   margin: 0 auto;
-  padding-left: 0;
-  width: 80%;
+  padding: 0;
+  width: 85%;
 }
 
 section#calls2act {
@@ -68,9 +68,9 @@ section#calls2act ul#actions li {
 section#calls2act ul#actions li:nth-child(2) {
   margin: 0;
 }
-section#calls2act ul#actions li:hover:after {
+/*section#calls2act ul#actions li:hover:after {
 	content:"" !important;
-}
+}*/
 
 section#recentPost {
   margin: 0 auto;

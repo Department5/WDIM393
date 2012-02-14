@@ -18,7 +18,6 @@
 <head>
 <meta charset="utf-8" />
 <title>[D5] Web Development - Welcome</title>
-<base href="http://jakelovedev.com/wdim393/d5/" />
 <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Passion+One' rel='stylesheet' type='text/css'>
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
@@ -27,6 +26,11 @@
 $(function(){
   $('#dpt5').fadeIn(2000);
   $logo = $('#d5');
+  var scroll = $(window).scrollTop();
+
+  if(scroll > 74){
+    $logo.css('display', 'none');
+  }
 
   $(window).scroll(function(){
     var scroll = $(window).scrollTop();
@@ -89,7 +93,7 @@ $(function(){
 </div><!-- end #container -->
   <footer id="footer">
   &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi | Progress: 
-  <progress id="progress" max="10" value="1">
+  <progress id="progress" max="10" value="5">
   </progress>
   </footer>
 </body>

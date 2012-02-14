@@ -132,8 +132,7 @@ section.standOut article {
 	font-weight: bold;
 	line-height: 27px;
 	margin: 0 auto;
-	padding-left: 50px;
-	width: 850px;
+	width: 900px;
 }
 section#calls2act {
 	width:900px;
@@ -206,4 +205,100 @@ footer#footer {
 }
 progress {
 	height:9px;
+}
+#intro {
+	color: #161616;
+	font-size: 145px;
+	font-weight: bold;
+	line-height: 27px;
+	margin: 0 auto;
+	width: 900px;
+	font-size: 14px;
+	background: hsla(0, 2%, 91%, 1);
+	color: #000;
+	font-family: 'Quicksand', sans-serif;
+}
+#intro h1 {
+	font-size: 24px;
+	padding-top:15px;
+}
+#peepLinker ul {
+	font-size: 24px;
+	background: hsla(0, 2%, 91%, 1);
+	color: #000;
+	font-family: 'Quicksand', sans-serif;
+	padding-bottom: 30px;
+	}
+#peepLinker ul li {
+	display: inline;
+	margin-bottom: 20px;
+	font-size: 24px;
+}
+section.peep {
+	height: 100%;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+}
+section.peep header {
+	padding:35px 0;
+	width:100%;
+	display: block;
+	max-height:52px;
+	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
+	background-repeat: repeat-x, repeat-x, repeat-x;
+	background-position: top center, bottom center, center center;
+	margin-bottom:20px;
+}
+section.peep header hgroup {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+section.peep header hgroup h1 {
+	font-size: 24px;
+	color: #000;
+	font-weight: bolder;
+}
+section.peep header hgroup h2 {
+	font-size: 18px;
+	color: #d0403e;
+	font-weight: bold;
+}
+section.peep figure {
+	float: left;
+	height: 100%;
+	width: 200px;
+}
+section.peep .homie {
+	width: 900px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 100px;
+	margin-left: auto;
+	clear: both;
+}
+section.peep .homie figure footer {
+	width: 250px;
+}
+section.peep .homie article h3 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+section.peep .homie article p {
+	padding-bottom: 10px;
+}
+section.peep .homie figure img {
+	
+}
+section.peep .homie figure footer a {
+	height: 32px;
+	width: 32px;
+	margin: 0px;
+	padding: 0px;
+}
+section.peep .homie figure .dude {
+	width: 200px;
 }
