@@ -97,3 +97,35 @@ section.peep article .desc {
 	float: none;
 	padding-bottom: 20px;
 }
+section.peep figure {
+	float: none;
+	display: block;
+	width: 100%;
+	margin: 0 !important;
+	padding-bottom: 20px;
+}
+
+section.peep .homie figure footer {
+	float: right;
+	width: 45%;
+	padding: 0;
+}
+section.peep .homie figure .dude {
+	float: left;
+	width: 46%;
+	padding: 2%; /* 13px / 230px */
+	margin-right: 5%;
+
+}
+section.peep .homie div {
+	float: none;
+	display: block;
+	width: 100%;
+	padding-left: 0;
+}
+section.peep .homie figure footer a img {
+	width: 25%;
+}
+section.peep .homie figure footer a:nth-child(2n+2) {
+	margin: 0 2%;
+}
