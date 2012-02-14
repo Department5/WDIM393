@@ -11,6 +11,9 @@ blockquote:before,blockquote:after,q:before,q:after {content: "";}
 blockquote, q {quotes: "" "";}
 
 /* END RESET */
+body, html {
+	width: 100%;
+}
 
 body {
 	font-size: 14px;
@@ -40,7 +43,20 @@ a:hover {
 #container {
 	padding-bottom:85px;
 }
-
+article {
+	padding: 0 30px;
+	margin: 0 auto;
+	max-width: 800px; /* 860px - (30px * 2) */
+}
+img {
+	height:auto;
+}
+.cleared:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
 header#header {
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	box-shadow: 0 0 15px #000000;
@@ -54,8 +70,8 @@ header#header {
 header#header menu {
 	margin: 0 auto;
 	text-align: right;
-	max-width: 900px;
-	width: 90%;
+	max-width: 860px;
+	width: 100%;
 	padding-right: 50px;
 }
 
@@ -69,10 +85,13 @@ header#header ul {
 header#header ul li {
 	display:inline-block;
 	color:#ececec;
-	margin-right: 6.666666667%; /* 60px / 900px */
+	margin-right: 6.976744186%; /* 60px / 860px */
 	text-align:left;
 	font-family: 'Passion One', cursive;
 	font-size:16px;
+}
+header#header ul li:last-child {
+	margin-right: 4.651162791%; /* 40px / 860px */
 }
 
 .ie7 header#header ul li {
@@ -97,21 +116,28 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 }
 
 figure#logo {
-	height: 285px;
 	margin: 0 auto;
-	width: 900px;
+	width: 100%;
+	max-width: 860px;
 	display: block;
-	padding-top:30px;
-	margin-bottom:30px;
+	padding-top: 30px;
 }
 figure#logo #d5 {
+	max-width: 300px;
+	width: 34.88372093%; /* 300px / 860px */
+	height: auto;
 	position: fixed;
 	z-index: 999999;
 }
 figure#logo #dpt5 {
-	display:none;
-	margin-left: 323px;
+	width: 62.222222222%; /* 560px / 860px */
+	
+	/* 860px - 560px = 300px */
+	
+	margin-left: 34.88372093%; /* 300px / 860px */
+	height: auto;
 	margin-top: 75px;
+	padding-bottom: 80px;
 	z-index: -1;
 }
 figure#coolShit {
@@ -125,10 +151,9 @@ figure#coolShit {
 	padding:35px 0;
 	display: block;
 	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
-	background-repeat: repeat-x, repeat-x, repeat-x;
-	background-position: top center, bottom center, center center ;
+	background-repeat: repeat-x, repeat-x, repeat;
+	background-position: top center, bottom center, top left ;
 	margin-bottom:20px;
-	max-height:52px;
 }
 
 .ltie9 section.standOut {
@@ -137,35 +162,41 @@ figure#coolShit {
 
 section.standOut article {
 	color: #161616;
-	font-size: 25px;
-	font-weight: bold;
+	font-size: 23px;
+	font-weight: 600;
 	line-height: 27px;
-	margin: 0 auto;
-	padding: 0 50px;
-	max-width: 900px;
 }
+
 #actions {
-	width: 90%;
-	max-width:900px;
-	margin:0 auto;
-}
-#actions:after {
-	content: '';
-	display: block;
-	height: 0;
-	clear: both;
-}
-
-section#calls2act ul#actions li:nth-child(2) {
-	margin:0 5.833333334%; /* 52px / 900px */
-}
-
-.ltie9 section#calls2act ul#actions li.ieFix {
-	margin:0 5.833333334%; /* 52px / 900px */
+	list-style-type:none;
+	width: 100%;
+	max-width: 860px;
+	margin:0 auto; 
 }
 
 #actions li {
-	width: 29.444444444%; /* (100-(5.833333334 * 2))/3 */
+	display: block;
+	float: left;
+	width: 30.813953488%; /* 265px (image sizes) / 860px */
+}
+
+#actions li:first-child {
+	margin-left: 2.1%; /* lining up with d5 logo */
+}
+
+	/*
+	30.813953488% * 3 = 92.441860464%
+	2.1% * 2 = 4.2% to account for even space on right of li's
+	92.441860464% + 4.2% = 96.641860464%
+	100% - 96.641860464% = 3.358139536%
+	3.358139536% / 2 = 1.679069768% margins for middle li
+	*/
+
+#actions li:nth-child(2) {
+	margin: 0 1.679069768%; 
+}
+#actions li.ieFix {
+	margin: 0 1.679069768%; 
 }
 
 #actions li img {
@@ -176,21 +207,6 @@ section#calls2act ul#actions li:nth-child(2) {
 	display: inline-block;
 	height: auto;
 }
-section#calls2act {
-	margin-bottom:15px;
-	text-align:center;
-	padding-left: 15px;
-}
-
-section#calls2act ul#actions {
-	list-style-type:none;
-}
-
-section#calls2act ul#actions li {
-	display: block;
-	float: left;
-}
-
 section#calls2act ul#actions li:after {
 	font-weight:bold;
 	color: transparent;
@@ -213,15 +229,16 @@ section#calls2act ul#actions li:nth-child(2):after {
 section#calls2act ul#actions li:last-child:after {
 	content:"{We’ll make you a sandwich...}";
 }
-
-section#recentPost {
-	max-width:900px;
-	width: 90%;
-	margin:0 auto;
+section#calls2act {
+	margin-bottom:15px;
+	text-align:center;
 }
 
-section#recentPost article {
-	padding-left:25px;
+
+section#recentPost {
+	max-width:860px;
+	width: 100%;
+	margin:0 auto;
 }
 
 footer#footer {
@@ -232,7 +249,7 @@ footer#footer {
 	bottom: 0;
 	position: fixed;
 	text-align: center;
-	width: 90%;
+	width: 100%;
 	box-shadow: 0px 0px 15px #000000;
 	display: block;
 }
@@ -249,16 +266,20 @@ progress {
 	height:9px;
 }
 
-.port aside#peepLinker div {
+aside#peepLinker div {
 	color: #161616;
 	font-size: 25px;
 	font-weight: bold;
 	line-height: 27px;
 	margin: 0 auto;
-	max-width: 900px;
-	width:900px;
+	max-width: 800px;
+	width: 100%;
 	margin:0 auto;
-	padding:20px 0;
+	padding:40px 30px 0 30px;
+}
+aside#peepLinker div h5, .port aside#peepLinker div ul {
+	display: inline;
+	padding-right: 15px;
 }
 
 aside#peepLinker div ul {
@@ -281,58 +302,93 @@ section.peep header hgroup h2 {
   font-weight: bold;
 }
 
-.port section.peep {
-	margin-top:20px;
-	clear: both;
+section.peep {
+	padding-top:50px;
 }
 
-.port section.peep div {
-	width:900px;
-	margin:0 auto;
-}
-
-.port section.peep hgroup {
-	width:900px;
+section.peep hgroup {
+	max-width:800px;
+	width: 100%;
+	padding: 0 30px;
 	margin:0 auto;
 }
 
 .port section.peep article {
 	clear:both;
 	margin-bottom:20px;
-	padding-bottom:20px;
 }
 
-.port section.peep article .desc h3 {
+section.peep article .desc h3 {
 	font-weight:bold;
 	font-size:18px;
 	margin-bottom:5px;
 }
 
-.port section.peep article .desc {
-	width:250px;
+section.peep article .desc {
+	width: 28.125%; /* 225px / 800px */
 	float:left;
 }
 
-.port section.peep article .desc a {
+section.peep article .desc a {
 	display: inline-block;
 	font-weight: bold;
 	margin-top: 5px;
 }
 
-.port section.peep article .imgs {
-	width:510px;
+section.peep article .imgs {
+	width: 63.75%; /* 510px / 800px */
 	float:right;
 }
 
-.port section.peep article .imgs img {
+section.peep article .imgs img {
 	transition:all 0.3s ease-in-out;
-	border-radius:10px;
 	display: inline-block;
-	margin-bottom:15px;
-	width:500px;
-	height:auto;
+	margin-bottom:30px;
+	width: 94.117647059%; /* 480px /510px */
+	padding: 2.549019608%; /* 13px / 510px */
+	background: url(../images/mid-bg-repeat.jpg);  
+	outline: 1px solid #b5b5b5;
+	border: 1px solid #fafafa;
+	border-radius: 0;
+	box-shadow:0 0 0 #5f5f5f;
+}
+section.peep article .imgs img:hover {
+	border-radius:10px;
+	box-shadow:0 0 15px #5f5f5f;
+	outline-color: transparent;
+}
+section.peep figure {
+	float: left;
+	width: 28.75%; /* 230px / 800px */
+	margin: 0 !important;
 }
 
-.port section.peep article .imgs img:hover {
-	box-shadow:0 0 15px #000000;
+section.peep .homie figure footer {
+	padding: 10px 0;
+}
+section.peep .homie figure footer a img {
+	width: 13.913043478%; /* 32px / 230px */
+}
+section.peep .homie figure footer a:nth-child(2n+2) {
+	margin: 0 6%;
+}
+section.peep .homie div {
+	width: 65%; /* 520px / 800px */ 
+	padding-left: 6.25% ; /* 50px / 800px */
+	float: right;
+}
+section.peep .homie h3 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+}
+section.peep .homie p {
+	padding-bottom: 10px;
+}
+section.peep .homie figure .dude {
+	width: 86.956521739%; /* 200px / 230px */
+	padding: 5.652173913%; /* 13px / 230px */
+	background: url(../images/mid-bg-repeat.jpg);  
+	outline: 1px solid #b5b5b5;
+	border: 1px solid #fafafa;
 }
