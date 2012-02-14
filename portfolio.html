@@ -1,20 +1,5 @@
- <!DOCTYPE html>
-<!--[if IE 9]>
-<html class="ie9 ie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie8 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<![endif]-->
-<!--[if IE 7]>
-<html class="ie7 ie ltie9" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<script type="text/javascript">
-  alert('You should probably come to grips with reality and upgrade your fucking browser!');
-  window.location = "http://www.mozilla.org/en-US/firefox/new/";
-</script>
-<![endif]-->
-<!--[if !IE]>
+<!DOCTYPE html>
 <html class="notie" xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<![endif]-->
 <head>
 <meta charset="utf-8" />
 <title>[D5] Web Development - Check Out Our Shit</title>
@@ -22,6 +7,7 @@
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
 <script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/modernizr.custom.js"></script>
 <script>
 $(function(){
   $('#dpt5').fadeIn(2000);
@@ -43,7 +29,7 @@ $(function(){
       $logo.css('display', '');
       $logo.stop(true).animate({ opacity: 1 }, 500);
     }
-  })
+  });
 
 });
 </script>
@@ -51,9 +37,6 @@ $(function(){
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="js/selectivizr.js"></script>
 <![endif]--> 
-<!--[if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
 </head>
 <body class="port">
 <div id="container">
