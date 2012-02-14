@@ -37,6 +37,7 @@ figure#logo img#dpt5 {
 	margin-top: 45px;
 	z-index: -1;
 	margin-left:1% !important;
+	padding-bottom: 0;
 }
 
 section.standOut article {
@@ -79,4 +80,20 @@ section#recentPost {
 
 section#recentPost article {
   padding-left: 0;
+}
+
+aside#peepLinker div {
+	font-size: 20px;
+}
+
+section.peep article .imgs {
+	width: 100%;
+	display: block;
+	float: none;
+}
+section.peep article .desc {
+	width: 100%;
+	display: block;
+	float: none;
+	padding-bottom: 20px;
 }

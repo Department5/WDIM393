@@ -11,6 +11,9 @@ blockquote:before,blockquote:after,q:before,q:after {content: "";}
 blockquote, q {quotes: "" "";}
 
 /* END RESET */
+body, html {
+	width: 100%;
+}
 
 body {
 	font-size: 14px;
@@ -48,6 +51,12 @@ article {
 img {
 	height:auto;
 }
+.cleared:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
 header#header {
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	box-shadow: 0 0 15px #000000;
@@ -62,7 +71,7 @@ header#header menu {
 	margin: 0 auto;
 	text-align: right;
 	max-width: 860px;
-	width: 90%;
+	width: 100%;
 	padding-right: 50px;
 }
 
@@ -108,7 +117,7 @@ header#header ul li.currentPage a:link, header#header ul li.currentPage a:visite
 
 figure#logo {
 	margin: 0 auto;
-	width: 90%;
+	width: 100%;
 	max-width: 860px;
 	display: block;
 	padding-top: 30px;
@@ -145,7 +154,6 @@ figure#coolShit {
 	background-repeat: repeat-x, repeat-x, repeat;
 	background-position: top center, bottom center, top left ;
 	margin-bottom:20px;
-	min-height: 52px;
 }
 
 .ltie9 section.standOut {
@@ -159,38 +167,11 @@ section.standOut article {
 	line-height: 27px;
 }
 
-
-/* older version
-
-section#calls2act ul#actions li:nth-child(2) {
-	margin:0 6.046511628%;  52px / 860px 
-}
-
-.ltie9 section#calls2act ul#actions li.ieFix {
-	margin:0 6.046511628%;  52px / 860px 
-}
-#actions li {
-	width: 29.30232558133%; 
-	
-	nth-child(2) margin left + right = 12.093023256%
-	(860px = 100%) - 12.093023256% = 87.906976744%
-	87.906976744% / 3 = 29.30232558133% = 252px
-	
-}
-*/
-
-
 #actions {
 	list-style-type:none;
-	width: 90%;
+	width: 100%;
 	max-width: 860px;
 	margin:0 auto; 
-}
-#actions:after {
-	content: '';
-	display: block;
-	height: 0;
-	clear: both;
 }
 
 #actions li {
@@ -256,7 +237,7 @@ section#calls2act {
 
 section#recentPost {
 	max-width:860px;
-	width: 90%;
+	width: 100%;
 	margin:0 auto;
 }
 
@@ -268,7 +249,7 @@ footer#footer {
 	bottom: 0;
 	position: fixed;
 	text-align: center;
-	width: 90%;
+	width: 100%;
 	box-shadow: 0px 0px 15px #000000;
 	display: block;
 }
@@ -292,7 +273,7 @@ aside#peepLinker div {
 	line-height: 27px;
 	margin: 0 auto;
 	max-width: 800px;
-	width: 90%;
+	width: 100%;
 	margin:0 auto;
 	padding:40px 30px 0 30px;
 }
@@ -323,18 +304,11 @@ section.peep header hgroup h2 {
 
 section.peep {
 	padding-top:50px;
-	clear: both;
-}
-
-section.peep div {
-	max-width:860px;
-	width: 90%;
-	margin:0 auto;
 }
 
 section.peep hgroup {
 	max-width:800px;
-	width: 90%;
+	width: 100%;
 	padding: 0 30px;
 	margin:0 auto;
 }
@@ -342,7 +316,6 @@ section.peep hgroup {
 .port section.peep article {
 	clear:both;
 	margin-bottom:20px;
-	padding-bottom:20px;
 }
 
 section.peep article .desc h3 {
@@ -384,61 +357,38 @@ section.peep article .imgs img:hover {
 	box-shadow:0 0 15px #5f5f5f;
 	outline-color: transparent;
 }
-section.peep {
-	height: 100%;
-	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	position: relative;
-}
-section.peep header hgroup {
-	width: 900px;
-	margin-right: auto;
-	margin-left: auto;
-}
-section.peep header hgroup h1 {
-	font-size: 24px;
-	color: #000;
-	font-weight: bolder;
-}
-section.peep header hgroup h2 {
-	font-size: 18px;
-	color: #d0403e;
-	font-weight: bold;
-}
 section.peep figure {
 	float: left;
-	height: 100%;
-	width: 200px;
+	width: 28.75%; /* 230px / 800px */
+	margin: 0 !important;
 }
-section.peep .homie {
-	width: 900px;
-	margin-top: 0px;
-	margin-right: auto;
-	margin-bottom: 100px;
-	margin-left: auto;
-	clear: both;
-}
+
 section.peep .homie figure footer {
-	width: 250px;
+	padding: 10px 0;
 }
-section.peep .homie article h3 {
+section.peep .homie figure footer a img {
+	width: 13.913043478%; /* 32px / 230px */
+}
+section.peep .homie figure footer a:nth-child(2n+2) {
+	margin: 0 6%;
+}
+section.peep .homie div {
+	width: 65%; /* 520px / 800px */ 
+	padding-left: 6.25% ; /* 50px / 800px */
+	float: right;
+}
+section.peep .homie h3 {
 	font-size: 18px;
 	font-weight: bold;
 	color: #000;
 }
-section.peep .homie article p {
+section.peep .homie p {
 	padding-bottom: 10px;
 }
-section.peep .homie figure img {
-	
-}
-section.peep .homie figure footer a {
-	height: 32px;
-	width: 32px;
-	margin: 0px;
-	padding: 0px;
-}
 section.peep .homie figure .dude {
-	width: 200px;
+	width: 86.956521739%; /* 200px / 230px */
+	padding: 5.652173913%; /* 13px / 230px */
+	background: url(../images/mid-bg-repeat.jpg);  
+	outline: 1px solid #b5b5b5;
+	border: 1px solid #fafafa;
 }
