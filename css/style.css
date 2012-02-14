@@ -146,6 +146,7 @@ figure#logo #d5 {
 	height: auto;
 	position: fixed;
 	z-index: 2000;
+	max-height: 285px;
 }
 figure#logo #dpt5 {
 	width: 62.222222222%; /* 560px / 860px */
