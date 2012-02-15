@@ -35,7 +35,7 @@ video {
 
 body {
 	font-size: 14px;
-	background: hsla(0, 2%, 91%, 1);
+	background: #e6e6e6 url('../images/groovepaper.png') repeat left top; /* From subtlepatterns.com */
 	color: #000;
 	font-family: 'Quicksand', sans-serif;
 }
@@ -146,6 +146,7 @@ figure#logo #d5 {
 	height: auto;
 	position: fixed;
 	z-index: 2000;
+	max-height: 285px;
 }
 figure#logo #dpt5 {
 	width: 62.222222222%; /* 560px / 860px */
