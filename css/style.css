@@ -271,6 +271,7 @@ progress {
 	border: 1px inset #747677;
 	border-radius: 50px;
 	box-shadow: 1px 1px 10px #9c9d9e;
+	color: red;
 }
 
 aside#peepLinker div {
