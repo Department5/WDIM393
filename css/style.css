@@ -1,6 +1,6 @@
 /* @override http://jakelovedev.com/wdim393/d5/css/style.css */
 
-html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
+html, body, div, menu, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td, figure {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}
 
 caption, th, td {text-align:left;font-weight:normal;}
 
@@ -14,6 +14,8 @@ blockquote, q {quotes: "" "";}
 body, html {
 	width: 100%;
 }
+
+/*
 #ievid {
 	position: fixed;
 	top: 0;
@@ -31,7 +33,8 @@ video {
 	z-index: 3000;
 	position: fixed;
 	background-color: #000;
-}
+} 
+*/
 
 body {
 	font-size: 14px;
@@ -44,14 +47,10 @@ body {
 	background:#e8e7e7;
 }
 
-a {
-    transition: all 0.3s ease-in-out;
-}
-
-a:link, a:visited {
+a, a:visited {
 	color:#b52f2d;
 	text-decoration:none;
-	transition: all .5s ease-in-out;
+	transition: all .45s ease;
 }
 
 a:hover {
@@ -61,7 +60,7 @@ a:hover {
 #container {
 	padding-bottom:85px;
 }
-article {
+article, header#header menu, hgroup {
 	padding: 0 30px;
 	margin: 0 auto;
 	max-width: 800px; /* 860px - (30px * 2) */
@@ -69,7 +68,28 @@ article {
 img {
 	height:auto;
 }
-.cleared:after {
+h1 {
+	font-weight: 600;
+	color: #000000;
+	font-size: 24px;
+}
+
+h2 {
+  color: #D0403E;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h3 {
+	font-size: 18px;
+	color: #000;
+	margin-bottom:5px;
+	font-weight: 900;
+}
+p {
+	padding-bottom: 10px;
+}
+.cleared:after, .peep article:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -86,58 +106,45 @@ header#header {
 }
 
 header#header menu {
-	margin: 0 auto;
 	text-align: right;
-	max-width: 860px;
-	width: 100%;
-	padding-right: 50px;
 }
 
 header#header ul {
 	list-style-type:none;
 	padding-top:10px;
-	width:100%;
-	display: inline-block;
 }
 
 header#header ul li {
 	display:inline-block;
 	color:#ececec;
-	margin-right: 6.976744186%; /* 60px / 860px */
+	margin-right: 7.5%; /* 60px / 800px */
 	text-align:left;
 	font-family: 'Passion One', cursive;
 	font-size:16px;
 }
 header#header ul li:last-child {
-	margin-right: 4.651162791%; /* 40px / 860px */
+	margin-right: 3.125%; /* 35px / 860px */
 }
 
 .ie7 header#header ul li {
 	display: inline;
 }
 
-header#header ul li.currentPage span {
-	color:#FFF;
-}
-
-header#header ul li:not(.currentPage) a:link, header#header ul li:not(.currentPage) a:visited {
+header#header ul li:not(.currentPage) a {
 	color:#ececec;
-	text-decoration:none;
 }
 
 header#header ul li:not(.currentPage) a:hover {
 	color:#f6a09f;
 }
 
-header#header ul li.currentPage a:link, header#header ul li.currentPage a:visited {
+header#header ul li.currentPage a {
 	color:#f34947;
 }
 
 figure#logo {
 	margin: 0 auto;
-	width: 100%;
 	max-width: 860px;
-	display: block;
 	padding-top: 30px;
 }
 figure#logo #d5 {
@@ -148,7 +155,7 @@ figure#logo #d5 {
 	z-index: 2000;
 	max-height: 285px;
 }
-figure#logo #dpt5 {
+figure#logo img#dpt5 {
 	width: 62.222222222%; /* 560px / 860px */
 	
 	/* 860px - 560px = 300px */
@@ -173,24 +180,24 @@ figure#coolShit {
 	background-repeat: repeat-x, repeat-x, repeat;
 	background-position: top center, bottom center, top left ;
 	margin-bottom:20px;
-}
-
-.ltie9 section.standOut {
-	background:url(../images/mid-bg-repeat-ltie9.jpg) center center repeat-x;
-}
-
-section.standOut article {
 	color: #161616;
 	font-size: 23px;
 	font-weight: 600;
 	line-height: 27px;
 }
 
+.ltie9 section.standOut {
+	background:url(../images/mid-bg-repeat.jpg) top left repeat;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	outline: 1px solid #dddddd;
+}
+
 #actions {
 	list-style-type:none;
-	width: 100%;
 	max-width: 860px;
-	margin:0 auto; 
+	margin:0 auto 15px;
+	text-align: center; 
 }
 
 #actions li {
@@ -218,71 +225,55 @@ section.standOut article {
 	margin: 0 1.679069768%; 
 }
 
-#actions li img {
+#actions li img, #actions li a {
 	width: 100%;
-	height: auto;
+	max-width: 265px;
 }
-#actions li a {
-	display: inline-block;
-	height: auto;
-}
-section#calls2act ul#actions li:after {
+
+#actions li:after {
 	font-weight:bold;
 	color: transparent;
 	text-shadow: #c6c6c6 0 0 2px;
 }
 
-section#calls2act ul#actions li:hover:after {
+#actions li:hover:after {
 	text-shadow: #B52F2D 0 0 0;
 	color: #B52F2D;
 }
 
-section#calls2act ul#actions li:first-child:after {
+#actions li:first-child:after {
 	content:"{It will change your life}";
 }
 
-section#calls2act ul#actions li:nth-child(2):after {
+#actions li:nth-child(2):after {
 	content:"{Let's grab a virtual beer}";
 }
 
-section#calls2act ul#actions li:last-child:after {
+#actions li:last-child:after {
 	content:"{We’ll make you a sandwich...}";
-}
-section#calls2act {
-	margin-bottom:15px;
-	text-align:center;
-}
-
-
-section#recentPost {
-	max-width:860px;
-	width: 100%;
-	margin:0 auto;
 }
 
 footer#footer {
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	color: #717171;
 	height: 42px;
-	padding: 20px 5% 0 5%;
+	padding: 20px 0 0 0;
 	bottom: 0;
 	position: fixed;
 	text-align: center;
 	width: 100%;
 	box-shadow: 0px 0px 15px #000000;
-	display: block;
 }
 
 .red {
 	color:#b52f2d;
 }
 
-.clear {
-	clear:both;
-}
-
 progress {
 	height:9px;
+	border: 1px inset #747677;
+	border-radius: 50px;
+	box-shadow: 1px 1px 10px #9c9d9e;
 }
 
 aside#peepLinker div {
@@ -296,70 +287,30 @@ aside#peepLinker div {
 	margin:0 auto;
 	padding:40px 30px 0 30px;
 }
-aside#peepLinker div h5, .port aside#peepLinker div ul {
+aside#peepLinker div h5, .port aside#peepLinker div ul, aside#peepLinker div ul li {
 	display: inline;
-	padding-right: 15px;
-}
-
-aside#peepLinker div ul {
 	list-style-type:none;
-}
-
-aside#peepLinker div ul li {
-	display: inline-block;
-}
-
-section.peep header hgroup h1 {
-  color: #000000;
-  font-size: 24px;
-  font-weight: bolder;
-}
-
-section.peep header hgroup h2 {
-  color: #D0403E;
-  font-size: 18px;
-  font-weight: bold;
 }
 
 section.peep {
 	padding-top:50px;
 }
 
-section.peep hgroup {
-	max-width:800px;
-	width: 100%;
-	padding: 0 30px;
-	margin:0 auto;
-}
-
-.port section.peep article {
-	clear:both;
-	margin-bottom:20px;
-}
-
-section.peep article .desc h3 {
-	font-weight:bold;
-	font-size:18px;
-	margin-bottom:5px;
-}
-
-section.peep article .desc {
+section.peep .desc {
 	width: 28.125%; /* 225px / 800px */
 	float:left;
 }
 
-section.peep article .desc a {
-	display: inline-block;
+section.peep .desc a {
 	font-weight: bold;
-	margin-top: 5px;
 }
 
-section.peep article .imgs {
+.imgs {
 	width: 63.75%; /* 510px / 800px */
 	float:right;
 }
 
-section.peep article .imgs img {
+.imgs img {
 	transition:all 0.3s ease-in-out;
 	display: inline-block;
 	margin-bottom:30px;
@@ -371,7 +322,7 @@ section.peep article .imgs img {
 	border-radius: 0;
 	box-shadow:0 0 0 #5f5f5f;
 }
-section.peep article .imgs img:hover {
+.imgs img:hover {
 	border-radius:10px;
 	box-shadow:0 0 15px #5f5f5f;
 	outline-color: transparent;
@@ -379,32 +330,23 @@ section.peep article .imgs img:hover {
 section.peep figure {
 	float: left;
 	width: 28.75%; /* 230px / 800px */
-	margin: 0 !important;
 }
 
-section.peep .homie figure footer {
+.homie figure footer {
 	padding: 10px 0;
 }
-section.peep .homie figure footer a img {
+.homie figure footer a img {
 	width: 13.913043478%; /* 32px / 230px */
 }
-section.peep .homie figure footer a:nth-child(2n+2) {
+.homie figure footer a:nth-child(2n+2) {
 	margin: 0 5%;
 }
-section.peep .homie div {
+.homie div {
 	width: 65%; /* 520px / 800px */ 
 	padding-left: 6.25% ; /* 50px / 800px */
 	float: right;
 }
-section.peep .homie h3 {
-	font-size: 18px;
-	font-weight: bold;
-	color: #000;
-}
-section.peep .homie p {
-	padding-bottom: 10px;
-}
-section.peep .homie figure .dude {
+.homie figure .dude {
 	width: 86.956521739%; /* 200px / 230px */
 	padding: 5.652173913%; /* 13px / 230px */
 	background: url(../images/mid-bg-repeat.jpg);  

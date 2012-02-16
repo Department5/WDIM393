@@ -45,41 +45,15 @@ section.standOut article {
   font-size: 17px;
   font-weight: bold;
   line-height: 17px;
-  margin: 0 auto;
-  padding: 0;
-  width: 85%;
 }
 
-section#calls2act {
-  height:auto;
-  min-height: 215px;
-  margin: 0 auto 30px;
-  text-align: center;
+#actions li, #actions li img  {
   width: 100%;
-  display: block;
+  float: none;
 }
 
-section#calls2act ul#actions li {
-  display: block;
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
-}
-
-section#calls2act ul#actions li:nth-child(2) {
-  margin: 0;
-}
-/*section#calls2act ul#actions li:hover:after {
-	content:"" !important;
-}*/
-
-section#recentPost {
-  margin: 0 auto;
-  width: 80%;
-}
-
-section#recentPost article {
-  padding-left: 0;
+#actions li:nth-child(2), #actions li:first-child, #actions li {
+    margin: 0 auto;
 }
 
 aside#peepLinker div {
