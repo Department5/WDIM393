@@ -3,19 +3,13 @@ h1, h2, h5 {
 	line-height: normal;
 }
 
-header#header {
+header#header nav{
 	background: url("../images/logo-small.png"), url("../images/nav-back.jpg");
   background-position: 15px 7px, top left;
   background-repeat: no-repeat, repeat-x;
 }
-header#header menu {
-	width:80%;
-	text-align:left;
-	margin-left:20%;
-}
 
 header#header ul {
-	width:100%;
 	padding-top: 15px;
 }
 
@@ -25,8 +19,6 @@ header#header ul li {
 
 figure#logo {
 	width: 90%;
-	height:auto;
-	margin:0 auto 10px;
 }
 
 figure#logo #d5 {
@@ -36,10 +28,9 @@ figure#logo #d5 {
 figure#logo img#dpt5 {
 	width:100%;
 	height:auto;
-	margin-top: 45px;
 	z-index: -1;
 	margin-left:1% !important;
-	padding-bottom: 0;
+	padding: 0 0 10px 0;
 }
 
 section.standOut article {
@@ -99,9 +90,11 @@ section.peep .homie div {
 	width: 100%;
 	padding-left: 0;
 }
+
 section.peep .homie figure footer a img {
 	width: 25%;
 }
+
 .homie figure footer a:nth-child(2n+2), .homie figure footer a {
 	margin: 2%;
 	display: block;
