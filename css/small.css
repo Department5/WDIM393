@@ -1,11 +1,13 @@
-/* @override http://jakelovedev.com/wdim393/d5/css/small.css */
+h1, h2, h5 {
+	font-size: 18px;
+	line-height: normal;
+}
 
 header#header {
 	background: url("../images/logo-small.png"), url("../images/nav-back.jpg");
   background-position: 15px 7px, top left;
   background-repeat: no-repeat, repeat-x;
 }
-
 header#header menu {
 	width:80%;
 	text-align:left;
@@ -47,7 +49,7 @@ section.standOut article {
   line-height: 17px;
 }
 
-#actions li, #actions li img  {
+#actions li {
   width: 100%;
   float: none;
 }
@@ -100,6 +102,7 @@ section.peep .homie div {
 section.peep .homie figure footer a img {
 	width: 25%;
 }
-section.peep .homie figure footer a:nth-child(2n+2) {
-	margin: 0 2%;
+.homie figure footer a:nth-child(2n+2), .homie figure footer a {
+	margin: 2%;
+	display: block;
 }
