@@ -203,23 +203,23 @@ figure#logo img#dpt5 {
 }
 
 #actions li:first-child {
-	margin-left: 1.9%; /* lining up with d5 logo */
+	margin-left: 2.1%; /* lining up with d5 logo */
 }
 
 	/*
 	30.813953488% * 3 = 92.441860464%
-	1.9% * 2 = 3.8% to account for even space on right of li's
-	92.441860464% + 3.8% = 96.241860464%
-	100% - 96.241860464% = 3.758139536%
-	3.758139536% / 2 = 1.879069768% margins for middle li
+	2.1% * 2 = 4.2% to account for even space on right of li's
+	92.441860464% + 4.2% = 96.641860464%
+	100% - 96.641860464% = 3.358139536%
+	3.358139536% / 2 = 1.679069768% margins for middle li
 	*/
 
 #actions li:nth-child(2) {
-	margin: 0 1.879069768%; 
+	margin: 0 1.679069768%; 
 }
 
 #actions li.ieFix {
-	margin: 0 1.879069768%; 
+	margin: 0 1.679069768%; 
 }
 
 #actions li img, #actions li a {
