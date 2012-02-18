@@ -1,0 +1,77 @@
+<!doctype html>  
+<html class="video" lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <title>HTML5 Video Testing</title>  
+  <meta name="description" content="Put content here"> 
+  <meta name="keywords" content="Put keywords here">  
+  <meta name="author" content="William Dingwall">  
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet" type="text/css"> 
+    <style>
+    
+    	.video body, html.video {
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    		overflow: hidden;
+    		background-color: #000;
+    	}
+    	.video header {
+    		padding: 5.5% 0;
+    		text-align: center;
+    		z-index: 5000;
+    		color: #fff;
+    	}
+    	.video header li, .video h1, .video ul {
+    		padding: 0;
+    		margin: 0;
+    		display: inline;
+    		list-style: none;
+    	}
+    	.video header a {
+    		text-decoration: none;
+    		color: #fff;
+    		top: 0;
+    	}
+    	.video #testVid4 {
+    		margin: 0 auto;
+    	}
+    </style> 
+  <script src="js/jquery-1.7.1.min.js"></script>
+  <!--[if lt IE 9]>  
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+  <![endif]-->
+  	<script src="http://vjs.zencdn.net/c/video.js"></script>
+</head>  
+<body>
+
+<header>
+	<h1>Dude, get a real browser:</h1>
+	<ul>
+		<li><a href="#">Chrome</a></li>
+		<li><a href="#">Firefox</a></li>
+		<li><a href="#">Safari</a></li>
+	</ul>
+</header>
+
+<article>
+	<video id="testVid4" class="video-js vjs-default-skin" controls autoplay loop width="1000" height="600" preload="auto" poster="http://jakelovedev.com/wdim393/d5/video/4.jpg" data-setup='{}'>
+		<source src="http://jakelovedev.com/wdim393/d5/video/4.mp4" type="video/mp4" />
+		<source src="http://jakelovedev.com/wdim393/d5/video/4.webm" type="video/webm" />
+		<source src="http://jakelovedev.com/wdim393/d5/video/4.ogv" type="video/ogg" />
+		
+	<!--Fallbacks
+		<object type="video/application/x-shockwave-flash" data="video/4.swf">
+			<param name="movie" value="video/4.swf" />
+			<param name="allowFullScreen" value="true" />
+			<param name="flashVars" value="autoplay=true&amp;controls=true&amp;loop=true&amp;src=1.mp4" />
+ 			 <embed src="video/4.swf" flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=video/4.jpg&amp;src=video/4.mp4"	allowFullScreen="true" wmode="transparent" type="video/application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+		<img alt="4" src="video/4.jpg" title="Video playback is not supported by your browser" />
+		</object>-->
+		
+</video>
+</article>
+ 
+</body>  
+</html>  
