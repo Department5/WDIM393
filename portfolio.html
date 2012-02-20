@@ -11,10 +11,6 @@
 <script>
 Modernizr.load([
   {
-    test: Modernizr.video,
-    nope: 'js/video-redirect.js'
-  }, 
-  {
     test: Modernizr.boxshadow,
     nope: ['js/PIE.js', 'js/init-PIE.js']
   }
@@ -50,7 +46,18 @@ $(function(){
   <script type="text/javascript" src="js/selectivizr.js"></script>
 <![endif]--> 
 </head>
-<body class="port">
+<!--[if IE 9]>
+<body class="ie9 port">
+<![endif]--> 
+<!--[if IE 8]>
+<body class="ie8 ltie9 port">
+<![endif]--> 
+<!--[if IE 7]>
+<body class="ie7 ltie9 port">
+<![endif]--> 
+<!--[if !IE]>
+<body>
+<![endif]--> 
   <header id="header">
     <nav>
 	  <ul>
