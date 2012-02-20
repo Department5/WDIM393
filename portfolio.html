@@ -9,6 +9,18 @@
 <script src="js/jquery-1.7.1.min.js"></script>
 <script src="js/modernizr.custom.js"></script>
 <script>
+Modernizr.load([
+  {
+    test: Modernizr.video,
+    nope: 'js/video-redirect.js'
+  }, 
+  {
+    test: Modernizr.boxshadow,
+    nope: ['js/PIE.js', 'js/init-PIE.js']
+  }
+]);
+</script>
+<script>
 $(function(){
   $('#dpt5').fadeIn(2000);
   $logo = $('#d5');
