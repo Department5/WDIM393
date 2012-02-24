@@ -14,27 +14,6 @@ body, html {
 	width: 100%;
 }
 
-/*
-#ievid {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index:4000;
-	color: #fff;
-	font-size: 30px;
-}
-
-video {
-	height: 100%;
-	width: 100%;
-	min-height: 100%;
-	min-width: 100%;
-	z-index: 3000;
-	position: fixed;
-	background-color: #000;
-} 
-*/
-
 body {
 	font-size: 14px;
 	background: #e6e6e6 url('../images/groovepaper.png') repeat left top; /* From subtlepatterns.com */
@@ -365,4 +344,17 @@ section.peep figure {
 	background: url(../images/mid-bg-repeat.jpg);  
 	outline: 1px solid #b5b5b5;
 	border: 1px solid #fafafa;
+}
+
+#deniedLinker li, #deniedLinker h1, #deniedLinker ul{
+	display: inline;
+}
+
+#deniedLinker li:after {
+	content: '|';
+	padding: 0 5px 0 10px;
+}
+
+#deniedLinker li:last-child:after {
+	content: '';
 }
