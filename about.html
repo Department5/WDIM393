@@ -7,6 +7,7 @@
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
 <script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/mediaelement.js"></script>
 <script src="js/modernizr.custom.js"></script>
 <script>
 Modernizr.load([
@@ -18,6 +19,17 @@ Modernizr.load([
 </script>
 <script>
 $(function(){
+
+  $('.peepVid').hide();
+   
+  $('.show-vid').click(function() {
+  	$('.peepVid').fadeIn(1750);
+  });
+  
+  $('.hide-vid').click(function() {
+  	$('.peepVid').fadeOut(1750);
+  });
+
   $('#dpt5').fadeIn(2000);
   $logo = $('#d5');
   var scroll = $(window).scrollTop();
@@ -100,7 +112,7 @@ $(function(){
     </header>
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" class="dude"/>
+        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" class="dude show-vid"/>
         
      <footer>
       <a href="https://www.facebook.com/rockymountainhigh1943" target="_blank"><img src="images/icons/facebook_32.png" alt="facebook"></a>
@@ -123,6 +135,30 @@ $(function(){
       <p>Wrote a JavaScript to stop time.</p>
     </div>
     </article>
+    
+    <!-- Video Section - Called When the Profile Pic is Clicked -->
+	    <article class="peepVid">
+	    <span class="hide-vid">X</span>
+	    	<video class="d5vid" id="player1" class="video-js vjs-default-skin" poster="video/jake.jpg" >
+	    		<source src="video/jake.mp4" type="video/mp4" />
+	    		<source src="video/jake.webm" type="video/webm" />
+	    		<source src="video/jake.ogv" type="video/ogg" />
+	    		
+	    	<!--Fallbacks
+	    		<object type="video/application/x-shockwave-flash" data="video/4.swf">
+	    			<param name="movie" value="video/4.swf" />
+	    			<param name="allowFullScreen" value="true" />
+	    			<param name="flashVars" value="autoplay=true&amp;controls=true&amp;loop=true&amp;src=1.mp4" />
+	     			 <embed src="video/4.swf" flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=video/4.jpg&amp;src=video/4.mp4"	allowFullScreen="true" wmode="transparent" type="video/application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+	    		<img alt="4" src="video/4.jpg" title="Video playback is not supported by your browser" />
+	    		</object>-->
+	    		
+	    </video>
+	    <footer>
+	    	<button class="pp">play</button>
+	    	<p class="vid-data"><span class="time">00:00</span>|<span class="duration"></span></p>
+	    </footer>
+	    </article>
 
   </section>
   
@@ -240,8 +276,39 @@ $(function(){
 
   <footer id="footer">
   &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi | Progress: 
-  <progress id="progress" max="10" value="5">
+  <progress id="progress" max="10" value="7">
   </progress>
   </footer>
+  
+   <script>
+   
+   	 MediaElement('player1', {success: function(video) {
+   	 	
+   	 	video.load();
+   	 	
+   	 	$('.pp').click(function() {
+   	 		if (video.paused || video.ended) {
+   	 			this.innerHTML='pause';
+   	 			video.play();
+   	 		}
+   	 		else {
+   	 			this.innerHTML='play';
+   	 			video.pause();
+   	 		}
+   	 	});
+  
+  		video.addEventListener('timeupdate', function() {
+  			$('.time').text(Math.round(video.currentTime*100)/100);
+  		}, false);
+  		
+  		video.addEventListener('loadedmetadata', function() {
+  			$('.duration').text(Math.round(video.duration*100)/100);
+  		}, false);
+  
+   	 
+   	 }});
+   
+   </script>
+  
 </body>
 </html>

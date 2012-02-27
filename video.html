@@ -24,6 +24,17 @@ Modernizr.load([
 </script>-->
 <script>
 $(function(){
+ 
+$('.peepVid').hide();
+ 
+$('.show-vid').click(function() {
+	$('.peepVid').fadeIn(1750);
+});
+
+$('.hide-vid').click(function() {
+	$('.peepVid').fadeOut(1750);
+});
+
  $('#dpt5').fadeIn(2000);
  $logo = $('#d5');
  var scroll = $(window).scrollTop();
@@ -51,13 +62,10 @@ $(function(){
 <!--[if (gte IE 6)&(lte IE 8)]>
  <script type="text/javascript" src="js/selectivizr.js"></script>
 <![endif]-->
-
-   <link href="video-js.css" rel="stylesheet" type="text/css">
  <script src="js/jquery-1.7.1.min.js"></script>
  <!--[if lt IE 9]>  
  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
  <![endif]-->
-     <script src="video.js"></script>
 
 </head>
 <!--[if IE 9]>
@@ -86,9 +94,16 @@ $(function(){
       <img id="dpt5" src="images/DEPT5.png" alt="Department 5 - The League of Extraordinary Developers" />
     </figure>
  </header>
- <section class="standOut">
+ <section class="standOut peep">
+ 
+ <p class="show-vid">Watch Video</p>
 
 <article class="peepVid">
+<span class="hide-vid">X</span>
+	<header>
+		<h1>Jake Love</h1>
+		<h2>(Doctor Love)</h2>
+	</header>
 	<video class="d5vid" id="player1" class="video-js vjs-default-skin" poster="video/jake.jpg" >
 		<source src="video/jake.mp4" type="video/mp4" />
 		<source src="video/jake.webm" type="video/webm" />
@@ -104,15 +119,11 @@ $(function(){
 		</object>-->
 		
 </video>
-<button class="pp">play/pause</button>
-<p class="vid-data"><span class="time">0</span> | <span class="duration"></span></p>
-
+<footer>
+	<button class="pp">play</button>
+	<p class="vid-data"><span class="time">00:00</span>|<span class="duration"></span></p>
+</footer>
 </article>
-
- </section>
- <section id="recentPost">
-
- </section>
 
  <footer id="footer">
  &copy; D5 Development 2012 | Every Right Reserved | Your Mom Says Hi | Progress:
@@ -122,24 +133,29 @@ $(function(){
  
  <script>
  
- 	 MediaElement('player1', {success: function(me) {
+ 	 MediaElement('player1', {success: function(video) {
  	 	
- 	 	me.load();
+ 	 	video.load();
  	 	
  	 	$('.pp').click(function() {
- 	 		if (me.paused)
- 	 			me.play();
- 	 		else
- 	 			me.pause();
+ 	 		if (video.paused || video.ended) {
+ 	 			this.innerHTML='pause';
+ 	 			video.play();
+ 	 		}
+ 	 		else {
+ 	 			this.innerHTML='play';
+ 	 			video.pause();
+ 	 		}
  	 	});
 
-		me.addEventListener('timeupdate', function() {
-			$('.time').text(me.currentTime);
+		video.addEventListener('timeupdate', function() {
+			$('.time').text(Math.round(video.currentTime*100)/100);
 		}, false);
 		
-		me.addEventListener('loadedmetadata', function() {
-			$('.duration').text(me.duration);
+		video.addEventListener('loadedmetadata', function() {
+			$('.duration').text(Math.round(video.duration*100)/100);
 		}, false);
+
  	 
  	 }});
  
