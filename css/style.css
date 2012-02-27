@@ -417,3 +417,8 @@ section.peep figure {
 #deniedLinker li:last-child:after {
 	content: '';
 }
+
+section#recentPost {
+	margin: 0 auto 50px auto;
+}
+
