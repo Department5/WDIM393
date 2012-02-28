@@ -175,7 +175,7 @@ $(function(){
     </header>
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude show-vid"/>
+        <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude"/>
    	<footer>
       <a href="https://www.facebook.com/phil.riehl"><img src="images/icons/facebook_32.png" alt="facebook"></a>
       <a href="https://twitter.com/#!/philriehl"><img src="images/icons/twitter_32.png" alt="twitter"></a>
@@ -328,26 +328,6 @@ $(function(){
 		video.addEventListener('loadedmetadata', function() {
 			$('.duration').text(Math.round(video.duration*100)/100);
 		}, false);
- 	 }});
- 	 
- 	 MediaElement('vid2', {success: function(video) {
- 	 	video.load();
- 	 	$('.pp').click(function() {
- 	 		if (video.paused || video.ended) {
- 	 			this.innerHTML='pause';
- 	 			video.play();
- 	 		}
- 	 		else {
- 	 			this.innerHTML='play';
- 	 			video.pause();
- 	 		}
- 	 	});
- 	 	video.addEventListener('timeupdate', function() {
- 	 		$('.time').text(Math.round(video.currentTime*100)/100);
- 	 	}, false);
- 	 	video.addEventListener('loadedmetadata', function() {
- 	 		$('.duration').text(Math.round(video.duration*100)/100);
- 	 	}, false);
  	 }});
  
  </script>
