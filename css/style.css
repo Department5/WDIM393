@@ -46,10 +46,6 @@ video {
 	padding: 0;
 }
 
-video img {
-	width: 100%;
-}
-
 .peepVid {
 	z-index: 500;
 	position: absolute;

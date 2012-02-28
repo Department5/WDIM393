@@ -22,15 +22,21 @@ Modernizr.load([
 <script>
 $(function(){
 
- $('.peepVid').hide();
+//Handles the video interviews Fade in and Out on the about page
+
+  $('.peepVid').hide();
    
   $('.show-vid').click(function() {
-  	$('.peepVid').fadeIn(1750);
+  	var title = this.getAttribute('title');
+  	$('.peepVid[title="'+title+'"]').fadeIn(1500);
   });
   
   $('.hide-vid').click(function() {
-  	$('.peepVid').fadeOut(1750);
+    var title = this.parentNode.getAttribute('title');
+  	$('.peepVid[title="'+title+'"]').fadeOut(1500);
   });
+
+//Handles the Logo Fade in and Out
 
   $('#dpt5').fadeIn(2000);
   $logo = $('#d5');
@@ -115,7 +121,7 @@ $(function(){
     </header>
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" class="dude show-vid"/>
+        <img src="images/jake.jpg" height="360" width="200" alt="Jake Love - Doctor" class="dude show-vid" title="jake"/>
         
      <footer>
       <a href="https://www.facebook.com/rockymountainhigh1943" target="_blank"><img src="images/icons/facebook_32.png" alt="facebook"></a>
@@ -140,7 +146,7 @@ $(function(){
     </article>
     
     <!-- Video Section - Called When the Profile Pic is Clicked -->
-	    <article class="peepVid">
+	    <article class="peepVid" title="jake">
 	    <span class="hide-vid">X</span>
 		<video id="vid1" preload="auto" poster="video/jake.jpg">
 			<source src="video/jake.mp4" type="video/mp4" />
@@ -175,7 +181,7 @@ $(function(){
     </header>
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude"/>
+        <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude show-vid" title="phil"/>
    	<footer>
       <a href="https://www.facebook.com/phil.riehl"><img src="images/icons/facebook_32.png" alt="facebook"></a>
       <a href="https://twitter.com/#!/philriehl"><img src="images/icons/twitter_32.png" alt="twitter"></a>
@@ -204,7 +210,7 @@ $(function(){
 </article>
 
 	<!-- Video Section - Called When the Profile Pic is Clicked -->
-	    <article class="peepVid">
+	    <article class="peepVid" title="phil">
 		    <span class="hide-vid">X</span>
 			<video id="vid2" preload="auto" poster="video/phil.jpg">
 				<source src="video/phil.mp4" type="video/mp4" />
@@ -310,25 +316,32 @@ $(function(){
   
  <script>
  
- 	 MediaElement('vid1', {success: function(video) {
- 	 	video.load();
- 	 	$('.pp').click(function() {
- 	 		if (video.paused || video.ended) {
- 	 			this.innerHTML='pause';
- 	 			video.play();
- 	 		}
- 	 		else {
- 	 			this.innerHTML='play';
- 	 			video.pause();
- 	 		}
- 	 	});
-		video.addEventListener('timeupdate', function() {
-			$('.time').text(Math.round(video.currentTime*100)/100);
-		}, false);
-		video.addEventListener('loadedmetadata', function() {
-			$('.duration').text(Math.round(video.duration*100)/100);
-		}, false);
- 	 }});
+ 	$('video').each(function() {
+ 		var vids = new Array($(this).attr('id'));
+ 
+	 	 new MediaElement(vids[0], {success: function(video) {
+	 	 	video.load();
+	 	 	$('.pp').click(function() {
+	 	 		if (video.paused || video.ended) {
+	 	 			this.innerHTML='pause';
+	 	 			video.play();
+	 	 		}
+	 	 		else {
+	 	 			this.innerHTML='play';
+	 	 			video.pause();
+	 	 		}
+	 	 	});
+			video.addEventListener('timeupdate', function() {
+				$('.time').text(Math.round(video.currentTime*100)/100);
+			}, false);
+			video.addEventListener('loadedmetadata', function() {
+				$('.duration').text(Math.round(video.duration*100)/100);
+			}, false);
+			
+			console.log(vids[0]);
+	 	 }});
+ 	 
+ 	 });
  
  </script>
   
