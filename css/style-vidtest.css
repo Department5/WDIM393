@@ -51,11 +51,8 @@ video img {
 }
 
 .peepVid {
-	z-index: 500;
-	position: absolute;
-	top: 175px;
-	left: 50%;
-	margin-left: -401px;
+	position: relative;
+	margin: 0 auto;
 	width: 100%;
 	max-width: 650px;
 	padding: 25px 75px;
@@ -80,6 +77,10 @@ video img {
 	border-bottom-left-radius:10px;
 	box-shadow:2px 2px 5px #959595;
 	border-top: 1px solid #dddddd;
+}
+
+.show-vid {
+	text-align: center;
 }
 
 .hide-vid {
@@ -335,6 +336,7 @@ figure#logo img#dpt5 {
 }
 
 footer#footer {
+	z-index: 1000;
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	color: #717171;
 	height: 42px;
