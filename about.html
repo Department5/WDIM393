@@ -4,11 +4,13 @@
 <meta charset="utf-8" />
 <title>[D5] Web Development - About The Peeps</title>
 <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700|Passion+One' rel='stylesheet' type='text/css'>
+<link href="css/video-js.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
 <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/small.css' />
 <script src="js/jquery-1.7.1.min.js"></script>
-<script src="js/mediaelement.js"></script>
 <script src="js/modernizr.custom.js"></script>
+<script src="js/_video.js"></script>
+
 <script>
 Modernizr.load([
   {
@@ -20,7 +22,7 @@ Modernizr.load([
 <script>
 $(function(){
 
-  $('.peepVid').hide();
+ $('.peepVid').hide();
    
   $('.show-vid').click(function() {
   	$('.peepVid').fadeIn(1750);
@@ -57,6 +59,7 @@ $(function(){
 <!--[if (gte IE 6)&(lte IE 8)]>
   <script type="text/javascript" src="js/selectivizr.js"></script>
 <![endif]--> 
+
 </head>
 <!--[if IE 9]>
 <body class="ie9">
@@ -139,25 +142,21 @@ $(function(){
     <!-- Video Section - Called When the Profile Pic is Clicked -->
 	    <article class="peepVid">
 	    <span class="hide-vid">X</span>
-	    	<video class="d5vid" id="player1" class="video-js vjs-default-skin" poster="video/jake.jpg" >
-	    		<source src="video/jake.mp4" type="video/mp4" />
-	    		<source src="video/jake.webm" type="video/webm" />
-	    		<source src="video/jake.ogv" type="video/ogg" />
-	    		
-	    	<!--Fallbacks
-	    		<object type="video/application/x-shockwave-flash" data="video/4.swf">
-	    			<param name="movie" value="video/4.swf" />
-	    			<param name="allowFullScreen" value="true" />
-	    			<param name="flashVars" value="autoplay=true&amp;controls=true&amp;loop=true&amp;src=1.mp4" />
-	     			 <embed src="video/4.swf" flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=video/4.jpg&amp;src=video/4.mp4"	allowFullScreen="true" wmode="transparent" type="video/application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
-	    		<img alt="4" src="video/4.jpg" title="Video playback is not supported by your browser" />
-	    		</object>-->
-	    		
-	    </video>
-	    <footer>
-	    	<button class="pp">play</button>
-	    	<p class="vid-data"><span class="time">00:00</span>|<span class="duration"></span></p>
-	    </footer>
+		<video id="testVid4" class="video-js vjs-default-skin" controls width="650" height="500" preload="auto" poster="http://jakelovedev.com/wdim393/d5/video/jake.jpg" data-setup='{}'>
+			<source src="http://jakelovedev.com/wdim393/d5/video/jake.mp4" type="video/mp4" />
+			<source src="http://jakelovedev.com/wdim393/d5/video/jake.webm" type="video/webm" />
+			<source src="http://jakelovedev.com/wdim393/d5/video/jake.ogv" type="video/ogg" />
+			
+		<!--Fallbacks
+			<object type="video/application/x-shockwave-flash" data="video/4.swf">
+				<param name="movie" value="video/4.swf" />
+				<param name="allowFullScreen" value="true" />
+				<param name="flashVars" value="autoplay=true&amp;controls=true&amp;loop=true&amp;src=1.mp4" />
+	 			 <embed src="video/4.swf" flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=video/4.jpg&amp;src=video/4.mp4"	allowFullScreen="true" wmode="transparent" type="video/application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+			<img alt="4" src="video/4.jpg" title="Video playback is not supported by your browser" />
+			</object>-->
+			
+	</video>
 	    </article>
 
   </section>
@@ -280,35 +279,7 @@ $(function(){
   </progress>
   </footer>
   
-   <script>
-   
-   	 MediaElement('player1', {success: function(video) {
-   	 	
-   	 	video.load();
-   	 	
-   	 	$('.pp').click(function() {
-   	 		if (video.paused || video.ended) {
-   	 			this.innerHTML='pause';
-   	 			video.play();
-   	 		}
-   	 		else {
-   	 			this.innerHTML='play';
-   	 			video.pause();
-   	 		}
-   	 	});
-  
-  		video.addEventListener('timeupdate', function() {
-  			$('.time').text(Math.round(video.currentTime*100)/100);
-  		}, false);
-  		
-  		video.addEventListener('loadedmetadata', function() {
-  			$('.duration').text(Math.round(video.duration*100)/100);
-  		}, false);
-  
-   	 
-   	 }});
-   
-   </script>
+
   
 </body>
 </html>
