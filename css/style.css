@@ -32,6 +32,10 @@ a {
 	text-decoration:none;
 }
 
+a img {
+	border: none;
+}
+
 a:hover {
 	color:#461c1b;
 }
@@ -66,13 +70,12 @@ video {
 .peepVid:after, .peepVid .hide-vid {
 	color: #B52F2D;
 	font-size: 13px;
-	background-color: #f9f9f9;
 	box-shadow:2px 2px 5px #959595;
 }
 
 .peepVid:after {
 	content: 'Dept.5 Employee Interview';
-	background-image: url('../images/top-grad.png') repeat-x;
+	background: #f6f4f4 url('../images/top-grad.png') repeat-x;
 	position: absolute;
 	bottom: -31px;
 	right: 30px;
@@ -90,6 +93,7 @@ video {
 	right: -10px;
 	border-radius: 50px;
 	border: 2px solid #dddddd;
+	background-color: #f9f9f9;
 	border-top-color: #fafafa;
 	border-left-color: #fafafa;
 	transition: all 0.4s ease-in-out;
@@ -435,7 +439,6 @@ section.peep figure {
 
 .homie figure .dude {
 	transition:all 0.4s ease-in-out;
-	cursor: pointer;
 	width: 86.956521739%; /* 200px / 230px */
 	padding: 5.652173913%; /* 13px / 230px */
 	background: url(../images/mid-bg-repeat.jpg);  
