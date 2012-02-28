@@ -63,36 +63,42 @@ video {
 	border-left-color: #fafafa;
 }
 
+.peepVid:after, .peepVid .hide-vid {
+	color: #B52F2D;
+	font-size: 13px;
+	background-color: #f9f9f9;
+	box-shadow:2px 2px 5px #959595;
+}
+
 .peepVid:after {
-	content: 'Dept. Five Employee Interview';
-	background: #f9f9f9 url('../images/top-grad.png') repeat-x;
+	content: 'Dept.5 Employee Interview';
+	background-image: url('../images/top-grad.png') repeat-x;
 	position: absolute;
-	bottom: -42px;
+	bottom: -31px;
 	right: 30px;
 	padding: 5px 8px 8px 8px;
-	font-size: 13px;
-	color: #B52F2D;
 	border-bottom-right-radius:10px;
 	border-bottom-left-radius:10px;
-	box-shadow:2px 2px 5px #959595;
 	border-top: 1px solid #dddddd;
 }
 
-.hide-vid {
+.peepVid .hide-vid {
 	cursor: pointer;
-	padding: 0 8px;
-	background-color: #3e3e3e;
-	color: #fff;
-	font-weight: 900;
-	font-size: 14px;
+	padding: 2px 6px;
 	position: absolute;
 	top: -10px;
 	right: -10px;
 	border-radius: 50px;
-	box-shadow:2px 2px 5px #959595;
-	border: 1px solid #dddddd;
+	border: 2px solid #dddddd;
 	border-top-color: #fafafa;
-	border-left-color: #fafafa;	
+	border-left-color: #fafafa;
+	transition: all 0.4s ease-in-out;
+}
+
+.peepVid .hide-vid:hover {
+	background-color: #000;
+	color: #fff;
+	font-weight: 900;
 }
 
 .peepVid h1, .peepVid h2 {
@@ -162,7 +168,7 @@ p {
 	padding-bottom: 10px;
 }
 
-.cleared:after, .peep article:after {
+.cleared:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -428,7 +434,7 @@ section.peep figure {
 }
 
 .homie figure .dude {
-	transition:all 0.3s ease-in-out;
+	transition:all 0.4s ease-in-out;
 	cursor: pointer;
 	width: 86.956521739%; /* 200px / 230px */
 	padding: 5.652173913%; /* 13px / 230px */
