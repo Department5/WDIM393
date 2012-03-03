@@ -278,6 +278,14 @@ figure#logo img#dpt5 {
 	outline: 1px solid #dddddd;
 }
 
+/* just playing around with intro title 
+#header+.standOut {
+	font-family: 'Passion One', cursive;
+	font-weight: 900;
+	color: #898989;
+}
+*/
+
 #actions {
 	list-style-type:none;
 	max-width: 860px;  /* context for the #actions ul */
@@ -419,7 +427,28 @@ section.peep figure {
 	width: 28.75%; /* 230px / 800px */
 }
 
+section.peep figure footer:after {
+	content: 'Watch Interview';
+	font-weight: 900;
+	font-size: 20px;
+	display: block;
+	color: #000;
+	position: absolute;
+	top: -63px;
+	left: 14px;
+	background-color: #dddddd;
+	width: 86.956521739%;
+	text-align: center;
+	padding: 10px 0;
+	opacity: .1;
+}
+
+section.peep figure:hover footer:after {
+	opacity: .5;
+}
+
 .homie figure footer {
+	position: relative;
 	padding: 10px 0;
 }
 

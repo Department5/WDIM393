@@ -22,18 +22,13 @@ Modernizr.load([
 <script>
 $(function(){
 
-//Handles the video interviews Fade in and Out on the about page
+//hides video on load and shows video when profile pic is clicked
 
   $('.peepVid').hide();
    
   $('.show-vid').click(function() {
   	var title = this.getAttribute('title');
   	$('.peepVid[title="'+title+'"]').fadeIn(1500);
-  });
-  
-  $('.hide-vid').click(function() {
-    var title = this.parentNode.getAttribute('title');
-  	$('.peepVid[title="'+title+'"]').fadeOut(1500);
   });
 
 //Handles the Logo Fade in and Out
@@ -146,8 +141,7 @@ $(function(){
     </article>
     
     <!-- Video Section - Called When the Profile Pic is Clicked -->
-	    <article class="peepVid" title="jake">
-	    <span class="hide-vid">X</span>
+	<article class="peepVid" title="jake">
 		<video id="vid1" preload="auto" poster="video/jake.jpg">
 			<source src="video/jake.mp4" type="video/mp4" />
 			<source src="video/jake.webm" type="video/webm" />
@@ -162,11 +156,7 @@ $(function(){
 			<img alt="4" src="video/4.jpg" title="Video playback is not supported by your browser" />
 			</object>-->
 			
-	</video>
-		<menu>
-			<button class="pp">play</button>
-			<p class="vid-data"><span class="time">00:00</span>|<span class="duration"></span></p>
-		</menu>
+		</video>
 	</article>
 
   </section>
@@ -181,7 +171,7 @@ $(function(){
     </header>
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude show-vid" title="phil"/>
+        <a href="#phil"><img src="images/phil.jpg" height="360" width="200" alt="phil" class="dude show-vid" title="phil"/></a>
    	<footer>
       <a href="https://www.facebook.com/phil.riehl"><img src="images/icons/facebook_32.png" alt="facebook"></a>
       <a href="https://twitter.com/#!/philriehl"><img src="images/icons/twitter_32.png" alt="twitter"></a>
@@ -211,7 +201,6 @@ $(function(){
 
 	<!-- Video Section - Called When the Profile Pic is Clicked -->
 	    <article class="peepVid" title="phil">
-		    <span class="hide-vid">X</span>
 			<video id="vid2" preload="auto" poster="video/phil.jpg">
 				<source src="video/phil.mp4" type="video/mp4" />
 				<source src="video/phil.webm" type="video/webm" />
@@ -227,10 +216,6 @@ $(function(){
 				</object>-->
 				
 			</video>
-			<menu>
-				<button class="pp">play</button>
-				<p class="vid-data"><span class="time">00:00</span>|<span class="duration"></span></p>
-			</menu>
 		</article>
 
 </section>
@@ -249,7 +234,7 @@ $(function(){
     
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" class="dude"/>
+        <a href="#bill"><img src="images/bill2.jpg" alt="Oil Painted Self Portrait of Bill" class="dude show-vid" title="bill"/></a>
     <footer>
       <a href="http://www.facebook.com/williamdingwall"><img src="images/icons/facebook_32.png" alt="facebook"></a>
       <a href="https://twitter.com/#!/williamdingwall"><img src="images/icons/twitter_32.png" alt="twitter"></a>
@@ -271,6 +256,25 @@ $(function(){
       <p>I am that one guy&hellip;</p>
     </div>
     </article>
+    
+    <!-- Video Section - Called When the Profile Pic is Clicked -->
+        <article class="peepVid" title="bill">
+    		<video id="vid3" preload="auto" poster="video/bill.jpg">
+    			<source src="video/bill.mp4" type="video/mp4" />
+    			<source src="video/bill.webm" type="video/webm" />
+    			<source src="video/bill.ogv" type="video/ogg" />
+    			
+    		<!--Fallbacks
+    			<object type="video/application/x-shockwave-flash" data="video/4.swf">
+    				<param name="movie" value="video/4.swf" />
+    				<param name="allowFullScreen" value="true" />
+    				<param name="flashVars" value="autoplay=true&amp;controls=true&amp;loop=true&amp;src=1.mp4" />
+    	 			 <embed src="video/4.swf" flashVars="autoplay=true&amp;controls=true&amp;loop=true&amp;poster=video/4.jpg&amp;src=video/4.mp4"	allowFullScreen="true" wmode="transparent" type="video/application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer_en" />
+    			<img alt="4" src="video/4.jpg" title="Video playback is not supported by your browser" />
+    			</object>-->
+    			
+    		</video>
+    	</article>
      </section>
 
   
@@ -284,7 +288,7 @@ $(function(){
       </header>      
     <article class="homie cleared">
       <figure class="cleared">
-        <img src="images/ryan.jpg" alt="Ryan" class="dude"/>
+        <img src="images/ryan.jpg" alt="Ryan" class="dude show-vid" title="ryan"/>
       <footer>
       <a href=""><img src="images/icons/facebook_32.png" alt="facebook"></a>
       <a href=""><img src="images/icons/twitter_32.png" alt="twitter"></a>
@@ -317,28 +321,65 @@ $(function(){
  <script>
  
  	$('video').each(function() {
+ 		
  		var vids = new Array($(this).attr('id'));
  
 	 	 new MediaElement(vids[0], {success: function(video) {
-	 	 	video.load();
-	 	 	$('.pp').click(function() {
-	 	 		if (video.paused || video.ended) {
-	 	 			this.innerHTML='pause';
-	 	 			video.play();
-	 	 		}
-	 	 		else {
-	 	 			this.innerHTML='play';
-	 	 			video.pause();
-	 	 		}
-	 	 	});
-			video.addEventListener('timeupdate', function() {
-				$('.time').text(Math.round(video.currentTime*100)/100);
-			}, false);
-			video.addEventListener('loadedmetadata', function() {
-				$('.duration').text(Math.round(video.duration*100)/100);
-			}, false);
+	 	 
+	 	 	function videoControls () {
+	 	 		
+	 	 		var container = video.parentNode;
+	 	 		var peep = $(container).attr('title');
+	 	 		this.container = container;
+	 	 		
+	 	 		$("<menu>"+
+	 	 			"<button class='pp'>"+"&#x25BA;"+"</button>"+
+	 	 			"<p class='vid-data'>"+"<span class='time'>"+"00:00"+"</span>"+"|"+"<span class='duration'>"+"</span>"+"</p>"+
+	 	 		  "</menu>"+
+	 	 		  "<span class='hide-vid'>"+"X"+"</span>").appendTo(container);
+		 	 	
+		 	 	
+		 	 	// play pause button -- WORKS
+		 	 	$('.pp', this.container).click(function() {
+		 	 		if (video.paused) {
+		 	 			this.innerHTML='&#x2590;&#x2590;';
+		 	 			video.play();
+		 	 		}
+		 	 		else {
+		 	 			this.innerHTML='&#x25BA;';
+		 	 			video.pause();
+		 	 		}
+		 	 	});
+		 	 	
+		 	 	// updates the current time of the video as it plays -- works but cleaner
+				video.addEventListener('timeupdate', function() {
+					$('#'+peep+' .time').text(Math.round(video.currentTime*100)/100);
+					if (video.ended) {
+						$('#'+peep+' .time').text('00:00');
+						$('#'+peep+' .pp').text('restart');
+					}
+				});
+				
+				//loads the meta data for the video (duration of video) -- works but could be cleaner
+				video.addEventListener('loadedmetadata', function() {
+					//console.log(this); //references working videos
+					$('#'+peep+' .duration', this.container).text(Math.round(video.duration*100)/100);
+				});
+				
+				//pauses and hides the video when clicked -- WORKS
+				$('.hide-vid', this.container).click(function() {
+				 	video.pause();
+					$(container).fadeOut(1500);
+				});
+				
+				//console.log(vids[0]);
+				//console.log(this.container);
+				//console.log(video);
 			
-			console.log(vids[0]);
+			}
+			
+			new videoControls();
+			
 	 	 }});
  	 
  	 });
