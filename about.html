@@ -368,6 +368,7 @@ $(function(){
 				//pauses and hides the video when clicked -- WORKS
 				$('.hide-vid', this.container).click(function() {
 				 	video.pause();
+				 	$('#'+peep+' .pp').html('&#x25BA;');
 					$(container).fadeOut(1500);
 				});
 				
