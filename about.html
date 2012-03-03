@@ -355,7 +355,6 @@ $(function(){
 				video.addEventListener('timeupdate', function() {
 					$('#'+peep+' .time').text(Math.round(video.currentTime*100)/100);
 					if (video.ended) {
-						$('#'+peep+' .time').text('00:00');
 						$('#'+peep+' .pp').text('restart');
 					}
 				});

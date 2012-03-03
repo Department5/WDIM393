@@ -48,6 +48,8 @@ video {
 	width: 100%;
 	background-color: rgba(95, 95, 95, .5);
 	padding: 0;
+	margin-bottom: 10px;
+	box-shadow:0 -1px 5px #5f5f5f;
 }
 
 .peepVid {
@@ -58,7 +60,7 @@ video {
 	margin-left: -401px;
 	width: 100%;
 	max-width: 650px;
-	padding: 25px 75px;
+	padding: 25px 75px 10px 75px;
 	background: #dddddd url(../images/mid-bg-repeat.jpg);
 	border-radius:10px;
 	box-shadow:0 0 15px #5f5f5f;
@@ -110,20 +112,24 @@ video {
 }
 
 .peepVid button {
-	border: 1px solid #d7d7d7;
+	border: 2px solid #d1d1d1;
+	background-color: #f8f8f8;
 	border-top-color: #fafafa;
 	border-left-color: #fafafa;
+	color: #b52f2d;
 	border-radius: 15px;
 	padding: 5px;
-	background-color: rgba(50, 50, 50, .25);
 	display: inline-block;
 	text-align: center;
-	width: 50px;
+	width: 55px;
 	font-weight: bold;
+	box-shadow:1px 1px 3px #959595;
 }
 
 .peepVid button:hover {
-	background-color: rgba(50, 50, 50, .55);
+	background-color: #d1d1d1;
+	border-bottom-color: #a6a6a6;
+	border-right-color: #a6a6a6;
 	box-shadow:1px 1px 1px #dddddd;
 }
 
@@ -133,9 +139,16 @@ video {
 
 .peepVid menu span {
 	display: inline-block;
-	width: 75px;
+	width: 55px;
 	text-align: center;
+}
+
+.peepVid menu p {
+	color: #5a5a5a;
 	font-size: 90%;
+	font-weight: 700;
+	font-weight: 700;
+	padding-left: 5px;
 }
 
 article, header#header ul, hgroup, aside#peepLinker div {
@@ -278,11 +291,15 @@ figure#logo img#dpt5 {
 	outline: 1px solid #dddddd;
 }
 
-/* just playing around with intro title 
-#header+.standOut {
+/* just playing around with intro title
+#header+.standOut article{
 	font-family: 'Passion One', cursive;
 	font-weight: 900;
-	color: #898989;
+	color: #b2b1b2;
+	font-size: 1.95em;
+	line-height: 1em;
+	text-align: justify;
+	max-width: 800px;
 }
 */
 
@@ -437,10 +454,11 @@ section.peep figure footer:after {
 	top: -63px;
 	left: 14px;
 	background-color: #dddddd;
-	width: 86.956521739%;
+	width: 86.956521739%; /* 200px / 230px */
 	text-align: center;
 	padding: 10px 0;
 	opacity: .1;
+	transition:all 0.3s ease-in-out;
 }
 
 section.peep figure:hover footer:after {
