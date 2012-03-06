@@ -286,6 +286,7 @@ figure#logo img#dpt5 {
 	font-size: 23px;
 	font-weight: 600;
 	line-height: 27px;
+	text-shadow: #edebed 0 -1px 2px, #dddddd 0 1px 3px;
 }
 
 .ltie9 .standOut {
@@ -400,7 +401,7 @@ aside#peepLinker div {
 	line-height: 27px;
 }
 aside#peepLinker div h5 {
-	font-family: 'passion one';
+
 	color: #200001;
 }
 
