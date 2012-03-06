@@ -58,7 +58,17 @@ function updatePlayer() {
 	    player.x += 10;	
 	    var right = canvas.width - player.width;
 	    if(player.x > right) player.x = right;
+	}
+	//up arrow
+	if(keyboard[38]) { 
+	    player.y -= 10;	
+	    if(player.x > right) player.x = right;
 	}	
+	//up arrow
+	if(keyboard[40]) { 
+	    player.y += 10;	
+	    if(player.x > right) player.x = right;
+	}
 	
 	//space bar
 	if(keyboard[32]) {
