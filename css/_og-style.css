@@ -32,6 +32,10 @@ a {
 	text-decoration:none;
 }
 
+a img {
+	border: none;
+}
+
 a:hover {
 	color:#461c1b;
 }
@@ -44,18 +48,19 @@ video {
 	width: 100%;
 	background-color: rgba(95, 95, 95, .5);
 	padding: 0;
-}
-
-video img {
-	width: 100%;
+	margin-bottom: 10px;
+	box-shadow:0 -1px 5px #5f5f5f;
 }
 
 .peepVid {
-	position: relative;
-	margin: 0 auto;
+	z-index: 500;
+	position: absolute;
+	top: 175px;
+	left: 50%;
+	margin-left: -401px;
 	width: 100%;
 	max-width: 650px;
-	padding: 25px 75px;
+	padding: 25px 75px 10px 75px;
 	background: #dddddd url(../images/mid-bg-repeat.jpg);
 	border-radius:10px;
 	box-shadow:0 0 15px #5f5f5f;
@@ -64,40 +69,42 @@ video img {
 	border-left-color: #fafafa;
 }
 
+.peepVid:after, .peepVid .hide-vid {
+	color: #B52F2D;
+	font-size: 13px;
+	box-shadow:2px 2px 5px #959595;
+}
+
 .peepVid:after {
-	content: 'Dept. Five Employee Interview';
-	background: #f9f9f9 url('../images/top-grad.png') repeat-x;
+	content: 'Dept.5 Employee Interview';
+	background: #f6f4f4 url('../images/top-grad.png') repeat-x;
 	position: absolute;
-	bottom: -42px;
+	bottom: -31px;
 	right: 30px;
 	padding: 5px 8px 8px 8px;
-	font-size: 13px;
-	color: #B52F2D;
 	border-bottom-right-radius:10px;
 	border-bottom-left-radius:10px;
-	box-shadow:2px 2px 5px #959595;
 	border-top: 1px solid #dddddd;
 }
 
-.show-vid {
-	text-align: center;
-}
-
-.hide-vid {
+.peepVid .hide-vid {
 	cursor: pointer;
-	padding: 0 8px;
-	background-color: #3e3e3e;
-	color: #fff;
-	font-weight: 900;
-	font-size: 14px;
+	padding: 2px 6px;
 	position: absolute;
 	top: -10px;
 	right: -10px;
 	border-radius: 50px;
-	box-shadow:2px 2px 5px #959595;
-	border: 1px solid #dddddd;
+	border: 2px solid #dddddd;
+	background-color: #f9f9f9;
 	border-top-color: #fafafa;
-	border-left-color: #fafafa;	
+	border-left-color: #fafafa;
+	transition: all 0.4s ease-in-out;
+}
+
+.peepVid .hide-vid:hover {
+	background-color: #000;
+	color: #fff;
+	font-weight: 900;
 }
 
 .peepVid h1, .peepVid h2 {
@@ -105,20 +112,24 @@ video img {
 }
 
 .peepVid button {
-	border: 1px solid #d7d7d7;
+	border: 2px solid #d1d1d1;
+	background-color: #f8f8f8;
 	border-top-color: #fafafa;
 	border-left-color: #fafafa;
+	color: #b52f2d;
 	border-radius: 15px;
 	padding: 5px;
-	background-color: rgba(50, 50, 50, .25);
 	display: inline-block;
 	text-align: center;
-	width: 50px;
+	width: 55px;
 	font-weight: bold;
+	box-shadow:1px 1px 3px #959595;
 }
 
 .peepVid button:hover {
-	background-color: rgba(50, 50, 50, .55);
+	background-color: #d1d1d1;
+	border-bottom-color: #a6a6a6;
+	border-right-color: #a6a6a6;
 	box-shadow:1px 1px 1px #dddddd;
 }
 
@@ -128,9 +139,16 @@ video img {
 
 .peepVid menu span {
 	display: inline-block;
-	width: 75px;
+	width: 55px;
 	text-align: center;
+}
+
+.peepVid menu p {
+	color: #5a5a5a;
 	font-size: 90%;
+	font-weight: 700;
+	font-weight: 700;
+	padding-left: 5px;
 }
 
 article, header#header ul, hgroup, aside#peepLinker div {
@@ -167,7 +185,7 @@ p {
 	padding-bottom: 10px;
 }
 
-.cleared:after, .peep article:after {
+.cleared:after {
 	content: '';
 	display: block;
 	height: 0;
@@ -273,6 +291,18 @@ figure#logo img#dpt5 {
 	outline: 1px solid #dddddd;
 }
 
+/* just playing around with intro title
+#header+.standOut article{
+	font-family: 'Passion One', cursive;
+	font-weight: 900;
+	color: #b2b1b2;
+	font-size: 1.95em;
+	line-height: 1em;
+	text-align: justify;
+	max-width: 800px;
+}
+*/
+
 #actions {
 	list-style-type:none;
 	max-width: 860px;  /* context for the #actions ul */
@@ -336,7 +366,6 @@ figure#logo img#dpt5 {
 }
 
 footer#footer {
-	z-index: 1000;
 	background: url("../images/nav-back.jpg") repeat-x scroll 0 0 transparent;
 	color: #717171;
 	height: 42px;
@@ -415,7 +444,29 @@ section.peep figure {
 	width: 28.75%; /* 230px / 800px */
 }
 
+section.peep figure footer:after {
+	content: 'Watch Interview';
+	font-weight: 900;
+	font-size: 20px;
+	display: block;
+	color: #000;
+	position: absolute;
+	top: -63px;
+	left: 14px;
+	background-color: #dddddd;
+	width: 86.956521739%; /* 200px / 230px */
+	text-align: center;
+	padding: 10px 0;
+	opacity: .1;
+	transition:all 0.3s ease-in-out;
+}
+
+section.peep figure:hover footer:after {
+	opacity: .5;
+}
+
 .homie figure footer {
+	position: relative;
 	padding: 10px 0;
 }
 
@@ -434,8 +485,7 @@ section.peep figure {
 }
 
 .homie figure .dude {
-	transition:all 0.3s ease-in-out;
-	cursor: pointer;
+	transition:all 0.4s ease-in-out;
 	width: 86.956521739%; /* 200px / 230px */
 	padding: 5.652173913%; /* 13px / 230px */
 	background: url(../images/mid-bg-repeat.jpg);  

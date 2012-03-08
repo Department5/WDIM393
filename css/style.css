@@ -116,7 +116,6 @@ video {
 	background-color: #f8f8f8;
 	border-top-color: #fafafa;
 	border-left-color: #fafafa;
-	color: #b52f2d;
 	border-radius: 15px;
 	padding: 5px;
 	display: inline-block;
@@ -162,27 +161,45 @@ img, video {
 	height:auto;
 }
 
-h1 {
-	font: 28px 'passion one';
-	letter-spacing: 1px;
-	color: #200001;
-	text-shadow: #edebed 0 -1px 2px, #dddddd 0 1px 3px;
+
+/* DARK WARM GREY */
+h1, #header+.standOut article, h3, h5 {
+	color: #261615;
 }
 
-h2 {
-  color: #bd0000;
+/* USES DARK WARM GREY FOR TITLES - LITE */
+h3, h5 {
+	text-shadow: #edebed 0 -1px 1px, #2e2322 0 1px 1px;
+	font-weight: 900;
+}
+
+/* USES DARK WARM GREY FOR TITLES - BOLD */
+h1, #header+.standOut article {
+	text-shadow: #edebed 0 -1px 2px, #3d0000 0 1px 1px;
+	font: 28px 'passion one';
+	line-height: 1.35em;
+}
+
+#header+.standOut article{
+	font-size: 1.5em;
+	max-width: 800px;
+}
+
+/* USES A DARK RED FOR TITLES */
+h2, aside#peepLinker ul li a, .red, .peepVid button {
+  color: #ad0000;
+  text-shadow: #edebed 0 -1px 1px, #dddddd 0 1px 1px;
+}
+
+h2, aside#peepLinker ul li a {
   font-size: 20px;
   font-weight: 600;
-  text-shadow: #edebed 0 -1px 2px, #dddddd 0 1px 3px;
 }
 
 h3 {
 	font-size: 18px;
 	letter-spacing: 1px;
-	color: #200001;
-	text-shadow: #edebed 0 -1px 2px, #dddddd 0 1px 3px;
 	margin-bottom:5px;
-	font-weight: 900;
 }
 
 p {
@@ -282,11 +299,9 @@ figure#logo img#dpt5 {
 	background-image: url(../images/shade-line-top.jpg), url(../images/shade-line-bottom.jpg), url(../images/mid-bg-repeat.jpg);
 	background-repeat: repeat-x, repeat-x, repeat;
 	background-position: top center, bottom center, top left ;
-	color: #161616;
 	font-size: 23px;
 	font-weight: 600;
 	line-height: 27px;
-	text-shadow: #edebed 0 -1px 2px, #dddddd 0 1px 3px;
 }
 
 .ltie9 .standOut {
@@ -295,18 +310,6 @@ figure#logo img#dpt5 {
 	border-bottom: 1px solid #fff;
 	outline: 1px solid #dddddd;
 }
-
-/* just playing around with intro title */
-#header+.standOut article{
-	font-family: 'passion one';
-	font-weight: 900;
-	font-size: 1.5em;
-	line-height: 1.35em;
-	max-width: 800px;
-	text-shadow: #edebed 0 -1px 2px, #510208 0 1px 1px;
-	color: #310002;
-}
-
 
 #actions {
 	list-style-type:none;
@@ -382,10 +385,6 @@ footer#footer {
 	box-shadow: 0px 0px 15px #000000;
 }
 
-.red {
-	color:#b52f2d;
-}
-
 progress {
 	height:9px;
 	border: 1px inset #747677;
@@ -394,26 +393,10 @@ progress {
 	color: red;
 }
 
-aside#peepLinker div {
-	color: #161616;
-	font-size: 25px;
-	font-weight: bold;
-	line-height: 27px;
-}
-aside#peepLinker div h5 {
-
-	color: #200001;
-}
-
 aside#peepLinker div h5, aside#peepLinker ul li {
+	font-size: 20px;
 	display: inline;
 	list-style-type:none;
-	font-size: 20px;
-	text-shadow: #edebed 0 -1px 2px, #dddddd 0 1px 3px;
-}
-
-aside#peepLinker ul li a{
-	color: #9a0614;
 }
 
 aside#peepLinker ul li a:hover {
