@@ -235,25 +235,24 @@ $(function(){
   
   
   // =========== enemies ===============
-  
-  function drawEnemy(c,enemy,radius) {
-  	if(radius <=0) radius = 1;
-  	var theta = enemy.counter;
-  	c.save();
-  	c.translate(0,30);
-  	
-  	circlePath(c, enemy.x, enemy.y, radius*2);
-  	c.fill();
-  	
-  	for(var i=0; i<10; i++) {
-  		var xoff = Math.sin(toRadians(theta+i*36*2))*radius;
-  		var yoff = Math.sin(toRadians(theta+i*36*1.5))*radius;
-  		circlePath(c, enemy.x + xoff, enemy.y + yoff, 3);
-  		c.fillStyle = "white";
-  		c.fill();	
-  	}
-  	c.restore();
-  }
+	  function drawEnemy(c,enemy,radius) {
+	  	if(radius <=0) radius = 1;
+	  	var theta = enemy.counter;
+	  	c.save();
+	  	c.translate(0,30);
+	  	
+	  	circlePath(c, enemy.x, enemy.y, radius*1); /* made enemies' bubble smaller */
+	  	c.fill();
+	  	
+	  	for(var i=0; i<10; i++) {
+	  		var xoff = Math.sin(toRadians(theta+i*36*2))*radius;
+	  		var yoff = Math.sin(toRadians(theta+i*36*1.5))*radius;
+	  		circlePath(c, enemy.x + xoff, enemy.y + yoff, 3);
+	  		c.fillStyle = "fafafa";
+	  		c.fill();	
+	  	}
+	  	c.restore();
+	  }
   
   function toRadians(d) {
   	return d * Math.PI * 2.0 / 360.0;
@@ -269,12 +268,12 @@ $(function(){
       for(var i in enemies) {
           var enemy = enemies[i];
           if(enemy.state == "alive") {
-              c.fillStyle = "green";
+              c.fillStyle = "ac1720";
               //c.fillRect(enemy.x,enemy.y,enemy.width,enemy.height);
               drawEnemy(c,enemy,15);
           }
           if(enemy.state == "hit") {
-              c.fillStyle = "purple";
+              c.fillStyle = "#da2832";
               //c.fillRect(enemy.x,enemy.y,enemy.width,enemy.height);
               enemy.shrink--;
               drawEnemy(c,enemy,enemy.shrink);
@@ -341,7 +340,7 @@ $(function(){
   setInterval(mainLoop,1000/30);
   
 
-  
+  keepScore(); /*** Bill ** set's score variable to 0 at the start */
   
   </script>
   

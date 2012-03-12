@@ -21,12 +21,11 @@ var playerBullets = [];
 var enemies = [];
 var enemyBullets = [];
 var score = 0;
-keepScore(); /*Bill: set's score variable to 0 at the start */
 
 // =========== game   ============
 
 function keepScore() {
-	$('#score').text(score);  /*Bill: Update the score */ 
+	$('#score').text(score);  /*** Bill ** Update the score */ 
 }
 
 function updateGame() {
@@ -74,7 +73,7 @@ function updatePlayer() {
 	//down arrow
 	if(keyboard[40]) { 
 	    player.y += 10;	
-	    if(player.y > 550) player.y = 550; /*Bill: height of canvas - height of player */
+	    if(player.y > 550) player.y = 550; /*** Bill ** height of canvas - height of player */
 	}
 	
 	//space bar
@@ -123,18 +122,18 @@ function updateEnemies() {
     if(game.state == "start") {
         enemies = [];
         enemyBullets = [];
-        for(var i=0; i<10; i++) { /*Bill: NOTE: the 10 controls how many enemies */
+        for(var i=0; i<10; i++) { /*** Bill ** NOTE: the 10 controls how many enemies */
             enemies.push({
-                    x: 50+ i*65, /*Bill: creates spacing for the enemies (65 - 50 = 15px of spacing | note: green goes past spacing  */
+                    x: 50+ i*65, /*** Bill ** creates spacing for the enemies (65 - 50 = 15px of spacing | note: green goes past spacing  */
                     y: 10,
-                    width: 40,  /*Bill: What the f**K does this doo? */
-                    height: 40, /*Bill: What the f**K does this doo? */
+                    width: 40,  /*** Bill ** What the f**K does this doo? */
+                    height: 40, /*** Bill ** What the f**K does this doo? */
                     
                     state: "alive", // the starting state of enemies
                     counter: 0, // a counter to use when calculating effects in each state
-                    phase: Math.floor(Math.random()*100), //make the enemies not be identical /*Bill: And controls shot variety */
+                    phase: Math.floor(Math.random()*100), //make the enemies not be identical /*** Bill ** And controls shot variety */
                     
-                    shrink: 40,  /*Bill: BLOOM!!! headshot */
+                    shrink: 40,  /*** Bill ** BLOOM!!! headshot */
             });
         }
         game.state = "playing";
@@ -142,22 +141,22 @@ function updateEnemies() {
     
     
     //for each enemy
-    for(var i=0; i<10; i++) { /*Bill: NOTE: the controls how many enemies move */
+    for(var i=0; i<10; i++) { /*** Bill ** NOTE: the controls how many enemies move */
         var enemy = enemies[i];
         if(!enemy) continue;
         
         //float back and forth when alive
         if(enemy && enemy.state == "alive") {
             enemy.counter++;
-            enemy.x += Math.sin(enemy.counter*Math.PI*2/100)*4; /*Bill: controls speed of enemies and distance traveled (I don't understand How)*/
+            enemy.x += Math.sin(enemy.counter*Math.PI*2/100)*4; /*** Bill ** controls speed of enemies and distance traveled (I don't understand How ... Math.sin(bullet.counter*Math.PI*2/50 {controls the distance they move back and forth})*10 {controls speed};)*/
             
-            enemy.y += 0.5;  /*Bill: Spane Invaders 2!! now they move down too */
+            enemy.y += 0.5;  /*** Bill ** Spane Invaders 2!! now they move down too */
             
             //fire a bullet every 50 ticks ----- "50 ticks????  What the F***k??
             
             //use 'phase' so they don't all fire at the same time
             
-            if((enemy.counter + enemy.phase) % 100 == 0) {  /*Bill: the hundred controls how often they fire (I don't understand How)*/
+            if((enemy.counter + enemy.phase) % 100 == 0) {  /*** Bill ** the hundred controls how often they fire (I don't understand How)*/
                 enemyBullets.push(createEnemyBullet(enemy));
             }
         }
@@ -172,7 +171,7 @@ function updateEnemies() {
                 enemy.counter = 0;
                 
                 score += 25;
-               	keepScore(); /*Bill: let's update that score */
+               	keepScore(); /*** Bill ** let's update that score */
             }
         }
     }
@@ -188,9 +187,9 @@ function updateEnemies() {
 function updateEnemyBullets() {
     for(var i in enemyBullets) {
         var bullet = enemyBullets[i];
-        bullet.y += 5;  /*Bill: controls how fast the bullets move!!  ( I actually do know how) */
+        bullet.y += 7.5;  /*** Bill ** controls how fast the bullets move!!  ( I actually do know how) */
         
-        bullet.x += Math.sin(bullet.counter*Math.PI*2/100)*4;  /*Bill: sidewinder bullets Biatch! (don't know how this works exactly) */
+        bullet.x += Math.sin(bullet.counter*Math.PI*2/50)*10;  /*** Bill ** sidewinder bullets Biatch! (don't know how this works exactly) */
         
         bullet.counter++;
         
