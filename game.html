@@ -82,7 +82,9 @@ $(function(){
     
     	<canvas id="canvas" width="800" height="600"></canvas>
     	
-    	<div>score: <span id=score></span></div>
+    	<div>Score: <span id="score"></span></div>
+    	<div>Kills: <span id="kills"></span></div>
+    	<div>Level: <span id="level"></span></div>
     
     </article>
   </section>
@@ -335,6 +337,7 @@ $(function(){
       c.font = "14pt Arial";
       c.fillText(overlay.subtitle, 190,250);
       c.restore();
+      reset();
   }
   
   doSetup();
@@ -342,6 +345,8 @@ $(function(){
   
 
   keepScore(); /*** Bill ** set's score variable to 0 at the start */
+  keepLevel();
+  keepKills();
   
   </script>
   

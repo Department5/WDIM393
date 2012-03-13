@@ -514,5 +514,11 @@ section#recentPost {
 
 #game {
   margin-bottom: 0;	
+  padding: 0;
+}
+
+#game div {
+	display: inline;
+	padding-right: 35px;
 }
 

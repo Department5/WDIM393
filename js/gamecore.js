@@ -1,5 +1,5 @@
 var game = {
-    state: "start",
+   state: "start",
 };
 
 var overlay = {
@@ -21,19 +21,51 @@ var playerBullets = [];
 var enemies = [];
 var enemyBullets = [];
 var score = 0;
+var kills = 0;
+var level = 0;
+var enemyCount = 10;
 
 // =========== game   ============
+
+function reset() {
+	score = 0;
+	keepScore();
+	kills = 0;
+	keepKills();
+	level = 0;
+	keepLevel();
+}
 
 function keepScore() {
 	$('#score').text(score);  /*** Bill ** Update the score */ 
 }
 
+function keepKills() {
+	$('#kills').text(kills);  /*** Bill ** Update the score */ 
+}
+
+function keepLevel() {
+	$('#level').text(level);  /*** Bill ** Update the score */ 
+}
+
+function levelUp(){
+	kills++;
+	keepKills();
+	if(kills % 10 == 0){
+		level++;
+	    keepLevel();
+	}
+}
+
 function updateGame() {
     if(game.state == "playing" && enemies.length == 0) {
+        /*
         game.state = "won";
         overlay.title = "SWARM DEAD";
         overlay.subtitle = "press space to play again";
         overlay.counter = 0;
+        */
+        game.state = "start";
     }
     if(game.state == "over" && keyboard[32]) {
         game.state = "start";
@@ -122,7 +154,7 @@ function updateEnemies() {
     if(game.state == "start") {
         enemies = [];
         enemyBullets = [];
-        for(var i=0; i<10; i++) { /*** Bill ** NOTE: the 10 controls how many enemies */
+        for(var i=0; i<enemyCount; i++) { /*** Bill ** NOTE: the 10 controls how many enemies */
             enemies.push({
                     x: 50+ i*65, /*** Bill ** creates spacing for the enemies (65 - 50 = 15px of spacing | note: green goes past spacing  */
                     y: 10,
@@ -141,16 +173,16 @@ function updateEnemies() {
     
     
     //for each enemy
-    for(var i=0; i<10; i++) { /*** Bill ** NOTE: the controls how many enemies move */
+    for(var i=0; i<enemyCount; i++) { /*** Bill ** NOTE: the controls how many enemies move */
         var enemy = enemies[i];
         if(!enemy) continue;
         
         //float back and forth when alive
         if(enemy && enemy.state == "alive") {
             enemy.counter++;
-            enemy.x += Math.sin(enemy.counter*Math.PI*2/100)*4; /*** Bill ** controls speed of enemies and distance traveled (I don't understand How ... Math.sin(bullet.counter*Math.PI*2/50 {controls the distance they move back and forth})*10 {controls speed};)*/
+            enemy.x += Math.sin(enemy.counter*Math.PI*2/50)*7; /*** Bill ** controls speed of enemies and distance traveled (I don't understand How ... Math.sin(bullet.counter*Math.PI*2/50 {controls the distance they move back and forth})*10 {controls speed};)*/
             
-            enemy.y += 0.5;  /*** Bill ** Spane Invaders 2!! now they move down too */
+            enemy.y += 0.9;  /*** Bill ** Spane Invaders 2!! now they move down too */
             
             //fire a bullet every 50 ticks ----- "50 ticks????  What the F***k??
             
@@ -172,6 +204,8 @@ function updateEnemies() {
                 
                 score += 25;
                	keepScore(); /*** Bill ** let's update that score */
+               	
+               	levelUp();
             }
         }
     }
@@ -189,7 +223,7 @@ function updateEnemyBullets() {
         var bullet = enemyBullets[i];
         bullet.y += 7.5;  /*** Bill ** controls how fast the bullets move!!  ( I actually do know how) */
         
-        bullet.x += Math.sin(bullet.counter*Math.PI*2/50)*10;  /*** Bill ** sidewinder bullets Biatch! (don't know how this works exactly) */
+        bullet.x += Math.sin(bullet.counter*Math.PI*2/10)*10;  /*** Bill ** sidewinder bullets Biatch! (don't know how this works exactly) */
         
         bullet.counter++;
         
@@ -219,6 +253,8 @@ function checkCollisions() {
             bullet.state = "hit";
             player.state = "hit";
             player.counter = 0;
+            
+          
         }
     }
 }
