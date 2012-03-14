@@ -85,6 +85,15 @@ $(function(){
     	<div>Score: <span id="score"></span></div>
     	<div>Kills: <span id="kills"></span></div>
     	<div>Level: <span id="level"></span></div>
+    	
+    	<label for="ships">Select Ship:</label>
+    	<select id="ships">
+    		<option>pimp</option>
+    		<option>hunter</option>
+    		<option>tugboat</option>
+    	</select>
+    	
+    	<button id="play">play</button>
     
     </article>
   </section>
@@ -101,36 +110,98 @@ $(function(){
   
   var can = document.getElementById("canvas");
   var c = can.getContext('2d');
+
   
-  player.width = 46;
-  player.height = 46;
+ var ship = { /* The Pimp ship Variable */
+ 			width: 24,  
+ 			height: 40, 
+ 			src: "images/game/pimpShip.png",
+ };
+ 
   
-  var ship_image;
+  $('#ships').change(function() {
+  
+  	var shipPick = $(this).val();
+  		if (shipPick == 'pimp') {
+  			ship = { /* The Pimp ship Variable */
+				width: 24,  
+				height: 40, 
+				src: "images/game/pimpShip.png",
+  			};
+  		}
+  		else if (shipPick == 'hunter') {
+  			ship = { /* The Pimp ship Variable */
+  				width: 23,  
+  				height: 23, 
+  				src: "images/game/Hunter.png",
+  			};
+  		}
+  		else {
+  			ship = { /* The Pimp ship Variable */
+  				width: 32,  
+  				height: 50, 
+  				src: "images/game/tugboat.png",
+  			};  			
+  		}
+  		
+  		loadResources();
+  		drawPlayer(c);
+  });
+  
+
+  
+  player.width = ship.width;
+  player.height = ship.height;
+  
   var bomb_image;
   var bullet_image;
+  var levelbg_image;
+  
+  var redFace = {
+  			width: 100,
+  			height: 63,
+  };
+  
+  var stars = {
+  	x: 0,
+  	y: 0,
+  	width: 800,
+  	height: 600,
+  	src: "images/game/stars.png",
+  };
   
   var particles = [];
   
   loadResources();
   
   function loadResources() {
-  	ship_image = new Image();
-  	ship_image.src = "images/Hunter1.png";
+  
+  	shipType = new Image();
+  	shipType.src = ship.src;
   	
   	bomb_image = new Image();
-  	bomb_image.src = "images/bomb.png";
+  	bomb_image.src = "images/game/bomb.png";
+  	
+  	stars_image = new Image();
+  	stars_image.src = "images/game/stars-overlay.png";
+  	stars_image.globalAlpha = 0.25;
   	
   	bullet_image = new Image();
-  	bullet_image.src = "images/bullets.png";
+  	bullet_image.src = "images/game/bullets.png";
+  	
+  	levelbg_image = new Image();
+  	levelbg_image.src = "images/game/bg1.jpg";
+  	
+  	redFace = new Image();
+  	redFace.src = "images/game/redFace.png";
   }
   
-  
+
   
   function mainLoop() {
   	var c = can.getContext('2d');
   
   	updateGame();
-  	updateBackground();
   	updateEnemies();
   	updatePlayer();
   	
@@ -140,29 +211,18 @@ $(function(){
   	checkCollisions();
   	
   	drawBackground(c);
+  	drawStars(c);
   	drawEnemies(c);
   	drawPlayer(c);
   	drawEnemyBullets(c);
   	drawPlayerBullets(c);
   	drawOverlay(c);
   }
-  
+
   
   // =========== player ============
   
-  function firePlayerBullet() {
-  	//create a new bullet
-  	playerBullets.push({
-  		//x: player.x,
-  		x: player.x+14,
-  		y: player.y - 5,
-  		//width:10,
-  		//height:10,
-  		width:20,
-  		height:20,
-  		counter:0,
-  	});
-  }
+
   
   function drawPlayer(c) {
       if(player.state == "dead") return;
@@ -175,10 +235,11 @@ $(function(){
   	}
   	//c.fillStyle = "red";
   	//c.fillRect(player.x,player.y, player.width, player.height);
-  	c.drawImage(ship_image,
-  				25,1, 23,23,
+  	c.drawImage(shipType,
+  				0,0, ship.width,ship.height,
   				player.x, player.y, player.width, player.height
   				);
+  				
   }
   
   
@@ -196,7 +257,6 @@ $(function(){
               });
           }
       }
-      
       //update and draw
       if(player.counter > 0) {
           for(var i=0; i<particles.length; i++) {
@@ -211,9 +271,37 @@ $(function(){
       }
   };
   
+  /*function drawEnemyExplosion(c) {
+      //start
+      if(enemy.counter == 0) {
+          particles = []; //clear any old values
+          for(var i = 0; i<50; i++) {
+              particles.push({
+                      x: enemy.x + enemy.width/2,
+                      y: enemy.y + enemy.height/2,
+                      xv: (Math.random()-0.5)*2.0*5.0,  // x velocity
+                      yv: (Math.random()-0.5)*2.0*5.0,  // y velocity
+                      age: 0,
+              });
+          }
+      }
+      //update and draw
+      if(enemy.counter > 0) {
+          for(var i=0; i<particles.length; i++) {
+              var p = particles[i];
+              p.x += p.xv;
+              p.y += p.yv;
+              var v = 255-p.age*3;
+              c.fillStyle = "rgb("+v+","+v+","+v+")";
+              c.fillRect(p.x,p.y,3,3);
+              p.age++;
+          }
+      }
+  };*/
+  
   
   function drawPlayerBullets(c) {
-  	c.fillStyle = "blue";
+  	//c.fillStyle = "blue";
   	for(i in playerBullets) {
   		var bullet = playerBullets[i];
   		var count = Math.floor(bullet.counter/4);
@@ -233,18 +321,34 @@ $(function(){
   function drawBackground(c) {
   	c.fillStyle = "black";
   	c.fillRect(0,0,can.width,can.height);
+  	c.drawImage(levelbg_image,
+  				0,0, can.width,can.height
+  				);
+  				
+  }
+  
+  function drawStars(c) {
+  	c.drawImage(stars_image,
+  				0,0, 800,600,
+  				stars.x,stars.y, stars.width, stars.height
+  				);			
   }
   
   
   
   // =========== enemies ===============
 	  function drawEnemy(c,enemy,radius) {
-	  	if(radius <=0) radius = 1;
-	  	var theta = enemy.counter;
-	  	c.save();
-	  	c.translate(0,30);
+	  //	if(radius <=0) radius = 1;
+	  	//var theta = enemy.counter;
+	  	//c.save();
+	  //	c.translate(0, -100);
+	  	c.drawImage(
+	  				redFace,
+	  				0,0, redFace.width, redFace.height,
+	  				enemy.x,enemy.y, enemy.width,enemy.height
+	  				);
 	  	
-	  	circlePath(c, enemy.x, enemy.y, radius*1); /* made enemies' bubble smaller */
+	  /*	circlePath(c, enemy.x, enemy.y, radius*1); 
 	  	c.fill();
 	  	
 	  	for(var i=0; i<10; i++) {
@@ -253,8 +357,8 @@ $(function(){
 	  		circlePath(c, enemy.x + xoff, enemy.y + yoff, 3);
 	  		c.fillStyle = "fafafa";
 	  		c.fill();	
-	  	}
-	  	c.restore();
+	  	} */
+	  	//c.restore();
 	  }
   
   function toRadians(d) {
@@ -277,9 +381,10 @@ $(function(){
           }
           if(enemy.state == "hit") {
               c.fillStyle = "#da2832";
-              //c.fillRect(enemy.x,enemy.y,enemy.width,enemy.height);
+              c.fillRect(enemy.x,enemy.y,enemy.width,enemy.height);
               enemy.shrink--;
               drawEnemy(c,enemy,enemy.shrink);
+              //drawEnemyExplosion(c);
           }
           //this probably won't ever be called.
           if(enemy.state == "dead") {
@@ -293,11 +398,11 @@ $(function(){
   function createEnemyBullet(enemy) {
       return {
           x:enemy.x,
-          y:enemy.y+enemy.height,
+          y:enemy.y+(enemy.height),
           //width:4,
           //height:12,
-          width:30,
-          height:30,
+          width:20,
+          height:20,
           counter:0,
       }
   }
@@ -315,10 +420,7 @@ $(function(){
           			);
       }
   }
-  
-  
-  
-  
+ 
   
   // =========== overlay ===============
   

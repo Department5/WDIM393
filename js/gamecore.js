@@ -1,5 +1,5 @@
 var game = {
-   state: "start",
+   state: "ready",
 };
 
 var overlay = {
@@ -11,10 +11,21 @@ var overlay = {
 var player = {
 	x:375,
 	y:550,
-	width: 20,
-	height: 50,
+	width: 25,
+	height: 25,
 	counter: 0,
 };
+
+var stars = {
+	
+	counter: -1,
+	x: 0,
+	y: 0,
+	width: 800,
+	height: 600,
+	src: "images/game/stars.png",
+};
+
 var keyboard = { };
 
 var playerBullets = [];
@@ -22,7 +33,7 @@ var enemies = [];
 var enemyBullets = [];
 var score = 0;
 var kills = 0;
-var level = 0;
+var level = 1;
 var enemyCount = 10;
 
 // =========== game   ============
@@ -32,20 +43,29 @@ function reset() {
 	keepScore();
 	kills = 0;
 	keepKills();
-	level = 0;
+	level = 1;
 	keepLevel();
+	enemyCount = 10;
+	playerBulletW = 20;
+	playerBulletH = 20;
 }
 
+$('#play').click(function() {
+	game.state = 'start';
+	player.state = "alive";
+	overlay.counter = -1;
+});
+
 function keepScore() {
-	$('#score').text(score);  /*** Bill ** Update the score */ 
+	$('#score').text(score);  /* Update the score */ 
 }
 
 function keepKills() {
-	$('#kills').text(kills);  /*** Bill ** Update the score */ 
+	$('#kills').text(kills);  /* Update the kills */ 
 }
 
 function keepLevel() {
-	$('#level').text(level);  /*** Bill ** Update the score */ 
+	$('#level').text(level);  /* Update the level */ 
 }
 
 function levelUp(){
@@ -54,6 +74,8 @@ function levelUp(){
 	if(kills % 10 == 0){
 		level++;
 	    keepLevel();
+	    
+	    enemyCount += 2;
 	}
 }
 
@@ -80,7 +102,7 @@ function updateGame() {
     
     if(overlay.counter >= 0) {
         overlay.counter++;
-    }
+    } 
     
 }
 function updatePlayer() {
@@ -105,7 +127,7 @@ function updatePlayer() {
 	//down arrow
 	if(keyboard[40]) { 
 	    player.y += 10;	
-	    if(player.y > 550) player.y = 550; /*** Bill ** height of canvas - height of player */
+	    if(player.y > 550) player.y = 550; /* height of canvas - height of player */
 	}
 	
 	//space bar
@@ -131,13 +153,57 @@ function updatePlayer() {
 	}
 }
 
+playerBulletW = 20;
+playerBulletH = 20;
+
+function loadBullets() {
+	if(level <= 3){
+		bullet_image = new Image();
+		bullet_image.src = "images/game/bullets.png";
+	} else {
+		bullet_image = new Image();
+		bullet_image.src = "images/game/bullets2.png";
+	}
+}
+
+function firePlayerBullet() {
+	//create a new bullet
+	playerBullets.push({
+		//x: player.x,
+		x: player.x+((player.width/2)-5),
+		y: player.y - 5,
+		//width:10,
+		//height:10,
+		width:playerBulletW,
+		height:playerBulletH,
+		counter:0,
+	});
+}
 
 function updatePlayerBullets() {
 	//move each bullet
 	for(i in playerBullets) {
 		var bullet = playerBullets[i];
-		bullet.y -= 8;
+			bullet.y -= 4;
+			bullet.x += 0;
+		if(level <= 2){
+			bullet.y -= 8;
+			playerBulletW = 15;
+			playerBulletH = 15;
+			bullet_image = new Image();
+			bullet_image.src = "images/game/bullets.png";
+		} else if (level == 3){
+			bullet.y -= 16;
+		} else if (level >= 4){
+			bullet.y -= 5;
+			playerBulletW = 25;
+			playerBulletH = 25;
+			bullet.x += Math.sin(bullet.counter*Math.PI*2/85)*4;
+			bullet_image = new Image();
+			bullet_image.src = "images/game/bullets2.png";
+		}
 		bullet.counter++;
+		loadBullets();
 	}
 	//remove the ones that are off the screen
 	playerBullets = playerBullets.filter(function(bullet){
@@ -145,8 +211,9 @@ function updatePlayerBullets() {
 	});
 }
 
-function updateBackground() {
-}
+setInterval(function() {
+	
+}, 5000);
 
 // ============== Enemy =============
 function updateEnemies() {
@@ -154,18 +221,19 @@ function updateEnemies() {
     if(game.state == "start") {
         enemies = [];
         enemyBullets = [];
-        for(var i=0; i<enemyCount; i++) { /*** Bill ** NOTE: the 10 controls how many enemies */
+        for(var i=0; i<enemyCount; i++) { /* NOTE: the 10 controls how many enemies */
             enemies.push({
-                    x: 50+ i*65, /*** Bill ** creates spacing for the enemies (65 - 50 = 15px of spacing | note: green goes past spacing  */
-                    y: 10,
-                    width: 40,  /*** Bill ** What the f**K does this doo? */
-                    height: 40, /*** Bill ** What the f**K does this doo? */
+                    x: Math.floor(Math.random()*750), /* creates spacing for the enemies (65 - 50 = 15px of spacing | note: green goes past spacing  */
+                    y: Math.floor(Math.random()*200) - 100,
+                   width: (75*0.6),  /* What the f**K does this doo? - Controls size allowed */
+                    height: (51*0.6), 
                     
                     state: "alive", // the starting state of enemies
                     counter: 0, // a counter to use when calculating effects in each state
-                    phase: Math.floor(Math.random()*100), //make the enemies not be identical /*** Bill ** And controls shot variety */
+                    phase: Math.floor(Math.random()*100), //make the enemies not be identical /* And controls shot variety */
                     
-                    shrink: 40,  /*** Bill ** BLOOM!!! headshot */
+                    //shrink: 40,  /* BLOOM!!! headshot */
+                    
             });
         }
         game.state = "playing";
@@ -173,23 +241,25 @@ function updateEnemies() {
     
     
     //for each enemy
-    for(var i=0; i<enemyCount; i++) { /*** Bill ** NOTE: the controls how many enemies move */
+    for(var i=0; i<enemyCount; i++) { /* NOTE: the controls how many enemies move */
         var enemy = enemies[i];
         if(!enemy) continue;
         
         //float back and forth when alive
         if(enemy && enemy.state == "alive") {
             enemy.counter++;
-            enemy.x += Math.sin(enemy.counter*Math.PI*2/50)*7; /*** Bill ** controls speed of enemies and distance traveled (I don't understand How ... Math.sin(bullet.counter*Math.PI*2/50 {controls the distance they move back and forth})*10 {controls speed};)*/
+            enemy.x += Math.sin(enemy.counter*Math.PI*2/85)*4; /* controls speed of enemies and distance traveled (I don't understand How ... Math.sin(bullet.counter*Math.PI*2/50 {controls the distance they move back and forth})*10 {controls speed};)*/
             
-            enemy.y += 0.9;  /*** Bill ** Spane Invaders 2!! now they move down too */
+            enemy.y += (level*0.25);  /* Space Invaders 2!! now they move down too */
             
-            //fire a bullet every 50 ticks ----- "50 ticks????  What the F***k??
             
-            //use 'phase' so they don't all fire at the same time
+            if((enemy.counter + enemy.phase) % (200) == 0) {  
             
-            if((enemy.counter + enemy.phase) % 100 == 0) {  /*** Bill ** the hundred controls how often they fire (I don't understand How)*/
-                enemyBullets.push(createEnemyBullet(enemy));
+                   enemyBullets.push(createEnemyBullet(enemy));
+            }
+            
+            if(enemy.y == 580) {
+            	player.state = 'hit';
             }
         }
         
@@ -203,7 +273,7 @@ function updateEnemies() {
                 enemy.counter = 0;
                 
                 score += 25;
-               	keepScore(); /*** Bill ** let's update that score */
+               	keepScore(); /* let's update that score */
                	
                	levelUp();
             }
@@ -221,9 +291,9 @@ function updateEnemies() {
 function updateEnemyBullets() {
     for(var i in enemyBullets) {
         var bullet = enemyBullets[i];
-        bullet.y += 7.5;  /*** Bill ** controls how fast the bullets move!!  ( I actually do know how) */
+        bullet.y += (level*1.11); /* controls how fast the bullets move!!  ( I actually do know how) */
         
-        bullet.x += Math.sin(bullet.counter*Math.PI*2/10)*10;  /*** Bill ** sidewinder bullets Biatch! (don't know how this works exactly) */
+        bullet.x += Math.sin(bullet.counter*Math.PI*1/100*9);  /* sidewinder bullets Biatch! (don't know how this works exactly) */
         
         bullet.counter++;
         
@@ -280,7 +350,7 @@ function collided(a, b) {
     if(a.x <= b.x && a.x + a.width >= b.x+b.width) {
         if(a.y <= b.y && a.y + a.height >= b.y+b.height) {
             return true;
-        }
+        } 
     }
     
     return false;

@@ -111,7 +111,7 @@ video {
 	display: inline-block;
 }
 
-.peepVid button {
+.peepVid button, #game #play, #game #ships {
 	border: 2px solid #d1d1d1;
 	background-color: #f8f8f8;
 	border-top-color: #fafafa;
@@ -186,7 +186,7 @@ h1, #header+.standOut article {
 }
 
 /* USES A DARK RED FOR TITLES */
-h2, aside#peepLinker ul li a, .red, .peepVid button {
+h2, aside#peepLinker ul li a, .red, .peepVid button, #game #play, #game #ships {
   color: #ad0000;
   text-shadow: #edebed 0 -1px 1px, #dddddd 0 1px 1px;
 }
@@ -196,7 +196,7 @@ h2, aside#peepLinker ul li a {
   font-weight: 600;
 }
 
-h3 {
+h3, #game label {
 	font-size: 18px;
 	letter-spacing: 1px;
 	margin-bottom:5px;
@@ -517,8 +517,30 @@ section#recentPost {
   padding: 0;
 }
 
+#game article {
+	position: relative;
+}
+
 #game div {
 	display: inline;
 	padding-right: 35px;
 }
 
+#game #play {
+	position: absolute;
+	right: 35px;
+	bottom: 13px;
+}
+
+#game #ships {
+	position: absolute;
+	right: 130px;
+	bottom: 13px;
+	width: 100px;
+}
+
+#game label {
+	position: absolute;
+	right: 240px;
+	bottom: -3px;
+}
