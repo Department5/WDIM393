@@ -16,6 +16,11 @@ var player = {
 	counter: 0,
 };
 
+var canvas = {
+	width: 800,
+	height: 600,
+};
+
 var stars = {
 	
 	counter: -1,
@@ -33,7 +38,7 @@ var enemies = [];
 var enemyBullets = [];
 var score = 0;
 var kills = 0;
-var level = 1;
+level = 1;
 var enemyCount = 10;
 
 // =========== game   ============
@@ -123,17 +128,30 @@ function updatePlayer() {
 	if(keyboard[38]) { 
 	    player.y -= 10;	
 	    if(player.y < 0) player.y = 0;
+	    //level -= 1;
+	    //keepLevel();
 	}	
 	//down arrow
 	if(keyboard[40]) { 
 	    player.y += 10;	
 	    if(player.y > 550) player.y = 550; /* height of canvas - height of player */
+	    //level++;
+	    //keepLevel();	
 	}
 	
 	//space bar
 	if(keyboard[32]) {
 		if(!keyboard.fired) { 
 			firePlayerBullet(); 
+			keyboard.fired = true;
+		}
+		
+	//double shot
+	if((keyboard[32]) && (level >= 20)) { 
+			firePlayerBullet();
+			$(this).delay(1000, function(){
+				firePlayerBullet();
+			});
 			keyboard.fired = true;
 		}
 	} else {
@@ -153,24 +171,15 @@ function updatePlayer() {
 	}
 }
 
-playerBulletW = 20;
-playerBulletH = 20;
 
-function loadBullets() {
-	if(level <= 3){
-		bullet_image = new Image();
-		bullet_image.src = "images/game/bullets.png";
-	} else {
-		bullet_image = new Image();
-		bullet_image.src = "images/game/bullets2.png";
-	}
-}
+playerBulletW = 15;
+playerBulletH = 15;
 
 function firePlayerBullet() {
 	//create a new bullet
 	playerBullets.push({
 		//x: player.x,
-		x: player.x+((player.width/2)-5),
+		x: player.x+((player.width/2)-(playerBulletW/2)),
 		y: player.y - 5,
 		//width:10,
 		//height:10,
@@ -186,24 +195,36 @@ function updatePlayerBullets() {
 		var bullet = playerBullets[i];
 			bullet.y -= 4;
 			bullet.x += 0;
-		if(level <= 2){
+		if(level >= 5){
 			bullet.y -= 8;
-			playerBulletW = 15;
-			playerBulletH = 15;
-			bullet_image = new Image();
-			bullet_image.src = "images/game/bullets.png";
-		} else if (level == 3){
+		}
+		if (level >= 10 && level <= 14){
 			bullet.y -= 16;
-		} else if (level >= 4){
+			playerBulletW = 20;
+			playerBulletH = 20;
+		} if (level >= 15 && level <=19){
 			bullet.y -= 5;
 			playerBulletW = 25;
 			playerBulletH = 25;
 			bullet.x += Math.sin(bullet.counter*Math.PI*2/85)*4;
 			bullet_image = new Image();
 			bullet_image.src = "images/game/bullets2.png";
+		} if (level >= 20 && level <= 24) {
+			bullet.y -= 20;
+			bullet.x += 0;
+			playerBulletW = 10;
+			playerBulletH = 10;
+			bullet_image = new Image();
+			bullet_image.src = "images/game/bullets3.png";
+		} if (level >= 25) {
+			bullet.y -= 18;
+			bullet.x += 0;
+			playerBulletW = 30;
+			playerBulletH = 30;
+			bullet_image = new Image();
+			bullet_image.src = "images/game/bullets4.png";
 		}
 		bullet.counter++;
-		loadBullets();
 	}
 	//remove the ones that are off the screen
 	playerBullets = playerBullets.filter(function(bullet){
@@ -230,7 +251,7 @@ function updateEnemies() {
                     
                     state: "alive", // the starting state of enemies
                     counter: 0, // a counter to use when calculating effects in each state
-                    phase: Math.floor(Math.random()*100), //make the enemies not be identical /* And controls shot variety */
+                    phase: Math.floor(Math.random()*1000), //make the enemies not be identical /* And controls shot variety */
                     
                     //shrink: 40,  /* BLOOM!!! headshot */
                     
@@ -241,7 +262,7 @@ function updateEnemies() {
     
     
     //for each enemy
-    for(var i=0; i<enemyCount; i++) { /* NOTE: the controls how many enemies move */
+    for(var i=0; i<enemyCount; i++) {
         var enemy = enemies[i];
         if(!enemy) continue;
         
@@ -250,7 +271,7 @@ function updateEnemies() {
             enemy.counter++;
             enemy.x += Math.sin(enemy.counter*Math.PI*2/85)*4; /* controls speed of enemies and distance traveled (I don't understand How ... Math.sin(bullet.counter*Math.PI*2/50 {controls the distance they move back and forth})*10 {controls speed};)*/
             
-            enemy.y += (level*0.25);  /* Space Invaders 2!! now they move down too */
+            enemy.y += (level*0.05);  /* Space Invaders 2!! now they move down too */
             
             
             if((enemy.counter + enemy.phase) % (200) == 0) {  
