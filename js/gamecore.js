@@ -232,10 +232,6 @@ function updatePlayerBullets() {
 	});
 }
 
-setInterval(function() {
-	
-}, 5000);
-
 // ============== Enemy =============
 function updateEnemies() {
     
